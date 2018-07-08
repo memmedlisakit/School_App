@@ -17,7 +17,6 @@ namespace School.Pages
         {
             InitializeComponent();
             connection = "Data Source=" + GetPath() + @"DB\StoreDb.db;Version=3;";
-            MessageBox.Show(connection);
         }
 
         public static string GetPath()
