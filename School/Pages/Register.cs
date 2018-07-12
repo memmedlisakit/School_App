@@ -1,62 +1,126 @@
 ﻿using System; 
 using System.Windows.Forms;
-using System.Data.SQLite;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Linq;
 using System.Data;
+using System.Data.SQLite;
+using System.Drawing;
+using System.Net;
 
 namespace School.Pages
 {
     public partial class Register : Form
-    {
-
-        string connection = null;
+    { 
+        OpenFileDialog file = new OpenFileDialog();
 
         public Register()
         {
             InitializeComponent();
-            connection = "Data Source=" + GetPath() + @"DB\StoreDb.db;Version=3;";
+            this.pctImage.Image = School.Properties.Resources._default;
         }
 
-        public static string GetPath()
+        private void btnRegister_Click(object sender, EventArgs e)
         {
-            string path = Application.StartupPath; 
-            List<string> splited = Regex.Split(path, "bin").ToList();
-            return splited[0];
+            if (this.isNotEmpty())
+            { 
+                string name = this.txtName.Text;
+                string surname = this.txtSurname.Text;
+                string username = this.txtUsername.Text;
+                string email = this.txtEmail.Text;
+                string password = this.txtPassword.Text;
+                int gender = this.ckbMale.Checked ? 1 : 0;
+                string imageName = null;
 
-        }
-         
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            string name = txtName.Text;
-            string surname = txtSurname.Text;
-            string email = txtEmail.Text;
-            string password = txtPassword.Text;
-            int gender = Convert.ToInt32(txtGender.Text);
+                if (file.SafeFileName != "")
+                {
+                    imageName = DateTime.Now.ToString("yyyyMMddHHssmm") + file.SafeFileName;
+                    this.imageUpload(file, imageName);
+                }
 
-            SQLiteConnection con = new SQLiteConnection(connection);
-            con.Open();
-            string sql = "INSERT INTO Students(name, surname, email, password, gender) VALUES('" + name+"', '"+surname+"', '"+email+"', '"+password+"', "+gender+")";
-            SQLiteCommand com = new SQLiteCommand(sql, con);
-            com.ExecuteNonQuery();
-            con.Close();
-            SelectAll();
+                string sql = "INSERT INTO Students(name, surname, username, email, password, gender, image) VALUES('" + name + "', '" + surname + "', '" + username + "', '" + email + "', '" + password + "', " + gender + ", '" + imageName + "')";
+                using(SQLiteConnection con = new SQLiteConnection(Login.connection))
+                {
+                    con.Open();
+                    using (SQLiteCommand com = new SQLiteCommand(sql,con))
+                    { 
+                        com.ExecuteNonQuery();
+                    }
+                }
+                btnRegister.Enabled = false;
+                cleaner();
+                this.lblSuccess.Text = "registration was successfully";
+            } 
         }
-         
-        public void SelectAll()
+
+        bool isNotEmpty()
         {
-            txtData.Text = "";
-            SQLiteConnection con = new SQLiteConnection(connection);
-            SQLiteDataAdapter da = new SQLiteDataAdapter();
-            DataTable dt = new DataTable();
-            SQLiteCommand com = new SQLiteCommand("SELECT * FROM Students", con);
-            da.SelectCommand = com;
-            da.Fill(dt);
-            foreach (DataRow row in dt.Rows)
+            if (this.txtName.Text == "")
             {
-                txtData.Text += row["name"] + " - " + row["surname"] + " - " + row["email"] + "\r\n";
+                this.lblName.Text = "name is required !!!";
+                this.ActiveControl = this.txtName;
+                return false;
             }
+            if (this.txtSurname.Text == "")
+            {
+                this.lblSurname.Text = "surname is required !!!";
+                this.ActiveControl = this.txtSurname;
+                return false;
+            }
+            if(this.txtUsername.Text == "")
+            {
+                this.lblUsername.Text = "username is required !!!";
+                this.ActiveControl = this.txtUsername;
+                return false;
+            }
+            if (this.txtEmail.Text == "")
+            {
+                this.lblEmail.Text = "email is required !!!";
+                this.ActiveControl = this.txtEmail;
+                return false;
+            }
+            if (this.txtPassword.Text == "")
+            {
+                this.lblPassword.Text = "password is required !!!";
+                this.ActiveControl = this.txtPassword;
+                return false;
+            }
+            if (!(this.ckbMale.Checked || this.ckbFemale.Checked))
+            {
+                this.lblGender.Text = "gender is required !!!";
+                return false;
+            }
+            return true;
+        }
+
+        void cleaner()
+        {
+            this.txtName.Text = "";
+            this.txtSurname.Text = "";
+            this.txtUsername.Text = "";
+            this.txtEmail.Text = "";
+            this.txtPassword.Text = "";
+            this.ckbMale.Checked  = false;
+            this.ckbFemale.Checked = false;
+            this.lblName.Text = "";
+            this.lblSurname.Text = "";
+            this.lblUsername.Text = "";
+            this.lblEmail.Text = "";
+            this.lblPassword.Text = "";
+            this.lblGender.Text = "";
+        }
+
+        private void linkUpload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            file.ShowDialog();
+            if (file.FileName != "")
+            {
+                this.pctImage.Image = Image.FromFile(file.FileName); 
+            }
+        }
+
+        void imageUpload(OpenFileDialog file, string imageName)
+        {
+            string path = Login.GetPath() + @"Uploads\" + imageName;
+            WebClient webclient = new WebClient();
+            webclient.DownloadFile(file.FileName, path);
         }
     }
 }
