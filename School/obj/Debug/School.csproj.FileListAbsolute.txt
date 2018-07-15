@@ -23,4 +23,5 @@ C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.AdminPanel.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Students.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Activations.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Category.resources
-C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Quation.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.AddQuation.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Quations.resources

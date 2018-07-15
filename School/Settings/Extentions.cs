@@ -1,6 +1,11 @@
-﻿using System;
+﻿using School.Pages;
+using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Text; 
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace School.Settings
@@ -32,6 +37,26 @@ namespace School.Settings
             fs.Close();
         }
 
+        public static void ImageUpload(OpenFileDialog file, string imageName, string folderName)
+        {
+            string path = GetPath() + folderName + "\\" + imageName;
+            WebClient webclient = new WebClient();
+            webclient.DownloadFile(file.FileName, path);
+        }
 
+        public static string GetPath()
+        {
+            string path = Application.StartupPath;
+            List<string> splited = Regex.Split(path, "bin").ToList();
+            return splited[0];
+
+        }
+
+        public static void DeleteFile(string fileName, string folderName)
+        {
+            string path = Application.StartupPath;
+            List<string> splited = Regex.Split(path, "bin").ToList();
+            File.Delete(splited[0] + "\\" + folderName + "\\" + fileName);
+        }
     }
 }

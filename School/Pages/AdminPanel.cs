@@ -47,7 +47,14 @@ namespace School.Pages
         private void quationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThisForm = this;
-            new Quation().Show();
+            new AddQuation().Show();
+            this.Hide();
+        }
+
+        private void quationsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ThisForm = this;
+            new Quations().Show();
             this.Hide();
         }
     }

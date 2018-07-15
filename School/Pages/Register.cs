@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Net;
+using School.Settings;
 
 namespace School.Pages
 {
@@ -32,7 +33,7 @@ namespace School.Pages
                 if (file.SafeFileName != "")
                 {
                     imageName = DateTime.Now.ToString("yyyyMMddHHssmm") + file.SafeFileName;
-                    this.imageUpload(file, imageName);
+                    Extentions.ImageUpload(file, imageName, "Uploads");
                 }
 
                 string sql = "INSERT INTO Students(name, surname, username, email, password, gender, image) VALUES('" + name + "', '" + surname + "', '" + username + "', '" + email + "', '" + password + "', " + gender + ", '" + imageName + "')";
@@ -114,13 +115,6 @@ namespace School.Pages
             {
                 this.pctImage.Image = Image.FromFile(file.FileName); 
             }
-        }
-
-        void imageUpload(OpenFileDialog file, string imageName)
-        {
-            string path = Login.GetPath() + @"Uploads\" + imageName;
-            WebClient webclient = new WebClient();
-            webclient.DownloadFile(file.FileName, path);
-        }
+        } 
     }
 }

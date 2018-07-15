@@ -34,6 +34,7 @@
             this.examToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quationsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +68,8 @@
             // 
             this.examToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.categoryToolStripMenuItem,
-            this.quationsToolStripMenuItem});
+            this.quationsToolStripMenuItem,
+            this.quationsToolStripMenuItem1});
             this.examToolStripMenuItem.Name = "examToolStripMenuItem";
             this.examToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.examToolStripMenuItem.Text = "Exam";
@@ -83,8 +85,15 @@
             // 
             this.quationsToolStripMenuItem.Name = "quationsToolStripMenuItem";
             this.quationsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.quationsToolStripMenuItem.Text = "Quations";
+            this.quationsToolStripMenuItem.Text = "Add quation";
             this.quationsToolStripMenuItem.Click += new System.EventHandler(this.quationsToolStripMenuItem_Click);
+            // 
+            // quationsToolStripMenuItem1
+            // 
+            this.quationsToolStripMenuItem1.Name = "quationsToolStripMenuItem1";
+            this.quationsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.quationsToolStripMenuItem1.Text = "Quations";
+            this.quationsToolStripMenuItem1.Click += new System.EventHandler(this.quationsToolStripMenuItem1_Click);
             // 
             // AdminPanel
             // 
@@ -111,5 +120,6 @@
         private System.Windows.Forms.ToolStripMenuItem examToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quationsToolStripMenuItem1;
     }
 }

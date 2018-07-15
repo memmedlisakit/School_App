@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SQLite;
 using System;
 using System.Drawing;
+using School.Settings;
 
 namespace School.Pages
 {
@@ -62,11 +63,11 @@ namespace School.Pages
                 string image = dt.Rows[0]["image"].ToString();
                 if (image == "")
                 {
-                    this.pckStudent.Image = Image.FromFile(Login.GetPath() + @"Uploads\default.png");
+                    this.pckStudent.Image = Image.FromFile(Extentions.GetPath() + @"Uploads\default.png");
                 }
                 else
                 {
-                    this.pckStudent.Image = Image.FromFile(Login.GetPath() + @"Uploads\"+image);
+                    this.pckStudent.Image = Image.FromFile(Extentions.GetPath() + @"Uploads\"+image);
                 }
 
             }

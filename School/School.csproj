@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Quation.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Pages\Activations.cs">
       <SubType>Form</SubType>
@@ -93,11 +94,17 @@
     <Compile Include="Pages\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Quation.cs">
+    <Compile Include="Pages\AddQuation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Quation.Designer.cs">
-      <DependentUpon>Quation.cs</DependentUpon>
+    <Compile Include="Pages\AddQuation.Designer.cs">
+      <DependentUpon>AddQuation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Quations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Quations.Designer.cs">
+      <DependentUpon>Quations.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Register.cs">
       <SubType>Form</SubType>
@@ -126,8 +133,11 @@
     <EmbeddedResource Include="Pages\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Quation.resx">
-      <DependentUpon>Quation.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\AddQuation.resx">
+      <DependentUpon>AddQuation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Quations.resx">
+      <DependentUpon>Quations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
@@ -167,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Uploads\default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Quations_Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" />

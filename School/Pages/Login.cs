@@ -6,6 +6,7 @@ using School.Models;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
+using School.Settings;
 
 namespace School.Pages
 {
@@ -18,17 +19,11 @@ namespace School.Pages
         public Login()
         {
             InitializeComponent();
-            connection = "Data Source=" + GetPath() + @"DB\StoreDb.db;Version=3;";
+            connection = "Data Source=" + Extentions.GetPath() + @"DB\StoreDb.db;Version=3;";
 
         }
 
-        public static string GetPath()
-        {
-            string path = Application.StartupPath;
-            List<string> splited = Regex.Split(path, "bin").ToList();
-            return splited[0];
-
-        }
+       
          
         private void btnSignIn_Click(object sender, EventArgs e)
         {
