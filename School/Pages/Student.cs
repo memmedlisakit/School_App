@@ -7,9 +7,9 @@ using School.Settings;
 
 namespace School.Pages
 {
-    public partial class Students : Form
+    public partial class Student : Form
     {
-        public Students()
+        public Student()
         {
             InitializeComponent();
             this.FillData(null);

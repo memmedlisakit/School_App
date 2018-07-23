@@ -12,7 +12,7 @@ namespace School.Pages
 {
     public partial class Login : Form
     {
-        static Student LoginedUser = new Student();
+        static Models.Student LoginedUser = new Models.Student();
         public static Form ThisForm;
         public static string connection = null;
          
@@ -90,7 +90,7 @@ namespace School.Pages
             Da.Fill(Dt);
             if (Dt.Rows.Count > 0)
             {
-                LoginedUser = new Student()
+                LoginedUser = new Models.Student()
                 {
                     Id = Convert.ToInt32(Dt.Rows[0]["id"]),
                     Name = Dt.Rows[0]["name"].ToString(),

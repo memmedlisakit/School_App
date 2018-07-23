@@ -55,7 +55,7 @@ namespace School.Pages
             {
                 this.lblAnswer.Text = "Write an answer !!!";
                 return false;
-            }
+            } 
             if (ofd.SafeFileName == "")
             {
                 this.lblImage.Text = "Choose an image !!!";

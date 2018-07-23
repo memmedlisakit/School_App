@@ -106,7 +106,7 @@
             this.groupBox2.Controls.Add(this.lblAllImages);
             this.groupBox2.Location = new System.Drawing.Point(49, 48);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(358, 438);
+            this.groupBox2.Size = new System.Drawing.Size(358, 455);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add multipli quation";
@@ -116,7 +116,7 @@
             this.lblMulti.AutoSize = true;
             this.lblMulti.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMulti.ForeColor = System.Drawing.Color.Red;
-            this.lblMulti.Location = new System.Drawing.Point(21, 411);
+            this.lblMulti.Location = new System.Drawing.Point(21, 331);
             this.lblMulti.Name = "lblMulti";
             this.lblMulti.Size = new System.Drawing.Size(0, 14);
             this.lblMulti.TabIndex = 45;
@@ -125,7 +125,7 @@
             // 
             this.btnAllSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAllSave.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnAllSave.Location = new System.Drawing.Point(216, 377);
+            this.btnAllSave.Location = new System.Drawing.Point(216, 404);
             this.btnAllSave.Name = "btnAllSave";
             this.btnAllSave.Size = new System.Drawing.Size(93, 30);
             this.btnAllSave.TabIndex = 42;
@@ -213,14 +213,14 @@
             this.groupBox3.Controls.Add(this.lblImage);
             this.groupBox3.Location = new System.Drawing.Point(530, 48);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(358, 438);
+            this.groupBox3.Size = new System.Drawing.Size(358, 455);
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Add single quation";
             // 
             // pckSingle
             // 
-            this.pckSingle.Location = new System.Drawing.Point(39, 304);
+            this.pckSingle.Location = new System.Drawing.Point(39, 331);
             this.pckSingle.Name = "pckSingle";
             this.pckSingle.Size = new System.Drawing.Size(148, 110);
             this.pckSingle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -230,7 +230,7 @@
             // txtAnswer
             // 
             this.txtAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAnswer.Location = new System.Drawing.Point(39, 149);
+            this.txtAnswer.Location = new System.Drawing.Point(39, 151);
             this.txtAnswer.Multiline = true;
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(283, 30);
@@ -240,7 +240,7 @@
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnSave.Location = new System.Drawing.Point(220, 377);
+            this.btnSave.Location = new System.Drawing.Point(220, 404);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 30);
             this.btnSave.TabIndex = 42;
@@ -294,7 +294,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label10.Location = new System.Drawing.Point(36, 123);
+            this.label10.Location = new System.Drawing.Point(36, 125);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(59, 18);
             this.label10.TabIndex = 39;
@@ -338,7 +338,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 535);
+            this.ClientSize = new System.Drawing.Size(940, 553);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Name = "AddQuation";

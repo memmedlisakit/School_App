@@ -2,14 +2,15 @@
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SQLite;
+using School.Settings;
 
 namespace School.Pages
 {
-    public partial class Category : Form
+    public partial class Categories : Form
     {
         SQLiteConnection con = new SQLiteConnection(Login.connection);
         int id;
-        public Category()
+        public Categories()
         {
             InitializeComponent();
             this.fillData();
@@ -67,14 +68,41 @@ namespace School.Pages
             return dt;
         }
 
+        void deleteAllQuations(int catId)
+        {
+            SQLiteDataAdapter da = new SQLiteDataAdapter();
+            DataTable dt = new DataTable();
+            string sql = "SELECT * FROM Quations WHERE category_id = " + catId;
+            SQLiteCommand com = new SQLiteCommand(sql, con);
+            da.SelectCommand = com;
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    sql = "DELETE FROM Quations WHERE category_id = " + Convert.ToInt32(row["category_id"]);
+                    com.CommandText = sql;
+                    com.Connection = con;
+                    con.Open();
+                    com.ExecuteNonQuery();
+                    con.Close();
+                    Extentions.DeleteFile(row["image"].ToString(), "Quations_Images");
+                }
+            }
+        }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string sql = "DELETE FROM Categories WHERE id = " + this.id;
-            SQLiteCommand com = new SQLiteCommand(sql, con);
-            con.Open();
-            com.ExecuteNonQuery();
-            con.Close();
-            this.fillData();
+            if(DialogResult.Yes == MessageBox.Show("Also 'Delete' all quations with releted this category", "Delete Category", MessageBoxButtons.YesNo))
+            {
+                string sql = "DELETE FROM Categories WHERE id = " + this.id;
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                con.Open();
+                com.ExecuteNonQuery();
+                con.Close();
+                this.fillData();
+                this.deleteAllQuations(this.id);
+            } 
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -90,10 +118,17 @@ namespace School.Pages
         private void Celect(object sender, DataGridViewCellMouseEventArgs e)
         {
             this.id = Convert.ToInt32(this.dgvData.Rows[e.RowIndex].Cells[0].Value);
-            this.btnAdd.Visible = false;
-            this.btnDelete.Visible = true;
-            this.btnUpdate.Visible = true;
-            this.txtCategory.Text = this.select(id).Rows[0]["name"].ToString();
+            if (this.id > 0)
+            {
+                this.btnAdd.Visible = false;
+                this.btnDelete.Visible = true;
+                this.btnUpdate.Visible = true;
+                this.txtCategory.Text = this.select(id).Rows[0]["name"].ToString();
+            }
+            else
+            {
+                this.cleaner();
+            }
         }
 
     }

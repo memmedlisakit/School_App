@@ -13,10 +13,10 @@ using School.Settings;
 
 namespace School.Pages
 {
-    public partial class Activations : Form
+    public partial class Activation : Form
     {
         List<string> activations = new List<string>();
-        public Activations()
+        public Activation()
         {
             InitializeComponent();
         }

@@ -20,7 +20,8 @@ namespace School.Pages
         AddQuation AQ = new AddQuation();
         SQLiteConnection con = new SQLiteConnection(Login.connection);
         OpenFileDialog ofd = new OpenFileDialog();
-        Quation seleced = new Quation();
+        Models.Quation seleced = new Models.Quation();
+        string selectedNumber = null;
 
         public Quations()
         {
@@ -41,9 +42,9 @@ namespace School.Pages
             AdminPanel.ThisForm.Show();
         }
          
-        List<Quation> getAllQuations(int? id = null, int? category_id = null)
+        List<Models.Quation> getAllQuations(int? id = null, int? category_id = null)
         {
-            List<Quation> quations = new List<Quation>();
+            List<Models.Quation> quations = new List<Models.Quation>();
             SQLiteDataAdapter da = new SQLiteDataAdapter();
             DataTable dt = new DataTable();
             string sql = "SELECT * FROM Quations";
@@ -55,7 +56,7 @@ namespace School.Pages
 
             foreach (DataRow row in dt.Rows)
             {
-                quations.Add(new Quation()
+                quations.Add(new Models.Quation()
                 {
                     Id = Convert.ToInt32(row["id"]),
                     Image = row["image"].ToString(),
@@ -66,19 +67,21 @@ namespace School.Pages
             return quations;
         }
 
-        void fillPanel(List<Quation> quations)
+        void fillPanel(List<Models.Quation> quations)
         {
+            int counter = 1;
             this.pnlAllQuations.Controls.Clear();
             int mainWidth = this.pnlAllQuations.Width - 10;
             int mainHeight = this.pnlAllQuations.Height;
             int top = 10;
             int left = 10;
-            foreach (Quation q in quations)
+            foreach (Models.Quation q in quations)
             {
                 GroupBox qrp = new GroupBox();
                 qrp.Width = (mainWidth / 3 - 20);
                 qrp.Height = (mainHeight / 3 - 20);
-                qrp.Text = q.Id.ToString();
+                qrp.Text = this.selectedNumber == null ? counter.ToString() : this.selectedNumber;
+                qrp.Name = q.Id.ToString();
                 qrp.Top = top;
                 qrp.Left = left;
                 left += (mainWidth / 3);
@@ -89,11 +92,13 @@ namespace School.Pages
                 }
                 this.pnlAllQuations.Controls.Add(qrp);
 
+                counter++;
+
                 PictureBox pct = new PictureBox();
                 pct.Width = qrp.Width;
                 pct.Top = 15;
                 pct.Height = qrp.Height - 50;
-                using (FileStream s = new  FileStream(Extentions.GetPath() + "\\Quations_Images\\" + q.Image,  FileMode.Open))
+                using (FileStream s = new FileStream(Extentions.GetPath() + "\\Quations_Images\\" + q.Image, FileMode.Open))
                 {
                     pct.Image = Image.FromStream(s);
                 }
@@ -112,7 +117,7 @@ namespace School.Pages
                 btnDel.ForeColor = Color.White;
                 btnDel.Top = qrp.Height - 33;
                 qrp.Controls.Add(btnDel);
-                btnDel.Name = q.Id+"_"+q.Image;
+                btnDel.Name = q.Id+"_"+ q.Image;
                 btnDel.Click += this.delete;
 
 
@@ -152,7 +157,7 @@ namespace School.Pages
             {
                 if (Int32.TryParse(this.txtNumOfQuation.Text, out id))
                 {
-                    this.fillPanel(this.getAllQuations(id));
+                    this.selectQuationForNumber(this.txtNumOfQuation.Text);
                     this.lblNumberOfQuation.Text = "";
                 }
                 else
@@ -163,12 +168,32 @@ namespace School.Pages
             else
             {
                 this.lblNumberOfQuation.Text = "";
-                this.fillPanel(this.getAllQuations());
+                this.selectQuationForNumber();
             }
+        }
+
+        void selectQuationForNumber(string number = "")
+        {
+            this.selectedNumber = null;
+            this.fillPanel(this.getAllQuations()); 
+            if (number != "")
+            {
+                foreach (var control in this.pnlAllQuations.Controls)
+                {
+                    GroupBox grp = control as GroupBox;
+                    if (grp.Text == number)
+                    {
+                            this.selectedNumber = grp.Text;
+                            this.fillPanel(this.getAllQuations(Convert.ToInt32(grp.Name)));
+                            return;
+                    } 
+                } 
+            } 
         }
 
         private void delete(object sender, EventArgs e)
         {
+            this.selectedNumber = null;
             this.pnlAllQuations.Controls.Clear();
             Button btn = sender as Button;
             string[] data = btn.Name.Split('_');
@@ -177,13 +202,13 @@ namespace School.Pages
             con.Open();
             com.ExecuteNonQuery();
             con.Close();
-            Extentions.DeleteFile(data[1], "Quations_Images");
+            Extentions.DeleteFile(data[1], "Quations_Images"); 
             this.fillPanel(this.getAllQuations()); 
         }
-
-
+         
         private void update(object sender, EventArgs e)
-        {
+        { 
+            this.pnlAllQuations.Controls.Clear();
             Button btn = sender as Button;
             this.seleced.Id = Convert.ToInt32(btn.Name);
             string sql = "SELECT * FROM Quations q INNER JOIN Categories c ON q.category_id = c.id WHERE q.id = " + this.seleced.Id;
@@ -195,7 +220,6 @@ namespace School.Pages
             this.cmbInfoCategory.Text = dt.Rows[0]["name"].ToString();
             this.txtInfoAnswer.Text = dt.Rows[0]["answer"].ToString();
             this.seleced.Image = dt.Rows[0]["image"].ToString();
-            this.lblId.Text = dt.Rows[0]["id"].ToString();
             using (FileStream s = new FileStream(Extentions.GetPath() + "\\Quations_Images\\" + this.seleced.Image, FileMode.Open))
             {
                 this.pctInfoQuation.Image = Image.FromStream(s);
@@ -236,9 +260,11 @@ namespace School.Pages
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             this.grpInfo.Visible = false;
+            this.selectedNumber = null;
+            this.fillPanel(this.getAllQuations());
         }
     }
 }

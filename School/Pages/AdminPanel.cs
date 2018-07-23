@@ -26,14 +26,14 @@ namespace School.Pages
 
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Students().Show();
+            new Student().Show();
             ThisForm = this;
             this.Hide();
         } 
 
         private void aCtivationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Activations().Show();
+            new Activation().Show();
             ThisForm = this;
             this.Hide();
         }
@@ -41,7 +41,7 @@ namespace School.Pages
         private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ThisForm = this;
-            new Category().Show();
+            new Categories().Show();
         }
 
         private void quationsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,6 +55,13 @@ namespace School.Pages
         {
             ThisForm = this;
             new Quations().Show();
+            this.Hide();
+        }
+
+        private void ticketsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThisForm = this;
+            new Tickets().Show();
             this.Hide();
         }
     }

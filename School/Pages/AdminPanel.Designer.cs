@@ -35,6 +35,7 @@
             this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quationsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +44,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.studentsToolStripMenuItem,
             this.aCtivationsToolStripMenuItem,
-            this.examToolStripMenuItem});
+            this.examToolStripMenuItem,
+            this.ticketsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(954, 24);
@@ -68,8 +70,8 @@
             // 
             this.examToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.categoryToolStripMenuItem,
-            this.quationsToolStripMenuItem,
-            this.quationsToolStripMenuItem1});
+            this.quationsToolStripMenuItem1,
+            this.quationsToolStripMenuItem});
             this.examToolStripMenuItem.Name = "examToolStripMenuItem";
             this.examToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.examToolStripMenuItem.Text = "Exam";
@@ -77,23 +79,30 @@
             // categoryToolStripMenuItem
             // 
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.categoryToolStripMenuItem.Text = "Category";
             this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // quationsToolStripMenuItem
             // 
             this.quationsToolStripMenuItem.Name = "quationsToolStripMenuItem";
-            this.quationsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quationsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.quationsToolStripMenuItem.Text = "Add quation";
             this.quationsToolStripMenuItem.Click += new System.EventHandler(this.quationsToolStripMenuItem_Click);
             // 
             // quationsToolStripMenuItem1
             // 
             this.quationsToolStripMenuItem1.Name = "quationsToolStripMenuItem1";
-            this.quationsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.quationsToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.quationsToolStripMenuItem1.Text = "Quations";
             this.quationsToolStripMenuItem1.Click += new System.EventHandler(this.quationsToolStripMenuItem1_Click);
+            // 
+            // ticketsToolStripMenuItem
+            // 
+            this.ticketsToolStripMenuItem.Name = "ticketsToolStripMenuItem";
+            this.ticketsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.ticketsToolStripMenuItem.Text = "Tickets";
+            this.ticketsToolStripMenuItem.Click += new System.EventHandler(this.ticketsToolStripMenuItem_Click);
             // 
             // AdminPanel
             // 
@@ -121,5 +130,6 @@
         private System.Windows.Forms.ToolStripMenuItem categoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quationsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ticketsToolStripMenuItem;
     }
 }

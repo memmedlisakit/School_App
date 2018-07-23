@@ -20,8 +20,10 @@ C:\Users\Sakit\Desktop\School\School\obj\Debug\School.exe
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.pdb
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Login.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.AdminPanel.resources
-C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Students.resources
-C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Activations.resources
-C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Category.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.AddQuation.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Activation.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Student.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.AddTicket.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Categories.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Quations.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Tickets.resources

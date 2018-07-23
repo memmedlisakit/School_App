@@ -1,6 +1,6 @@
 ﻿namespace School.Pages
 {
-    partial class Category
+    partial class Categories
     {
         /// <summary>
         /// Required designer variable.

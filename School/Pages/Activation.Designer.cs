@@ -1,6 +1,6 @@
 ﻿namespace School.Pages
 {
-    partial class Activations
+    partial class Activation
     {
         /// <summary>
         /// Required designer variable.

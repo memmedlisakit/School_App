@@ -68,13 +68,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\ComboboxItem.cs" />
     <Compile Include="Models\Quation.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Pages\Activations.cs">
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Pages\Activation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Activations.Designer.cs">
-      <DependentUpon>Activations.cs</DependentUpon>
+    <Compile Include="Pages\Activation.Designer.cs">
+      <DependentUpon>Activation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AddTicket.Designer.cs">
+      <DependentUpon>AddTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminPanel.cs">
       <SubType>Form</SubType>
@@ -82,11 +91,11 @@
     <Compile Include="Pages\AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Category.cs">
+    <Compile Include="Pages\Categories.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Category.Designer.cs">
-      <DependentUpon>Category.cs</DependentUpon>
+    <Compile Include="Pages\Categories.Designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.cs">
       <SubType>Form</SubType>
@@ -112,23 +121,32 @@
     <Compile Include="Pages\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Students.cs">
+    <Compile Include="Pages\Student.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Students.Designer.cs">
-      <DependentUpon>Students.cs</DependentUpon>
+    <Compile Include="Pages\Student.Designer.cs">
+      <DependentUpon>Student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Tickets.Designer.cs">
+      <DependentUpon>Tickets.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\Extentions.cs" />
-    <EmbeddedResource Include="Pages\Activations.resx">
-      <DependentUpon>Activations.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\Activation.resx">
+      <DependentUpon>Activation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AddTicket.resx">
+      <DependentUpon>AddTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Category.resx">
-      <DependentUpon>Category.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\Categories.resx">
+      <DependentUpon>Categories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -142,8 +160,11 @@
     <EmbeddedResource Include="Pages\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Students.resx">
-      <DependentUpon>Students.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\Student.resx">
+      <DependentUpon>Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Tickets.resx">
+      <DependentUpon>Tickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -85,6 +85,7 @@
             // 
             // btnSignIn
             // 
+            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnSignIn.Location = new System.Drawing.Point(171, 249);
