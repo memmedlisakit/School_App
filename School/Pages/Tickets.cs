@@ -23,7 +23,7 @@ namespace School.Pages
 
         private void btnAddTicket_Click(object sender, EventArgs e)
         { 
-            new AddTicket().Show();
+            new AddTicket(this).Show();
             this.Hide();
         }
 
@@ -56,7 +56,7 @@ namespace School.Pages
             }
         }
 
-        void fillPanel()
+        public void fillPanel()
         {
             this.dgwTickets.Rows.Clear();
             int index = 0;
@@ -98,7 +98,7 @@ namespace School.Pages
             }
             if(e.ColumnIndex == 2)
             {
-                AddTicket form = new AddTicket();
+                AddTicket form = new AddTicket(this);
                 form.update(id);
                 this.Hide();
                 form.Show();
@@ -124,6 +124,12 @@ namespace School.Pages
             }
 
             this.tickets.Remove(this.tickets.First(t => t.Id == ticketId));
+        }
+
+        public void updatePanel()
+        {
+            this.tickets = this.selectAllTicket();
+            this.fillPanel();
         }
     }
 }

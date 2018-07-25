@@ -34,8 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvData = new System.Windows.Forms.DataGridView();
             this.btnExel = new System.Windows.Forms.Button();
+            this.dgvData = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtActivation)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -109,17 +109,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "List of activations";
             // 
-            // dgvData
-            // 
-            this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2});
-            this.dgvData.Location = new System.Drawing.Point(6, 19);
-            this.dgvData.Name = "dgvData";
-            this.dgvData.Size = new System.Drawing.Size(446, 292);
-            this.dgvData.TabIndex = 0;
-            // 
             // btnExel
             // 
             this.btnExel.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,12 +121,24 @@
             this.btnExel.UseVisualStyleBackColor = true;
             this.btnExel.Click += new System.EventHandler(this.btnExel_Click);
             // 
+            // dgvData
+            // 
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2});
+            this.dgvData.Location = new System.Drawing.Point(6, 19);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.Size = new System.Drawing.Size(446, 292);
+            this.dgvData.TabIndex = 0;
+            // 
             // Column2
             // 
             this.Column2.HeaderText = "Activation code";
             this.Column2.Name = "Column2";
             // 
-            // Activations
+            // Activation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,7 +149,7 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.btnActivation);
             this.Controls.Add(this.label1);
-            this.Name = "Activations";
+            this.Name = "Activation";
             this.Text = "Activations";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             ((System.ComponentModel.ISupportInitialize)(this.txtActivation)).EndInit();

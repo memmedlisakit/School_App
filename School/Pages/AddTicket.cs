@@ -17,30 +17,36 @@ namespace School.Pages
         List<Quation> quations = new List<Quation>();
         List<Category> categories = new List<Category>();
         List<int> quation_ids = new List<int>();
+        public bool UpdateCheck { get; set; }
+        public int TicketId { get; set; }
+        public Tickets TicketForm { get; set; }
 
-        public AddTicket()
+        public AddTicket(Tickets ticketForm, bool updateCheck = true)
         {
+            this.TicketForm = ticketForm;
             InitializeComponent();
             selectAllForTable("Quations");
             selectAllForTable("Categories");
+            this.UpdateCheck = updateCheck;
             setScrollImages();
         }
 
+       
         private void Closing(object sender, FormClosingEventArgs e)
         {
             Tickets.ThisForm.Show();
         }
-         
+
         void setScrollImages()
         {
             foreach (var grp in this.grpMain.Controls)
             {
-                if(grp is GroupBox)
+                if (grp is GroupBox)
                 {
                     GroupBox groupBox = grp as GroupBox;
                     foreach (var obj in groupBox.Controls)
                     {
-                        if(obj is Panel)
+                        if (obj is Panel)
                         {
                             Panel panel = obj as Panel;
                             panel.HorizontalScroll.Maximum = 0;
@@ -48,9 +54,10 @@ namespace School.Pages
                             panel.VerticalScroll.Visible = false;
                             panel.AutoScroll = true;
                         }
-                        if(obj is ComboBox)
+                        if (obj is ComboBox)
                         {
-                            ComboBox cmb = obj as ComboBox; 
+                            ComboBox cmb = obj as ComboBox;
+                            cmb.Items.Clear();
                             foreach (Category cat in this.categories)
                             {
                                 ComboboxItem item = new ComboboxItem();
@@ -64,7 +71,7 @@ namespace School.Pages
                 }
             }
         }
-
+         
         private void Cmb_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cmb = sender as ComboBox;
@@ -75,7 +82,7 @@ namespace School.Pages
             pnl.Controls.Clear();
             int top = 0;
             foreach (Quation item in newQuations)
-            { 
+            {
                 Button btn = new Button();
                 btn.Width = pnl.Width - 18;
                 btn.Height = pnl.Height;
@@ -84,7 +91,7 @@ namespace School.Pages
                 btn.BackgroundImageLayout = ImageLayout.Stretch;
                 using (FileStream s = new FileStream(Extentions.GetPath() + "\\Quations_Images\\" + item.Image, FileMode.Open))
                 {
-                    btn.BackgroundImage = Image.FromStream(s); 
+                    btn.BackgroundImage = Image.FromStream(s);
                 }
                 pnl.Controls.Add(btn);
                 btn.Click += Btn_Click;
@@ -92,7 +99,7 @@ namespace School.Pages
                 top += pnl.Height;
             }
 
-           this.markImage(pnl);
+            this.markImage(pnl);
         }
 
         private void Btn_Click(object sender, EventArgs e)
@@ -106,8 +113,8 @@ namespace School.Pages
             btn.FlatAppearance.BorderColor = Color.LawnGreen;
             btn.FlatAppearance.BorderSize = 5;
         }
-         
-        void selectAllForTable( string table)
+
+        void selectAllForTable(string table)
         {
             string sql = "SELECT * FROM " + table;
             SQLiteCommand com = new SQLiteCommand(sql, con);
@@ -115,8 +122,8 @@ namespace School.Pages
             DataTable dt = new DataTable();
             da.SelectCommand = com;
             da.Fill(dt);
-             
-           if(table == "Quations")
+
+            if (table == "Quations")
             {
                 foreach (DataRow row in dt.Rows)
                 {
@@ -129,13 +136,13 @@ namespace School.Pages
                     });
                 }
             }
-           if(table == "Categories")
+            if (table == "Categories")
             {
                 foreach (DataRow row in dt.Rows)
                 {
                     this.categories.Add(new Category()
                     {
-                        Id = Convert.ToInt32(row["id"]), 
+                        Id = Convert.ToInt32(row["id"]),
                         Name = row["name"].ToString()
                     });
                 }
@@ -153,7 +160,7 @@ namespace School.Pages
 
             foreach (Control item in this.grpMain.Controls)
             {
-                if(item is GroupBox)
+                if (item is GroupBox)
                 {
                     GroupBox grp = item as GroupBox;
                     if (grp.Name.Contains("selected"))
@@ -168,7 +175,7 @@ namespace School.Pages
                 this.lblQuations.Text = "Select 10 quation !!!";
                 return;
             }
-             
+
             using (SQLiteConnection con = new SQLiteConnection(Login.connection))
             {
                 con.Open();
@@ -196,8 +203,9 @@ namespace School.Pages
             }
 
             this.btnSave.Enabled = false;
-            int tickedId =  this.insertToTicket();
+            int tickedId = this.insertToTicket();
             this.insertToPivot(tickedId, this.quation_ids);
+            this.TicketForm.updatePanel();
             this.Close();
             Tickets.ThisForm.Show();
         }
@@ -209,7 +217,7 @@ namespace School.Pages
             SQLiteCommand com = new SQLiteCommand(sql, con);
             con.Open();
             com.ExecuteNonQuery();
-           
+
 
             com.CommandText = "SELECT * FROM Tickets WHERE name = '" + this.txtTicketName.Text + "'";
             com.Connection = con;
@@ -217,9 +225,9 @@ namespace School.Pages
             int ticketId = 0;
             while (dr.Read())
             {
-               ticketId = Convert.ToInt32(dr["id"]);
+                ticketId = Convert.ToInt32(dr["id"]);
             }
-           
+
             con.Close();
             return ticketId;
         }
@@ -228,11 +236,11 @@ namespace School.Pages
         {
             foreach (int q_id in quationIds)
             {
-                using(SQLiteConnection con =new SQLiteConnection(Login.connection))
+                using (SQLiteConnection con = new SQLiteConnection(Login.connection))
                 {
                     con.Open();
                     string sql = "INSERT INTO P_TicketAndQuation(ticket_id, quation_id) values(" + ticketId + ", " + q_id + ")";
-                    SQLiteCommand com = new SQLiteCommand(sql,con);
+                    SQLiteCommand com = new SQLiteCommand(sql, con);
                     com.ExecuteNonQuery();
                 }
             }
@@ -245,8 +253,8 @@ namespace School.Pages
                 Button btn = ctrl as Button;
 
                 int id = Convert.ToInt32(btn.Name);
-             
-                using(SQLiteConnection con = new SQLiteConnection(Login.connection))
+
+                using (SQLiteConnection con = new SQLiteConnection(Login.connection))
                 {
                     con.Open();
                     string sql = "SELECT * FROM P_TicketAndQuation WHERE quation_id = " + id;
@@ -265,12 +273,17 @@ namespace School.Pages
                         btn.FlatAppearance.BorderColor = Color.Black;
                         btn.FlatAppearance.BorderSize = 1;
                     }
-                } 
+                }
             }
         }
 
         public void update(int ticketId)
         {
+
+            this.TicketId = ticketId;
+            this.btnSave.Visible = false;
+            this.btnUpdate.Visible = true;
+
             using (SQLiteConnection con = new SQLiteConnection(Login.connection))
             {
                 con.Open();
@@ -283,17 +296,18 @@ namespace School.Pages
                 this.txtTicketName.Text = dt.Rows[0]["name"].ToString();
             }
 
-            using (SQLiteConnection con =new SQLiteConnection(Login.connection))
+            using (SQLiteConnection con = new SQLiteConnection(Login.connection))
             {
                 con.Open();
-                string sql = "SELECT * FROM P_TicketAndQuation";
+                string sql = "SELECT * FROM P_TicketAndQuation WHERE ticket_id = " + ticketId;
                 SQLiteCommand com = new SQLiteCommand(sql, con);
                 SQLiteDataAdapter da = new SQLiteDataAdapter();
                 DataTable dt = new DataTable();
                 da.SelectCommand = com;
                 da.Fill(dt);
 
-                int index = 0;
+                int c_index = 0;
+                int p_index = 0;
                 foreach (Control ctrl in this.grpMain.Controls)
                 {
                     if (ctrl is GroupBox)
@@ -303,24 +317,96 @@ namespace School.Pages
                             if (cmb is ComboBox)
                             {
                                 ComboBox combo = cmb as ComboBox;
-                                int id = Convert.ToInt32(dt.Rows[index]["quation_id"]);
+                                combo.TextChanged -= Cmb_SelectedIndexChanged;
+                                int id = Convert.ToInt32(dt.Rows[c_index]["quation_id"]);
                                 int cat_id = this.quations.FirstOrDefault(q => q.Id == id).Category_id;
                                 foreach (ComboboxItem item in combo.Items)
                                 {
-                                    if(cat_id == Convert.ToInt32(item.Value))
                                     {
-                                        combo.SelectedItem = item;
+                                        if (cat_id == Convert.ToInt32(item.Value))
+                                        {
+                                            combo.SelectedItem = item;
+                                        }
                                     }
                                 }
+                                c_index++;
+                            }
+                             
+                        }
+
+                        foreach (Control panel in ctrl.Controls)
+                        {
+                            if (panel is Panel)
+                            {
+                                int id = Convert.ToInt32(dt.Rows[p_index]["quation_id"]);
+                                Quation selected = quations.FirstOrDefault(q => q.Id == id);
+
+                                Panel pnl = panel as Panel;
+                                pnl.Parent.Name = "selected-" + id;
+                                pnl.Controls.Clear();
+
+
+                                Button btn = new Button();
+                                btn.Width = pnl.Width - 18;
+                                btn.Height = pnl.Height; 
+                                btn.FlatStyle = FlatStyle.Flat;
+                                btn.BackgroundImageLayout = ImageLayout.Stretch;
+                                using (FileStream s = new FileStream(Extentions.GetPath() + "\\Quations_Images\\" + selected.Image, FileMode.Open))
+                                {
+                                    btn.BackgroundImage = Image.FromStream(s);
+                                }
+                                pnl.Controls.Add(btn);
+                                btn.Click += Btn_Click;
+                                btn.Name = id.ToString(); 
+                                  
+                                p_index++;
                             }
                         }
-                        index++;
-                    }
-                }
+                    } 
+                } 
+            }
+             
+        }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            this.btnUpdate.Enabled = false;
 
+            using(SQLiteConnection con =new SQLiteConnection(Login.connection))
+            {
+                string sql = "UPDATE Tickets SET name = '" + this.txtTicketName.Text + "' where id = " + this.TicketId;
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                con.Open();
+                com.ExecuteNonQuery();
             }
 
+            using (SQLiteConnection con = new SQLiteConnection(Login.connection))
+            {
+                con.Open();
+                string sql = "DELETE FROM P_TicketAndQuation WHERE ticket_id = " + this.TicketId;
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                com.ExecuteNonQuery();
+            }
+             
+            foreach (Control item in this.grpMain.Controls)
+            {
+                if (item is GroupBox)
+                {
+                    GroupBox grp = item as GroupBox;
+                    int id = Convert.ToInt32(grp.Name.Split('-').ToArray()[1]);
+                    using (SQLiteConnection con = new SQLiteConnection(Login.connection))
+                    {
+                        con.Open();
+                        string sql = "INSERT INTO P_TicketAndQuation(ticket_id, quation_id) values(" + this.TicketId + ", " + id + ")";
+                        SQLiteCommand com = new SQLiteCommand(sql, con);
+                        com.ExecuteNonQuery();
+                    }
+                }
+            }
+             
+            this.Close();
+            this.TicketForm.updatePanel();
+            Tickets.ThisForm.Show();
         }
     }
 }

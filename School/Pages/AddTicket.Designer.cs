@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grpMain = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
@@ -113,6 +114,7 @@
             // 
             // grpMain
             // 
+            this.grpMain.Controls.Add(this.btnUpdate);
             this.grpMain.Controls.Add(this.label23);
             this.grpMain.Controls.Add(this.button12);
             this.grpMain.Controls.Add(this.label22);
@@ -139,6 +141,20 @@
             this.grpMain.TabIndex = 7;
             this.grpMain.TabStop = false;
             this.grpMain.Text = "Add New Ticket";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Teal;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnUpdate.Location = new System.Drawing.Point(1224, 635);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(102, 30);
+            this.btnUpdate.TabIndex = 59;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label23
             // 
@@ -986,5 +1002,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button11;
         public System.Windows.Forms.TextBox txtTicketName;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

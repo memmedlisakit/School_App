@@ -63,6 +63,7 @@
             // 
             // dgwTickets
             // 
+            this.dgwTickets.AllowUserToAddRows = false;
             this.dgwTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
