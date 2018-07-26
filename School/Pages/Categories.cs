@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.Data.SQLite;
 using School.Settings;
+using System.Collections.Generic;
 
 namespace School.Pages
 {
@@ -70,6 +71,7 @@ namespace School.Pages
 
         void deleteAllQuations(int catId)
         {
+            List<int> ticket_ids = new List<int>();
             SQLiteDataAdapter da = new SQLiteDataAdapter();
             DataTable dt = new DataTable();
             string sql = "SELECT * FROM Quations WHERE category_id = " + catId;
@@ -87,13 +89,51 @@ namespace School.Pages
                     com.ExecuteNonQuery();
                     con.Close();
                     Extentions.DeleteFile(row["image"].ToString(), "Quations_Images");
+
+                   using(SQLiteConnection conn =new SQLiteConnection(Login.connection))
+                    {
+                        sql = "SELECT ticket_id FROM P_TicketAndQuation WHERE quation_id = " + Convert.ToInt32(row["id"]);
+                        SQLiteCommand command = new SQLiteCommand(sql, conn);
+                        conn.Open();
+                        SQLiteDataReader dr = command.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            int ticket_id = Convert.ToInt32(dr[0]);
+                            if (!ticket_ids.Contains(ticket_id))
+                            {
+                                ticket_ids.Add(ticket_id);
+                            }
+                        }
+                        con.Close();
+                    }
+                } 
+            }
+
+            if (ticket_ids.Count > 0)
+            {
+                foreach (int id in ticket_ids)
+                {
+                    using (SQLiteConnection connection = new SQLiteConnection(Login.connection))
+                    {
+                        string query = "DELETE FROM P_TicketAndQuation WHERE ticket_id = " + id;
+                        SQLiteCommand command = new SQLiteCommand(query, connection);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    using (SQLiteConnection connection = new SQLiteConnection(Login.connection))
+                    {
+                        string query = "DELETE FROM Tickets WHERE id = " + id;
+                        SQLiteCommand command = new SQLiteCommand(query, connection);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
                 }
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(DialogResult.Yes == MessageBox.Show("Also 'Delete' all quations with releted this category", "Delete Category", MessageBoxButtons.YesNo))
+            if(DialogResult.Yes == MessageBox.Show("Also 'Delete' all Quations and Tickets with releted this category", "Delete Category", MessageBoxButtons.YesNo))
             {
                 string sql = "DELETE FROM Categories WHERE id = " + this.id;
                 SQLiteCommand com = new SQLiteCommand(sql, con);

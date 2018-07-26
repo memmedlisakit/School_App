@@ -20,7 +20,7 @@ namespace School.Pages
         AddQuation AQ = new AddQuation();
         SQLiteConnection con = new SQLiteConnection(Login.connection);
         OpenFileDialog ofd = new OpenFileDialog();
-        Models.Quation seleced = new Models.Quation();
+        Quation seleced = new Quation();
         string selectedNumber = null;
 
         public Quations()
@@ -35,6 +35,8 @@ namespace School.Pages
             pnlAllQuations.AutoScroll = false;
             pnlAllQuations.VerticalScroll.Visible = false;
             pnlAllQuations.AutoScroll = true;
+
+            this.cmbCategory.SelectedIndex = 0;
         }
 
         private void Closing(object sender, FormClosingEventArgs e)
@@ -42,9 +44,9 @@ namespace School.Pages
             AdminPanel.ThisForm.Show();
         }
          
-        List<Models.Quation> getAllQuations(int? id = null, int? category_id = null)
+        List<Quation> getAllQuations(int? id = null, int? category_id = null)
         {
-            List<Models.Quation> quations = new List<Models.Quation>();
+            List<Quation> quations = new List<Quation>();
             SQLiteDataAdapter da = new SQLiteDataAdapter();
             DataTable dt = new DataTable();
             string sql = "SELECT * FROM Quations";
@@ -56,7 +58,7 @@ namespace School.Pages
 
             foreach (DataRow row in dt.Rows)
             {
-                quations.Add(new Models.Quation()
+                quations.Add(new Quation()
                 {
                     Id = Convert.ToInt32(row["id"]),
                     Image = row["image"].ToString(),
@@ -67,7 +69,7 @@ namespace School.Pages
             return quations;
         }
 
-        void fillPanel(List<Models.Quation> quations)
+        void fillPanel(List<Quation> quations)
         {
             int counter = 1;
             this.pnlAllQuations.Controls.Clear();
@@ -75,7 +77,7 @@ namespace School.Pages
             int mainHeight = this.pnlAllQuations.Height;
             int top = 10;
             int left = 10;
-            foreach (Models.Quation q in quations)
+            foreach (Quation q in quations)
             {
                 GroupBox qrp = new GroupBox();
                 qrp.Width = (mainWidth / 3 - 20);
@@ -175,7 +177,15 @@ namespace School.Pages
         void selectQuationForNumber(string number = "")
         {
             this.selectedNumber = null;
-            this.fillPanel(this.getAllQuations()); 
+            if (this.cmbCategory.Text == "All")
+            {
+                this.fillPanel(this.getAllQuations());
+            }
+            else
+            {
+                int id = AddQuation.getCatId(this.cmbCategory.Text);
+                this.fillPanel(this.getAllQuations(null, id));
+            }
             if (number != "")
             {
                 foreach (var control in this.pnlAllQuations.Controls)
@@ -193,19 +203,64 @@ namespace School.Pages
 
         private void delete(object sender, EventArgs e)
         {
-            this.selectedNumber = null;
-            this.pnlAllQuations.Controls.Clear();
-            Button btn = sender as Button;
-            string[] data = btn.Name.Split('_');
-            string sql = "DELETE FROM Quations WHERE id = " + Convert.ToInt32(data[0]);
-            SQLiteCommand com = new SQLiteCommand(sql, con);
-            con.Open();
-            com.ExecuteNonQuery();
-            con.Close();
-            Extentions.DeleteFile(data[1], "Quations_Images"); 
-            this.fillPanel(this.getAllQuations()); 
+            if (DialogResult.Yes == MessageBox.Show("Also 'Delete' all Tickets with releted this category", "Delete Quation", MessageBoxButtons.YesNo))
+            {
+                this.selectedNumber = null;
+                this.pnlAllQuations.Controls.Clear();
+                Button btn = sender as Button;
+                string[] data = btn.Name.Split('_');
+
+                deleteTickets(Convert.ToInt32(data[0]));
+
+                string sql = "DELETE FROM Quations WHERE id = " + Convert.ToInt32(data[0]);
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                con.Open();
+                com.ExecuteNonQuery();
+                con.Close();
+                Extentions.DeleteFile(data[1], "Quations_Images");
+                this.fillPanel(this.getAllQuations());
+            }
         }
-         
+        
+        private void deleteTickets(int quation_id)
+        {
+            List<int> ticket_ids = new List<int>();
+            using(SQLiteConnection con = new SQLiteConnection(Login.connection))
+            {
+                string sql = "SELECT * FROM P_TicketAndQuation WHERE quation_id = " + quation_id;
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                con.Open();
+                SQLiteDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    int ticket_id = Convert.ToInt32(dr["ticket_id"]);
+                    if (!ticket_ids.Contains(ticket_id))
+                    {
+                        ticket_ids.Add(ticket_id);
+                    }
+                }
+            }
+
+
+            foreach (int ticket_id in ticket_ids)
+            {
+                using (SQLiteConnection con = new SQLiteConnection(Login.connection))
+                {
+                    string sql = "DELETE FROM P_TicketAndQuation WHERE ticket_id = " + ticket_id;
+                    SQLiteCommand com = new SQLiteCommand(sql, con);
+                    con.Open();
+                    com.ExecuteNonQuery();
+                }
+                using (SQLiteConnection con = new SQLiteConnection(Login.connection))
+                {
+                    string sql = "DELETE FROM Tickets WHERE id = " + ticket_id;
+                    SQLiteCommand com = new SQLiteCommand(sql, con);
+                    con.Open();
+                    com.ExecuteNonQuery();
+                }
+            }
+        }
+
         private void update(object sender, EventArgs e)
         { 
             this.pnlAllQuations.Controls.Clear();
