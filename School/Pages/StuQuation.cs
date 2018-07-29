@@ -176,8 +176,12 @@ namespace School.Pages
                 this.lblResponse.ForeColor = Color.Red;
                 this.lblResponse.Text = "Incorrect answer !!!";
 
-                string value = this.SelectedQuations[Index].Id.ToString();
-                string text = this.Categories.Where(c => c.Id == this.SelectedQuations[Index].Category_id).First().Name+" - answer: "+ this.SelectedQuations[Index].Answer;
+
+                Quation quat = this.SelectedQuations[Index];
+                string value = quat.Id.ToString();
+                List<Quation> _quations = this.Quations.Where(q => q.Category_id == quat.Category_id).ToList();
+                int number = (_quations.IndexOf(quat) + 1);
+                string text = this.Categories.Where(c => c.Id == quat.Category_id).First().Name + " - num - " + number;
                 ComboboxItem item = new ComboboxItem { Text = text, Value = value };
                 if (!this.IncorrectQuations.Any(q=>(string)q.Value==value))
                 {
