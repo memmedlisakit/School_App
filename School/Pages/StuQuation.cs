@@ -162,8 +162,12 @@ namespace School.Pages
                 this.lblResponse.ForeColor = Color.LawnGreen;
                 this.lblResponse.Text = "Congratulations correct answer";
 
-                string val = (cmbIncorrectQuations.SelectedItem as ComboboxItem).Value.ToString();
-                this.IncorrectQuations.Remove(this.IncorrectQuations.First(q=>q.Value.ToString() == val));
+
+                if (cmbIncorrectQuations.SelectedIndex != -1)
+                {
+                    string val = (cmbIncorrectQuations.SelectedItem as ComboboxItem).Value.ToString();
+                    this.IncorrectQuations.Remove(this.IncorrectQuations.First(q => q.Value.ToString() == val));
+                }
                 fillCmbIncorrect();
             }
             else
