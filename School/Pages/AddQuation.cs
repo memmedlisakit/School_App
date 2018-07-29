@@ -161,7 +161,7 @@ namespace School.Pages
                     string[] files = Directory.GetFiles(fbd.SelectedPath);
                     foreach (string file in files)
                     {
-                        if(Path.GetExtension(file) == ".jpg" || Path.GetExtension(file) == ".jpeg")
+                        if(Path.GetExtension(file) == ".jpg" || Path.GetExtension(file) == ".jpeg" || Path.GetExtension(file) == ".png")
                         {
                             this.images.Add(Path.GetFileName(file));
                         }

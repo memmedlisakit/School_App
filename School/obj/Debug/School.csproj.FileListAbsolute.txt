@@ -27,3 +27,5 @@ C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.AddTicket.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Categories.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Quations.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Tickets.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Dashboard.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.StuQuation.resources

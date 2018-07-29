@@ -52,6 +52,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnImage = new System.Windows.Forms.Button();
             this.lblImage = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pckSingle)).BeginInit();
@@ -93,6 +94,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblMulti);
             this.groupBox2.Controls.Add(this.btnAllSave);
             this.groupBox2.Controls.Add(this.cmbAllCategory);
@@ -334,6 +336,17 @@
             this.lblImage.Size = new System.Drawing.Size(0, 14);
             this.lblImage.TabIndex = 37;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(125, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 14);
+            this.label1.TabIndex = 46;
+            this.label1.Text = ".jpg, .jpeg, .png";
+            // 
             // AddQuation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,5 +391,6 @@
         private System.Windows.Forms.TextBox txtAnswer;
         private System.Windows.Forms.PictureBox pckSingle;
         private System.Windows.Forms.Label lblMulti;
+        private System.Windows.Forms.Label label1;
     }
 }

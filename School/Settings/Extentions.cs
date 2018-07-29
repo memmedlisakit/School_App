@@ -1,4 +1,5 @@
-﻿using School.Pages;
+﻿using School.Models;
+using School.Pages;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,9 +11,8 @@ using System.Windows.Forms;
 
 namespace School.Settings
 {
-    class Extentions
+   public static class  Extentions
     {
-
         public static void Export_data(DataGridView dGV, string filename)
         {
             string stOutput = "";

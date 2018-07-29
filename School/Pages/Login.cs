@@ -10,9 +10,9 @@ using School.Settings;
 
 namespace School.Pages
 {
-    public partial class Login : Form
+    partial class Login : Form
     {
-        static Models.Student LoginedUser = new Models.Student();
+        public static Models.Student LoginedUser = new Models.Student();
         public static Form ThisForm;
         public static string connection = null;
          
@@ -49,7 +49,9 @@ namespace School.Pages
                     if (hasStudent(txtUsername.Text, txtPassword.Text))
                     {
                         this.lblError.Text = "";
-                        MessageBox.Show(LoginedUser.Name);
+                        this.Hide();
+                        ThisForm = this;
+                        new Dashboard().Show();
                     }
                 }
             }

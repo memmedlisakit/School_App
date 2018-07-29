@@ -97,6 +97,12 @@
     <Compile Include="Pages\Categories.Designer.cs">
       <DependentUpon>Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,12 @@
     <Compile Include="Pages\Student.Designer.cs">
       <DependentUpon>Student.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\StuQuation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\StuQuation.Designer.cs">
+      <DependentUpon>StuQuation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Tickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,9 @@
     <EmbeddedResource Include="Pages\Categories.resx">
       <DependentUpon>Categories.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Student.resx">
       <DependentUpon>Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\StuQuation.resx">
+      <DependentUpon>StuQuation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Tickets.resx">
       <DependentUpon>Tickets.cs</DependentUpon>
