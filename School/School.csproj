@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\ComboboxItem.cs" />
+    <Compile Include="Models\P_TicketAndQuation.cs" />
     <Compile Include="Models\Quation.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Ticket.cs" />
@@ -139,6 +140,12 @@
     <Compile Include="Pages\StuQuation.Designer.cs">
       <DependentUpon>StuQuation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\StuTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\StuTicket.Designer.cs">
+      <DependentUpon>StuTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Tickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\StuQuation.resx">
       <DependentUpon>StuQuation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\StuTicket.resx">
+      <DependentUpon>StuTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Tickets.resx">
       <DependentUpon>Tickets.cs</DependentUpon>

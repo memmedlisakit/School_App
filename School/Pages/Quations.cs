@@ -29,14 +29,14 @@ namespace School.Pages
             this.cmbCategory.Items.Add("All");
             AQ.fillComboBox(this.cmbCategory);
             AQ.fillComboBox(this.cmbInfoCategory);
-            this.fillPanel(this.getAllQuations());
+            //this.fillPanel(this.getAllQuations());
 
             pnlAllQuations.HorizontalScroll.Maximum = 0;
             pnlAllQuations.AutoScroll = false;
             pnlAllQuations.VerticalScroll.Visible = false;
             pnlAllQuations.AutoScroll = true;
 
-            this.cmbCategory.SelectedIndex = 0;
+            this.cmbCategory.SelectedIndex = -1;
         }
 
         private void Closing(object sender, FormClosingEventArgs e)

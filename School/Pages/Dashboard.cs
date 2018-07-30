@@ -26,7 +26,8 @@ namespace School.Pages
 
         private void btnTicket_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new StuTicket().Show();
         }
 
         private void btnQuation_Click(object sender, EventArgs e)
