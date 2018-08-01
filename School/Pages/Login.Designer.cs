@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ckbRememberMe = new System.Windows.Forms.CheckBox();
             this.ckbAdmin = new System.Windows.Forms.CheckBox();
             this.lblError = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -88,7 +89,7 @@
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnSignIn.Location = new System.Drawing.Point(171, 249);
+            this.btnSignIn.Location = new System.Drawing.Point(166, 276);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(102, 30);
             this.btnSignIn.TabIndex = 3;
@@ -98,6 +99,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ckbRememberMe);
             this.groupBox1.Controls.Add(this.ckbAdmin);
             this.groupBox1.Controls.Add(this.lblError);
             this.groupBox1.Controls.Add(this.lblPassword);
@@ -109,15 +111,25 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(256, 93);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(334, 300);
+            this.groupBox1.Size = new System.Drawing.Size(334, 336);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
             // 
+            // ckbRememberMe
+            // 
+            this.ckbRememberMe.AutoSize = true;
+            this.ckbRememberMe.Location = new System.Drawing.Point(68, 289);
+            this.ckbRememberMe.Name = "ckbRememberMe";
+            this.ckbRememberMe.Size = new System.Drawing.Size(95, 17);
+            this.ckbRememberMe.TabIndex = 10;
+            this.ckbRememberMe.Text = "Remember Me";
+            this.ckbRememberMe.UseVisualStyleBackColor = true;
+            // 
             // ckbAdmin
             // 
             this.ckbAdmin.AutoSize = true;
-            this.ckbAdmin.Location = new System.Drawing.Point(68, 262);
+            this.ckbAdmin.Location = new System.Drawing.Point(68, 233);
             this.ckbAdmin.Name = "ckbAdmin";
             this.ckbAdmin.Size = new System.Drawing.Size(70, 17);
             this.ckbAdmin.TabIndex = 9;
@@ -177,6 +189,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -197,5 +210,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.CheckBox ckbAdmin;
+        private System.Windows.Forms.CheckBox ckbRememberMe;
     }
 }

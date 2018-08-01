@@ -59,7 +59,7 @@
             this.grpTickets.Size = new System.Drawing.Size(1072, 414);
             this.grpTickets.TabIndex = 5;
             this.grpTickets.TabStop = false;
-            this.grpTickets.Text = "groupBox1";
+            this.grpTickets.Text = "All Tickets";
             // 
             // dgwTickets
             // 

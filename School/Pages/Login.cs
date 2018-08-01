@@ -1,11 +1,7 @@
 ﻿using System; 
 using System.Windows.Forms;
 using System.Data;
-using System.Data.SQLite;
-using School.Models;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using System.Linq;
+using System.Data.SQLite; 
 using School.Settings;
 
 namespace School.Pages
@@ -20,10 +16,7 @@ namespace School.Pages
         {
             InitializeComponent();
             connection = "Data Source=" + Extentions.GetPath() + @"DB\StoreDb.db;Version=3;";
-
         }
-
-       
          
         private void btnSignIn_Click(object sender, EventArgs e)
         {
@@ -54,6 +47,47 @@ namespace School.Pages
                         new Dashboard().Show();
                     }
                 }
+            }
+            if(this.ckbRememberMe.Checked && LoginedUser != null)
+            {
+                this.updateRemeber(1);
+            }
+            else if (!ckbRememberMe.Checked)
+            {
+                this.updateRemeber(0);
+            }
+        }
+
+        void rememberMe()
+        {
+            using (SQLiteConnection con = new SQLiteConnection(connection))
+            {
+                string sql = "SELECT * FROM Remember_Me";
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                SQLiteDataAdapter da = new SQLiteDataAdapter(com);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                foreach (DataRow row in dt.Rows)
+                {
+                    int status = Convert.ToInt32(row["status"]);
+                    if (status == 1)
+                    {
+                        this.txtUsername.Text = row["username"].ToString();
+                        this.txtPassword.Text = row["password"].ToString();
+                        this.ckbRememberMe.Checked = true;
+                    }
+                }
+            }
+        }
+
+        void updateRemeber(int status)
+        {
+            using(SQLiteConnection con =new SQLiteConnection(connection))
+            {
+                string sql = "UPDATE Remember_Me SET username = '" + LoginedUser.Username + "', password = '" + LoginedUser.Password + "', status = " + status;
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                con.Open();
+                com.ExecuteNonQuery();
             }
         }
 
@@ -96,6 +130,7 @@ namespace School.Pages
                 {
                     Id = Convert.ToInt32(Dt.Rows[0]["id"]),
                     Name = Dt.Rows[0]["name"].ToString(),
+                    Username = Dt.Rows[0]["username"].ToString(),
                     Surname = Dt.Rows[0]["surname"].ToString(),
                     Email = Dt.Rows[0]["email"].ToString(),
                     Password = Dt.Rows[0]["password"].ToString(),
@@ -141,6 +176,9 @@ namespace School.Pages
             new Register().Show();
         }
 
-         
+        private void Login_Load(object sender, EventArgs e)
+        {
+           this.rememberMe();
+        }
     }
 }
