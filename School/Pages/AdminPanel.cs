@@ -33,7 +33,7 @@ namespace School.Pages
 
         private void aCtivationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Activation().Show();
+            new AddActivation().Show();
             ThisForm = this;
             this.Hide();
         }

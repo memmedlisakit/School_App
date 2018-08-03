@@ -115,6 +115,12 @@ namespace School.Pages
             {
                 this.pctImage.Image = Image.FromFile(file.FileName); 
             }
-        } 
+        }
+
+        private void Closing(object sender, FormClosingEventArgs e)
+        {
+            Login.hideSignUp();
+            Login.ThisForm.Show();
+        }
     }
 }

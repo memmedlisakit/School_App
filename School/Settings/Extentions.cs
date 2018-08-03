@@ -20,7 +20,7 @@ namespace School.Settings
             for (int j = 0; j < dGV.Columns.Count; j++)
                 sHeaders = sHeaders.ToString() + Convert.ToString(dGV.Columns[j].HeaderText) + "\t";
             stOutput += sHeaders + "\r\n";
-            for (int i = 0; i < dGV.RowCount - 1; i++)
+            for (int i = 0; i < dGV.RowCount; i++)
             {
                 string stLine = "";
                 for (int j = 0; j < dGV.Rows[i].Cells.Count; j++)

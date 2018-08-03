@@ -1,6 +1,6 @@
 ﻿namespace School.Pages
 {
-    partial class Activation
+    partial class AddActivation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtActivation = new System.Windows.Forms.NumericUpDown();
-            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.btnActivation = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
@@ -37,33 +36,21 @@
             this.btnExel = new System.Windows.Forms.Button();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.txtActivation)).BeginInit();
+            this.txtActivation = new System.Windows.Forms.TextBox();
+            this.btnClearAll = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtActivation
+            // lblError
             // 
-            this.txtActivation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActivation.Location = new System.Drawing.Point(33, 40);
-            this.txtActivation.Maximum = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
-            this.txtActivation.Name = "txtActivation";
-            this.txtActivation.Size = new System.Drawing.Size(172, 27);
-            this.txtActivation.TabIndex = 16;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.Red;
-            this.lblPassword.Location = new System.Drawing.Point(164, 118);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(0, 14);
-            this.lblPassword.TabIndex = 15;
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(18, 329);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 14);
+            this.lblError.TabIndex = 15;
             // 
             // btnActivation
             // 
@@ -102,6 +89,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnExel);
             this.groupBox1.Controls.Add(this.dgvData);
+            this.groupBox1.Controls.Add(this.lblError);
             this.groupBox1.Location = new System.Drawing.Point(12, 118);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(458, 357);
@@ -138,22 +126,44 @@
             this.Column2.HeaderText = "Activation code";
             this.Column2.Name = "Column2";
             // 
-            // Activation
+            // txtActivation
+            // 
+            this.txtActivation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActivation.Location = new System.Drawing.Point(33, 40);
+            this.txtActivation.Multiline = true;
+            this.txtActivation.Name = "txtActivation";
+            this.txtActivation.Size = new System.Drawing.Size(200, 30);
+            this.txtActivation.TabIndex = 23;
+            // 
+            // btnClearAll
+            // 
+            this.btnClearAll.BackColor = System.Drawing.Color.IndianRed;
+            this.btnClearAll.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearAll.ForeColor = System.Drawing.Color.White;
+            this.btnClearAll.Location = new System.Drawing.Point(337, 82);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(102, 30);
+            this.btnClearAll.TabIndex = 24;
+            this.btnClearAll.Text = "Clear All";
+            this.btnClearAll.UseVisualStyleBackColor = false;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            // 
+            // AddActivation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 479);
+            this.Controls.Add(this.btnClearAll);
+            this.Controls.Add(this.txtActivation);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblCount);
-            this.Controls.Add(this.txtActivation);
-            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.btnActivation);
             this.Controls.Add(this.label1);
-            this.Name = "Activation";
+            this.Name = "AddActivation";
             this.Text = "Activations";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
-            ((System.ComponentModel.ISupportInitialize)(this.txtActivation)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,9 +171,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown txtActivation;
-        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button btnActivation;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCount;
@@ -171,5 +179,7 @@
         private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Button btnExel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.TextBox txtActivation;
+        private System.Windows.Forms.Button btnClearAll;
     }
 }

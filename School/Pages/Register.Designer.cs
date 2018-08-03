@@ -31,6 +31,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.ckbMale = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSuccess = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblSuccess = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImage)).BeginInit();
             this.SuspendLayout();
@@ -107,6 +107,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registration";
+            // 
+            // lblSuccess
+            // 
+            this.lblSuccess.AutoSize = true;
+            this.lblSuccess.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuccess.ForeColor = System.Drawing.Color.Lime;
+            this.lblSuccess.Location = new System.Drawing.Point(690, 369);
+            this.lblSuccess.Name = "lblSuccess";
+            this.lblSuccess.Size = new System.Drawing.Size(0, 16);
+            this.lblSuccess.TabIndex = 25;
             // 
             // lblGender
             // 
@@ -313,16 +323,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Name:";
             // 
-            // lblSuccess
-            // 
-            this.lblSuccess.AutoSize = true;
-            this.lblSuccess.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuccess.ForeColor = System.Drawing.Color.Lime;
-            this.lblSuccess.Location = new System.Drawing.Point(690, 369);
-            this.lblSuccess.Name = "lblSuccess";
-            this.lblSuccess.Size = new System.Drawing.Size(0, 16);
-            this.lblSuccess.TabIndex = 25;
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,6 +331,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Register";
             this.Text = "Sign Up";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImage)).EndInit();

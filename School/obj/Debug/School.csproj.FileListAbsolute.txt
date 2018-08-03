@@ -11,7 +11,6 @@ C:\Users\Sakit\Desktop\School\School\bin\Debug\EntityFramework.xml
 C:\Users\Sakit\Desktop\School\School\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Data.SQLite.xml
 C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\Sakit\Desktop\School\School\obj\Debug\School.csprojResolveAssemblyReference.cache
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Register.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Properties.Resources.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.csproj.GenerateResource.Cache
@@ -21,7 +20,6 @@ C:\Users\Sakit\Desktop\School\School\obj\Debug\School.pdb
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Login.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.AdminPanel.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.AddQuation.resources
-C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Activation.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Student.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.AddTicket.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Categories.resources
@@ -30,3 +28,15 @@ C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Tickets.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Dashboard.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.StuQuation.resources
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.StuTicket.resources
+C:\Users\Sakit\Desktop\School\School\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sakit\Desktop\School\School\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.AddActivation.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.CheckActivation.resources
+C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Net.Http.dll
+C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Net.Http.WebRequest.dll
+C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Net.Http.xml
+C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Net.Http.WebRequest.xml
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.csprojResolveAssemblyReference.cache

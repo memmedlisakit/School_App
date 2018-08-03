@@ -3,6 +3,15 @@ using System.Windows.Forms;
 using System.Data;
 using System.Data.SQLite; 
 using School.Settings;
+using System.Net;
+using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Net.Http.Headers;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace School.Pages
 {
@@ -11,15 +20,21 @@ namespace School.Pages
         public static Models.Student LoginedUser = new Models.Student();
         public static Form ThisForm;
         public static string connection = null;
-         
+        public static LinkLabel LinkLabel = null;
+
+        static HttpClient client = new HttpClient();
+
         public Login()
         {
             InitializeComponent();
             connection = "Data Source=" + Extentions.GetPath() + @"DB\StoreDb.db;Version=3;";
+            LinkLabel = this.linkSignUp;
+            hideSignUp();
         }
          
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+            ThisForm = this;
             if (this.ckbAdmin.Checked)
             {
                 if (this.isNotEmpty(this.txtUsername.Text, this.txtPassword.Text))
@@ -27,8 +42,7 @@ namespace School.Pages
                     this.cleaner();
                     if (this.hasAdmin(this.txtUsername.Text, this.txtPassword.Text))
                     {
-                        this.Hide();
-                        ThisForm = this;
+                        this.Hide(); 
                         this.lblError.Text = "";
                         new AdminPanel().Show();
                     } 
@@ -43,8 +57,14 @@ namespace School.Pages
                     {
                         this.lblError.Text = "";
                         this.Hide();
-                        ThisForm = this;
-                        new Dashboard().Show();
+                        if (isActivated())
+                        {
+                            new Dashboard().Show();
+                        }
+                        else
+                        {
+                            new CheckActivation().Show();
+                        }
                     }
                 }
             }
@@ -55,6 +75,26 @@ namespace School.Pages
             else if (!ckbRememberMe.Checked)
             {
                 this.updateRemeber(0);
+            }
+        }
+
+        bool isActivated()
+        {
+            using(SQLiteConnection con = new SQLiteConnection(connection))
+            {
+                string sql = "SELECT * FROM Activations";
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                SQLiteDataAdapter da = new SQLiteDataAdapter(com);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
@@ -145,6 +185,23 @@ namespace School.Pages
             }
         }
 
+        public static void hideSignUp()
+        {
+            string query = "SELECT * FROM Students";
+            SQLiteConnection Con = new SQLiteConnection(connection);
+            SQLiteCommand Com = new SQLiteCommand(query, Con);
+            SQLiteDataAdapter Da = new SQLiteDataAdapter();
+            DataTable Dt = new DataTable();
+            Com.Connection = Con;
+            Com.CommandText = query;
+            Da.SelectCommand = Com;
+            Da.Fill(Dt);
+            if (Dt.Rows.Count > 0)
+            {
+                LinkLabel.Visible = false;
+            } 
+        }
+         
         private void cleaner()
         {
             this.lblPassword.Text = "";
@@ -173,12 +230,14 @@ namespace School.Pages
          
         private void linkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            ThisForm = this;
+            this.Hide();
             new Register().Show();
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-           this.rememberMe();
-        }
-    }
+           this.rememberMe(); 
+        }  
+    } 
 }
