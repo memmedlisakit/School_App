@@ -1,12 +1,13 @@
 ﻿using School.Models;
 using School.Settings;
 using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
-using System.Linq; 
+using System.Linq;
 using System.Windows.Forms;
 
 namespace School.Pages
@@ -23,20 +24,22 @@ namespace School.Pages
 
         public int Index { get; set; } = 0;
 
-
-
+        public int CorrectCount { get; set; } = 0;
+         
         public StuQuation()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             this.Quations = this.getData<Quation>("Quations");
             this.Categories = this.getData<Category>("Categories");
             fillCmbCategory();
             this.lblName.Text = Login.LoginedUser.Name;
             this.lblSurname.Text = Login.LoginedUser.Surname;
-            setQuation();
-            fillCmbIncorrect();
+            using (FileStream s = new FileStream(Extentions.GetPath() + "\\Uploads\\no-image.jpg", FileMode.Open))
+            {
+                this.pctQuation.Image = Image.FromStream(s);
+            }
         }
-
+         
         private void Closing(object sender, FormClosingEventArgs e)
         {
             Dashboard.ThisForm.Show();
@@ -44,11 +47,11 @@ namespace School.Pages
 
         List<T> getData<T>(string table)
         {
-           List<Quation> quations = new List<Quation>();
-           List<Category> categories = new List<Category>();
-           List<T> list = new List<T>();
+            List<Quation> quations = new List<Quation>();
+            List<Category> categories = new List<Category>();
+            List<T> list = new List<T>();
 
-           using(SQLiteConnection con =new SQLiteConnection(Login.connection))
+            using (SQLiteConnection con = new SQLiteConnection(Login.connection))
             {
                 string sql = "SELECT * FROM " + table;
                 SQLiteCommand com = new SQLiteCommand(sql, con);
@@ -56,7 +59,7 @@ namespace School.Pages
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                if(quations is List<T>)
+                if (quations is List<T>)
                 {
                     foreach (DataRow row in dt.Rows)
                     {
@@ -88,11 +91,10 @@ namespace School.Pages
 
             return list;
         }
-       
+
         void fillCmbCategory()
         {
-            this.cmbCategory.Items.Clear();
-            this.cmbCategory.Items.Add("All");
+            this.cmbCategory.Items.Clear(); 
             foreach (Category cat in this.Categories)
             {
                 ComboboxItem item = new ComboboxItem
@@ -101,49 +103,35 @@ namespace School.Pages
                     Value = cat.Id
                 };
                 this.cmbCategory.Items.Add(item);
-            }
-            this.cmbCategory.SelectedIndex = 0;
+            } 
         }
-          
-        private void cmbCategoryChange(object sender, EventArgs e)
-        {
-            if (this.cmbCategory.SelectedIndex == -1) return;
-            if(this.cmbCategory.SelectedIndex == 0)
-            {
-                this.SelectedQuations = this.Quations;
-                this.lblQuationCount.Text = this.SelectedQuations.Count.ToString();
-            }
-            else
-            {
-                int id = Convert.ToInt32((this.cmbCategory.SelectedItem as ComboboxItem).Value);
-                this.SelectedQuations = this.Quations.Where(q => q.Category_id == id).ToList();
-                this.lblQuationCount.Text = SelectedQuations.Count.ToString();
-            }
-            this.Index = 0;
-            this.setQuation();
-            this.cleaner();
-        }
-
+         
         void setQuation()
         {
             if (this.SelectedQuations.Count > 0)
-            { 
+            {
                 using (FileStream s = new FileStream(Extentions.GetPath() + "\\Quations_Images\\" + this.SelectedQuations[Index].Image, FileMode.Open))
                 {
                     this.pctQuation.Image = Image.FromStream(s);
                 }
+                this.txtQuationNum.Text = (this.Index + 1).ToString();
+                this.lblQuationNum.Text = (this.Index + 1).ToString();
             }
             else
             {
-                this.pctQuation.Image = null;
+                using (FileStream s = new FileStream(Extentions.GetPath() + "\\Uploads\\no-image.jpg", FileMode.Open))
+                {
+                    this.pctQuation.Image = Image.FromStream(s);
+                }
+                this.txtQuationNum.Text = "";
+                this.lblQuationNum.Text = "0";
             }
-            this.cleaner();
+            this.cleaner(); 
         }
 
         void cleaner()
         {
-            this.lblResponse.Text = "";
-            this.lblQuationNum.Text = (this.Index + 1).ToString();
+            this.lblResponse.Text = ""; 
             foreach (Button btn in grpAnswers.Controls)
             {
                 btn.FlatStyle = FlatStyle.Flat;
@@ -154,48 +142,52 @@ namespace School.Pages
 
         private void AnswerClick(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            string answer = btn.Text;
-            if(this.SelectedQuations[Index].Answer == answer)
+            if (this.SelectedQuations.Count > 0)
             {
-                btn.BackColor = Color.LawnGreen;
-                this.lblResponse.ForeColor = Color.LawnGreen;
-                this.lblResponse.Text = "Congratulations correct answer";
-
-
-                if (cmbIncorrectQuations.SelectedIndex != -1)
+                Button btn = sender as Button;
+                string answer = btn.Text;
+                if (this.SelectedQuations[Index].Answer == answer)
                 {
-                    string val = (cmbIncorrectQuations.SelectedItem as ComboboxItem).Value.ToString();
-                    this.IncorrectQuations.Remove(this.IncorrectQuations.First(q => q.Value.ToString() == val));
-                }
-                fillCmbIncorrect();
-            }
-            else
-            { 
-                btn.BackColor = Color.Red;
-                this.lblResponse.ForeColor = Color.Red;
-                this.lblResponse.Text = "Incorrect answer !!!";
+                    btn.BackColor = Color.LawnGreen;
+                    this.lblResponse.ForeColor = Color.LawnGreen;
+                    this.lblResponse.Text = "Congratulations correct answer";
+                    this.lblCorretCount.Text = (++this.CorrectCount).ToString();
 
 
-                Quation quat = this.SelectedQuations[Index];
-                string value = quat.Id.ToString();
-                List<Quation> _quations = this.Quations.Where(q => q.Category_id == quat.Category_id).ToList();
-                int number = (_quations.IndexOf(quat) + 1);
-                string text = this.Categories.Where(c => c.Id == quat.Category_id).First().Name + " - num - " + number;
-                ComboboxItem item = new ComboboxItem { Text = text, Value = value };
-                if (!this.IncorrectQuations.Any(q=>(string)q.Value==value))
-                {
-                    this.IncorrectQuations.Add(item);
+                    if (cmbIncorrectQuations.SelectedIndex != -1)
+                    {
+                        string val = (cmbIncorrectQuations.SelectedItem as ComboboxItem).Value.ToString();
+                        this.IncorrectQuations.Remove(this.IncorrectQuations.First(q => q.Value.ToString() == val));
+                    }
+                    fillCmbIncorrect();
                 }
-                fillCmbIncorrect();
-            }
-            foreach (Button button in this.grpAnswers.Controls)
-            {
-                if (button.Text == this.SelectedQuations[Index].Answer)
+                else
                 {
-                    button.BackColor = Color.LawnGreen;
+                    btn.BackColor = Color.Red;
+                    this.lblResponse.ForeColor = Color.Red;
+                    this.lblResponse.Text = "Incorrect answer !!!";
+
+
+                    Quation quat = this.SelectedQuations[Index];
+                    string value = quat.Id.ToString();
+                    List<Quation> _quations = this.Quations.Where(q => q.Category_id == quat.Category_id).ToList();
+                    int number = (_quations.IndexOf(quat) + 1);
+                    string text = "num - " + number;
+                    ComboboxItem item = new ComboboxItem { Text = text, Value = value };
+                    if (!this.IncorrectQuations.Any(q => (string)q.Value == value))
+                    {
+                        this.IncorrectQuations.Add(item);
+                    }
+                    fillCmbIncorrect();
                 }
-                button.Enabled = false;
+                foreach (Button button in this.grpAnswers.Controls)
+                {
+                    if (button.Text == this.SelectedQuations[Index].Answer)
+                    {
+                        button.BackColor = Color.LawnGreen;
+                    }
+                    button.Enabled = false;
+                }
             }
         }
 
@@ -208,22 +200,10 @@ namespace School.Pages
             }
             this.lblIncorretCount.Text = this.IncorrectQuations.Count.ToString();
         }
-
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            this.Index =  this.Index > 0 ? this.Index - 1 : this.Index;
-            this.setQuation();
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            this.Index = this.Index < (this.SelectedQuations.Count - 1) ? this.Index + 1 : this.Index;
-            this.setQuation(); 
-        }
          
         private void SelectForNum(object sender, KeyEventArgs e)
-        { 
-            if(e.KeyCode == Keys.Enter)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
                 string val = this.txtQuationNum.Text;
                 int num;
@@ -235,6 +215,27 @@ namespace School.Pages
                 this.txtQuationNum.Text = "";
             }
         }
+     
+        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cmbCategory.SelectedIndex == -1)  return; 
+
+            int id = Convert.ToInt32((this.cmbCategory.SelectedItem as ComboboxItem).Value);
+            this.SelectedQuations = this.Quations.Where(q => q.Category_id == id).ToList();
+            this.lblQuationCount.Text = SelectedQuations.Count.ToString();
+
+            
+            this.Index = 0;
+            this.setQuation();
+            this.cleaner();  
+            this.cmbIncorrectQuations.Items.Clear();
+            this.cmbIncorrectQuations.Items.Add("");
+            this.IncorrectQuations.Clear();
+            this.lblCorretCount.Text = "0";
+            this.lblIncorretCount.Text = "0";
+            this.rchCategory.Text = this.cmbCategory.Text;
+            this.CorrectCount = 0;
+        }
 
         private void cmbIncorrectQuations_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -243,6 +244,51 @@ namespace School.Pages
             this.Index = 0;
             this.setQuation();
             this.cmbCategory.SelectedIndex = -1;
+            this.rchCategory.Text = "";
+            this.txtQuationNum.Text = "";
+            this.lblQuationCount.Text = "0";
+            this.lblQuationNum.Text = "0";
         }
+
+        private void formResize(object sender, EventArgs e)
+        {
+            this.pctQuation.Width = (this.Width / 2);
+            this.pctQuation.Height = (this.Width / 4);
+            this.pctQuation.Left = ((this.Width - this.pctQuation.Width) / 2);
+
+            this.pnlAnswers.Left = ((this.Width - this.pnlAnswers.Width) / 2);
+            this.pnlAnswers.Top = (this.pctQuation.Top + this.pctQuation.Height + 5);
+
+            this.pnlInfo.Left = ((this.Width - this.pnlInfo.Width) / 2);
+            this.pnlInfo.Top = (pnlAnswers.Top + pnlAnswers.Height);
+        }
+
+        private void StuQuation_Load(object sender, EventArgs e)
+        {
+            this.pctQuation.Width = (this.Width / 2);
+            this.pctQuation.Height = (this.Width / 4);
+            this.pctQuation.Left = ((this.Width - this.pctQuation.Width) / 2);
+
+            this.pnlAnswers.Left = ((this.Width - this.pnlAnswers.Width) / 2);
+            this.pnlAnswers.Top = (this.pctQuation.Top + this.pctQuation.Height + 5);
+
+            this.pnlInfo.Left = ((this.Width - this.pnlInfo.Width) / 2);
+            this.pnlInfo.Top = (pnlAnswers.Top + pnlAnswers.Height);
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            this.Index = this.Index > 0 ? this.Index - 1 : this.Index;
+            this.setQuation();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            this.Index = this.Index < (this.SelectedQuations.Count - 1) ? this.Index + 1 : this.Index;
+            this.setQuation();
+        }
+         
+
+
     }
 }
