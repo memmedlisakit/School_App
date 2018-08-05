@@ -136,6 +136,7 @@ namespace School.Pages
             {
                 this.pctTicket.Image = Image.FromStream(s);
             }
+            this.txtTicketNum.Text = (this.Index + 1).ToString();
             this.cleaner();
         }
 
@@ -157,7 +158,7 @@ namespace School.Pages
             this.Minut = 15;
             this.Second = 0;
             this.lblDuration.Text = "15:00";
-
+            this.richCategory.Text = this.cmbTicket.Text;
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
@@ -280,6 +281,32 @@ namespace School.Pages
                 this.Second = 60;
                 this.Minut--;
             }
-        } 
+        }
+
+        private void StuTicket_Load(object sender, EventArgs e)
+        {
+            this.pctTicket.Width = (this.Width / 2);
+            this.pctTicket.Height = (this.Width / 4);
+            this.pctTicket.Left = ((this.Width - this.pctTicket.Width) / 2);
+
+            this.pnlAnswer.Left = ((this.Width - this.pnlAnswer.Width) / 2);
+            this.pnlAnswer.Top = (this.pctTicket.Top + this.pctTicket.Height + 5);
+
+            this.pnlInfo.Left = ((this.Width - this.pnlInfo.Width) / 2);
+            this.pnlInfo.Top = (pnlAnswer.Top + pnlAnswer.Height);
+        }
+
+        private void FormResize(object sender, EventArgs e)
+        {
+            this.pctTicket.Width = (this.Width / 2);
+            this.pctTicket.Height = (this.Width / 4);
+            this.pctTicket.Left = ((this.Width - this.pctTicket.Width) / 2);
+
+            this.pnlAnswer.Left = ((this.Width - this.pnlAnswer.Width) / 2);
+            this.pnlAnswer.Top = (this.pctTicket.Top + this.pctTicket.Height + 5);
+
+            this.pnlInfo.Left = ((this.Width - this.pnlInfo.Width) / 2);
+            this.pnlInfo.Top = (pnlAnswer.Top + pnlAnswer.Height);
+        }
     }
 }

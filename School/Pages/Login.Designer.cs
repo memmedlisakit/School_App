@@ -89,7 +89,7 @@
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnSignIn.Location = new System.Drawing.Point(166, 276);
+            this.btnSignIn.Location = new System.Drawing.Point(166, 258);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(102, 30);
             this.btnSignIn.TabIndex = 3;
@@ -109,9 +109,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.groupBox1.Location = new System.Drawing.Point(256, 93);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(334, 336);
+            this.groupBox1.Size = new System.Drawing.Size(334, 315);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
@@ -119,9 +121,10 @@
             // ckbRememberMe
             // 
             this.ckbRememberMe.AutoSize = true;
-            this.ckbRememberMe.Location = new System.Drawing.Point(68, 289);
+            this.ckbRememberMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbRememberMe.Location = new System.Drawing.Point(158, 233);
             this.ckbRememberMe.Name = "ckbRememberMe";
-            this.ckbRememberMe.Size = new System.Drawing.Size(95, 17);
+            this.ckbRememberMe.Size = new System.Drawing.Size(110, 19);
             this.ckbRememberMe.TabIndex = 10;
             this.ckbRememberMe.Text = "Remember Me";
             this.ckbRememberMe.UseVisualStyleBackColor = true;
@@ -129,9 +132,10 @@
             // ckbAdmin
             // 
             this.ckbAdmin.AutoSize = true;
+            this.ckbAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbAdmin.Location = new System.Drawing.Point(68, 233);
             this.ckbAdmin.Name = "ckbAdmin";
-            this.ckbAdmin.Size = new System.Drawing.Size(70, 17);
+            this.ckbAdmin.Size = new System.Drawing.Size(77, 19);
             this.ckbAdmin.TabIndex = 9;
             this.ckbAdmin.Text = "As Admin";
             this.ckbAdmin.UseVisualStyleBackColor = true;
@@ -181,6 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(854, 501);
             this.Controls.Add(this.linkSignUp);
             this.Controls.Add(this.groupBox1);

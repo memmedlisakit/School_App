@@ -4,15 +4,26 @@ using System.Data.SQLite;
 using System;
 using System.Drawing;
 using School.Settings;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using School.Models;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace School.Pages
 {
     public partial class Student : Form
     {
+        private static string message = "";
+
         public Student()
         {
             InitializeComponent();
-            this.FillData(null);
+            this.getData();
+            if(message != "")
+            {
+                this.lblError.Text = message;
+            }
         }
 
         private void Closing(object sender, FormClosingEventArgs e)
@@ -20,65 +31,55 @@ namespace School.Pages
             AdminPanel.ThisForm.Show();
         }
 
-        private void FillData(int? id)
+        //static async void deleteData(string data)
+        //{
+        //    try
+        //    {
+        //        string code = data;
+        //        string username = "delete";
+        //        using (var client = new HttpClient())
+        //        {
+        //            client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
+        //            client.DefaultRequestHeaders.Accept.Clear();
+        //            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //            HttpResponseMessage response = await client.GetAsync($"api/activations?data={code}&username={username}");
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        message = "An error accourd connecting with database";
+        //    }
+        //}
+
+        void getData()
         {
-            this.dgvData.Rows.Clear();
-            SQLiteConnection con = new SQLiteConnection(Login.connection);
-            SQLiteDataAdapter da = new SQLiteDataAdapter();
-            SQLiteCommand com = new SQLiteCommand();
-            string sql = "SELECT * FROM Students";
-            DataTable dt = new DataTable();
-
-            if (id == null)
+            try
             {
-                com.CommandText = sql;
-                com.Connection = con;
-                da.SelectCommand = com;
-                da.Fill(dt);
-                int index = 0;
-                foreach (DataRow row in dt.Rows)
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpResponseMessage response = client.GetAsync("api/activations").Result;
+                if (response.IsSuccessStatusCode)
                 {
-                    this.dgvData.Rows.Add();
-                    this.dgvData.Rows[index].Cells[0].Value = row["id"];
-                    this.dgvData.Rows[index].Cells[1].Value = row["name"];
-                    this.dgvData.Rows[index].Cells[2].Value = row["surname"];
-                    this.dgvData.Rows[index].Cells[3].Value = row["username"];
-                    this.dgvData.Rows[index].Cells[4].Value = row["email"];
-                    this.dgvData.Rows[index].Cells[5].Value = row["gender"].ToString() == "1" ? "Male" : "Female";
-                    index++;
+                    var products = response.Content.ReadAsStringAsync().Result;
+                    List<Activation_C> activations = JsonConvert.DeserializeObject<List<Activation_C>>(products);
+                    int index = 0;
+                    this.lblCount.Text = activations.Count.ToString();
+                    foreach (Activation_C a in activations)
+                    {
+                        this.dgvData.Rows.Add();
+                        this.dgvData.Rows[index].Cells[0].Value = a.activation_code;
+                        this.dgvData.Rows[index].Cells[1].Value = a.username;
+                        this.dgvData.Rows[index].Cells[2].Value = a.status ? "Activated" : "No Activated";
+                        index++;
+                    }
                 }
-                this.lblCount.Text = dt.Rows.Count.ToString();
             }
-            else
+            catch (Exception)
             {
-                sql += " WHERE id = " + id;
-                com.CommandText = sql;
-                com.Connection = con;
-                da.SelectCommand = com;
-                da.Fill(dt);
-                this.lblName.Text = dt.Rows[0]["name"].ToString();
-                this.lblSurname.Text = dt.Rows[0]["surname"].ToString();
-                this.lblEmail.Text = dt.Rows[0]["email"].ToString();
-                this.lblGender.Text = dt.Rows[0]["gender"].ToString() == "1" ? "Male" : "Female";
-                string image = dt.Rows[0]["image"].ToString();
-                if (image == "")
-                {
-                    this.pckStudent.Image = Image.FromFile(Extentions.GetPath() + @"Uploads\default.png");
-                }
-                else
-                {
-                    this.pckStudent.Image = Image.FromFile(Extentions.GetPath() + @"Uploads\"+image);
-                }
-
+                message = "An error occurred connecting with database please check your internet connection";
             }
         }
 
-        private void SelectStudent(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int id = Convert.ToInt32(this.dgvData.Rows[e.RowIndex].Cells[0].Value);
-            this.FillData(id);
-            this.FillData(null);
-            this.grpData.Visible = true;
-        }
     }
 }

@@ -43,17 +43,16 @@ namespace School.Pages
             }
             else
             {
-                if (count > 1000)
+                if (count > 200)
                 {
-                    this.lblCount.Text = "Maximim count 1000 !!!";
+                    this.lblCount.Text = "Maximim count 200 !!!";
                     return;
                 }
                 btnActivation.Enabled = false;
                 this.lblCount.Text = "";
                 this.dgvData.Rows.Clear(); 
                 this.activations = this.ActivateGenerator(count);
-                int i = 0;
-
+                int i = 0; 
                 foreach (string activate in this.activations)
                 {
                     this.dgvData.Rows.Add();
@@ -106,7 +105,7 @@ namespace School.Pages
             }
             catch (Exception)
             {
-                message = "An error accourd connecting with database";
+                message = "An error occurred connecting with database please check your internet connection";
             }
         }
 
@@ -124,7 +123,8 @@ namespace School.Pages
                 {
                     activate += c;
                 }
-                activate = activate.Substring(0, 12);
+                activate = activate.Substring(0, 10);
+                activate += DateTime.Now.ToString("ddMMyyyy");
                 activations.Add(activate);
                 activations = activations.Distinct().ToList();
                 if (activations.Count == count) break;
@@ -138,63 +138,49 @@ namespace School.Pages
             this.Hide();
         }
 
-        private void btnClearAll_Click(object sender, EventArgs e)
-        {
-            getData();
-            if(message != "")
-            {
-                this.lblError.ForeColor = Color.Red;
-                this.lblError.Text = message;
-            }
-            else
-            {
-                this.lblError.ForeColor = Color.LawnGreen;
-                this.lblError.Text = "Deleted all activations succesfuly";
-            }
-        }
 
-        static async void deleteData(string data)
-        {
-            try
-            {
-                string code = data;
-                string username = "delete";
-                using (var client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    HttpResponseMessage response = await client.GetAsync($"api/activations?data={code}&username={username}");
-                }
-            }
-            catch (Exception)
-            {
-                message = "An error accourd connecting with database";
-            }
-        }
-         
-        static void getData()
-        {
-            try
-            {
-                HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.GetAsync("api/activations").Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    var products = response.Content.ReadAsStringAsync().Result;
-                    List<Activation_C> activations = JsonConvert.DeserializeObject<List<Activation_C>>(products);
-                    foreach (Activation_C a in activations)
-                    {
-                        deleteData(a.activation_code);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                message = "An error accourd connecting with database";
-            } 
-        }
+        //static async void deleteData(string data)
+        //{
+        //    try
+        //    {
+        //        string code = data;
+        //        string username = "delete";
+        //        using (var client = new HttpClient())
+        //        {
+        //            client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
+        //            client.DefaultRequestHeaders.Accept.Clear();
+        //            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //            HttpResponseMessage response = await client.GetAsync($"api/activations?data={code}&username={username}");
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        message = "An error occurred connecting with database please check your internet connection";
+        //    }
+        //}
+
+        //static void getData()
+        //{
+        //    try
+        //    {
+        //        HttpClient client = new HttpClient();
+        //        client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
+        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //        HttpResponseMessage response = client.GetAsync("api/activations").Result;
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            var products = response.Content.ReadAsStringAsync().Result;
+        //            List<Activation_C> activations = JsonConvert.DeserializeObject<List<Activation_C>>(products);
+        //            foreach (Activation_C a in activations)
+        //            {
+        //                deleteData(a.activation_code);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        message = "An error occurred connecting with database please check your internet connection";
+        //    } 
+        //}
     }
 }

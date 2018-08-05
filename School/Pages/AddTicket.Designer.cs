@@ -192,10 +192,10 @@
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.Color.Gold;
+            this.button11.BackColor = System.Drawing.Color.Red;
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.ForeColor = System.Drawing.Color.Gold;
+            this.button11.ForeColor = System.Drawing.Color.Red;
             this.button11.Location = new System.Drawing.Point(1306, 28);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(20, 20);

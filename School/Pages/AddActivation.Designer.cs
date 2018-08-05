@@ -37,7 +37,6 @@
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtActivation = new System.Windows.Forms.TextBox();
-            this.btnClearAll = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
@@ -135,25 +134,11 @@
             this.txtActivation.Size = new System.Drawing.Size(200, 30);
             this.txtActivation.TabIndex = 23;
             // 
-            // btnClearAll
-            // 
-            this.btnClearAll.BackColor = System.Drawing.Color.IndianRed;
-            this.btnClearAll.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearAll.ForeColor = System.Drawing.Color.White;
-            this.btnClearAll.Location = new System.Drawing.Point(337, 82);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(102, 30);
-            this.btnClearAll.TabIndex = 24;
-            this.btnClearAll.Text = "Clear All";
-            this.btnClearAll.UseVisualStyleBackColor = false;
-            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
-            // 
             // AddActivation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 479);
-            this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.txtActivation);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblCount);
@@ -180,6 +165,5 @@
         private System.Windows.Forms.Button btnExel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.TextBox txtActivation;
-        private System.Windows.Forms.Button btnClearAll;
     }
 }

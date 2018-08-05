@@ -15,7 +15,7 @@ namespace School.Pages
         public Register()
         {
             InitializeComponent();
-            this.pctImage.Image = School.Properties.Resources._default;
+           // this.pctImage.Image = School.Properties.Resources._default;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -111,10 +111,10 @@ namespace School.Pages
         private void linkUpload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             file.ShowDialog();
-            if (file.FileName != "")
-            {
-                this.pctImage.Image = Image.FromFile(file.FileName); 
-            }
+            //if (file.FileName != "")
+            //{
+            //    this.pctImage.Image = Image.FromFile(file.FileName); 
+            //}
         }
 
         private void Closing(object sender, FormClosingEventArgs e)

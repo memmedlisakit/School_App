@@ -142,8 +142,10 @@ namespace School.Pages
             da.Fill(dt);
             if (dt.Rows.Count > 0)
             {
+                LoginedUser.Id = Convert.ToInt32(dt.Rows[0]["id"]);
                 LoginedUser.Username = dt.Rows[0]["username"].ToString();
                 LoginedUser.Password = dt.Rows[0]["password"].ToString();
+                LoginedUser.Email = dt.Rows[0]["email"].ToString();
                 return true;
             }
             else
@@ -174,7 +176,8 @@ namespace School.Pages
                     Surname = Dt.Rows[0]["surname"].ToString(),
                     Email = Dt.Rows[0]["email"].ToString(),
                     Password = Dt.Rows[0]["password"].ToString(),
-                    Image = Dt.Rows[0]["image"].ToString()
+                    Image = Dt.Rows[0]["image"].ToString(),
+                   Gender = Dt.Rows[0]["gender"].ToString() == "1"
                 };
                 return true;
             }
@@ -199,7 +202,11 @@ namespace School.Pages
             if (Dt.Rows.Count > 0)
             {
                 LinkLabel.Visible = false;
-            } 
+            }
+            else
+            {
+                LinkLabel.Visible = true;
+            }
         }
          
         private void cleaner()

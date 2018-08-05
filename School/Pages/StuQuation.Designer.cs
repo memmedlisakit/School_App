@@ -74,7 +74,7 @@
             this.grpAnswers.Controls.Add(this.btn02);
             this.grpAnswers.Controls.Add(this.btn03);
             this.grpAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpAnswers.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.grpAnswers.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.grpAnswers.Location = new System.Drawing.Point(19, 39);
             this.grpAnswers.Name = "grpAnswers";
             this.grpAnswers.Size = new System.Drawing.Size(478, 64);
@@ -245,7 +245,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblName);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.groupBox1.Location = new System.Drawing.Point(25, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(502, 146);
@@ -434,12 +434,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1366, 705);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.pnlAnswers);
             this.Controls.Add(this.pctQuation);
-            this.MaximumSize = new System.Drawing.Size(1382, 744);
             this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "StuQuation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

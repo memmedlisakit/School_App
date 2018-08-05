@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Collections.Generic; 
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SQLite;
+using System.Drawing; 
+using System.Linq; 
 using System.Windows.Forms;
+
 
 namespace School.Pages
 {
     public partial class AdminPanel : Form
     {
         public static Form ThisForm;
+
         public AdminPanel()
         {
             InitializeComponent();
@@ -63,6 +62,52 @@ namespace School.Pages
             ThisForm = this;
             new Tickets().Show();
             this.Hide();
+        }
+
+        private void profileUpdate(object sender, EventArgs e)
+        {
+            this.txtUsername.Text = Login.LoginedUser.Username;
+            this.txtPassword.Text = Login.LoginedUser.Password;
+            this.txtEmail.Text = Login.LoginedUser.Email;
+            this.grpAdminInfo.Visible = !this.grpAdminInfo.Visible;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text.Trim() == "" || txtPassword.Text.Trim() == "" || txtEmail.Text.Trim() == "")
+            {
+                this.lblError.Text = "Do not empty";
+                return;
+            }
+            using(SQLiteConnection con =new SQLiteConnection(Login.connection))
+            {
+                string sql = $"UPDATE Admin SET username='{this.txtUsername.Text}', password='{this.txtPassword.Text}', email='{this.txtEmail.Text}' WHERE id = {Login.LoginedUser.Id}";
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                con.Open();
+                com.ExecuteNonQuery();
+            }
+            this.Close();
+        }
+
+        private void ResetApp(object sender, EventArgs e)
+        {
+            using(SQLiteConnection con =new SQLiteConnection(Login.connection))
+            {
+                string sql = $"DELETE FROM Students";
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                con.Open();
+                com.ExecuteNonQuery();
+            }
+            using(SQLiteConnection con =new SQLiteConnection(Login.connection))
+            {
+                
+               string sql = $"DELETE FROM Activations";
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                con.Open();
+                com.ExecuteNonQuery();
+            }
+            this.Close();
+            Login.hideSignUp();
         }
     }
 }

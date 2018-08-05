@@ -265,7 +265,7 @@ namespace School.Pages
                     da.Fill(dt);
                     if (dt.Rows.Count > 0)
                     {
-                        btn.FlatAppearance.BorderColor = Color.Gold;
+                        btn.FlatAppearance.BorderColor = Color.Red;
                         btn.FlatAppearance.BorderSize = 5;
                     }
                     else

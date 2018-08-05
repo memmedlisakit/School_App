@@ -39,9 +39,6 @@
             this.lblSurname = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.linkUpload = new System.Windows.Forms.LinkLabel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pctImage = new System.Windows.Forms.PictureBox();
             this.ckbFemale = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -53,7 +50,6 @@
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImage)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
@@ -68,7 +64,7 @@
             // ckbMale
             // 
             this.ckbMale.AutoSize = true;
-            this.ckbMale.Location = new System.Drawing.Point(339, 263);
+            this.ckbMale.Location = new System.Drawing.Point(666, 167);
             this.ckbMale.Name = "ckbMale";
             this.ckbMale.Size = new System.Drawing.Size(48, 17);
             this.ckbMale.TabIndex = 2;
@@ -86,9 +82,6 @@
             this.groupBox1.Controls.Add(this.lblSurname);
             this.groupBox1.Controls.Add(this.lblName);
             this.groupBox1.Controls.Add(this.btnRegister);
-            this.groupBox1.Controls.Add(this.linkUpload);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.pctImage);
             this.groupBox1.Controls.Add(this.ckbFemale);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtPassword);
@@ -113,7 +106,7 @@
             this.lblSuccess.AutoSize = true;
             this.lblSuccess.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSuccess.ForeColor = System.Drawing.Color.Lime;
-            this.lblSuccess.Location = new System.Drawing.Point(690, 369);
+            this.lblSuccess.Location = new System.Drawing.Point(16, 246);
             this.lblSuccess.Name = "lblSuccess";
             this.lblSuccess.Size = new System.Drawing.Size(0, 16);
             this.lblSuccess.TabIndex = 25;
@@ -123,7 +116,7 @@
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.Red;
-            this.lblGender.Location = new System.Drawing.Point(340, 288);
+            this.lblGender.Location = new System.Drawing.Point(674, 192);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(0, 14);
             this.lblGender.TabIndex = 24;
@@ -133,7 +126,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Red;
-            this.lblPassword.Location = new System.Drawing.Point(336, 192);
+            this.lblPassword.Location = new System.Drawing.Point(663, 99);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(0, 14);
             this.lblPassword.TabIndex = 23;
@@ -143,7 +136,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Red;
-            this.lblEmail.Location = new System.Drawing.Point(336, 99);
+            this.lblEmail.Location = new System.Drawing.Point(336, 192);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(0, 14);
             this.lblEmail.TabIndex = 22;
@@ -153,7 +146,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Red;
-            this.lblUsername.Location = new System.Drawing.Point(16, 288);
+            this.lblUsername.Location = new System.Drawing.Point(345, 107);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(0, 14);
             this.lblUsername.TabIndex = 21;
@@ -182,7 +175,7 @@
             // 
             this.btnRegister.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnRegister.Location = new System.Drawing.Point(794, 324);
+            this.btnRegister.Location = new System.Drawing.Point(794, 232);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(102, 30);
             this.btnRegister.TabIndex = 18;
@@ -190,41 +183,10 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // linkUpload
-            // 
-            this.linkUpload.AutoSize = true;
-            this.linkUpload.Location = new System.Drawing.Point(851, 214);
-            this.linkUpload.Name = "linkUpload";
-            this.linkUpload.Size = new System.Drawing.Size(47, 13);
-            this.linkUpload.TabIndex = 17;
-            this.linkUpload.TabStop = true;
-            this.linkUpload.Text = "browse..";
-            this.linkUpload.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkUpload_LinkClicked);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(757, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 18);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Image:";
-            // 
-            // pctImage
-            // 
-            this.pctImage.Location = new System.Drawing.Point(760, 66);
-            this.pctImage.Name = "pctImage";
-            this.pctImage.Size = new System.Drawing.Size(136, 123);
-            this.pctImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctImage.TabIndex = 15;
-            this.pctImage.TabStop = false;
-            // 
             // ckbFemale
             // 
             this.ckbFemale.AutoSize = true;
-            this.ckbFemale.Location = new System.Drawing.Point(510, 268);
+            this.ckbFemale.Location = new System.Drawing.Point(837, 172);
             this.ckbFemale.Name = "ckbFemale";
             this.ckbFemale.Size = new System.Drawing.Size(59, 17);
             this.ckbFemale.TabIndex = 14;
@@ -237,7 +199,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(336, 138);
+            this.label4.Location = new System.Drawing.Point(663, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 18);
             this.label4.TabIndex = 13;
@@ -246,7 +208,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(339, 159);
+            this.txtPassword.Location = new System.Drawing.Point(666, 66);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(230, 30);
@@ -257,7 +219,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(336, 45);
+            this.label5.Location = new System.Drawing.Point(336, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 18);
             this.label5.TabIndex = 11;
@@ -266,7 +228,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(339, 66);
+            this.txtEmail.Location = new System.Drawing.Point(339, 159);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(230, 30);
@@ -277,7 +239,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Location = new System.Drawing.Point(16, 234);
+            this.label3.Location = new System.Drawing.Point(336, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 18);
             this.label3.TabIndex = 9;
@@ -286,7 +248,7 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(19, 255);
+            this.txtUsername.Location = new System.Drawing.Point(339, 66);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(230, 30);
@@ -327,6 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(984, 430);
             this.Controls.Add(this.groupBox1);
             this.Name = "Register";
@@ -334,7 +297,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,9 +315,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pctImage;
-        private System.Windows.Forms.LinkLabel linkUpload;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblPassword;
