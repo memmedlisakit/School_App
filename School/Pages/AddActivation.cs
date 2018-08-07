@@ -22,6 +22,8 @@ namespace School.Pages
     {
         List<string> activations = new List<string>();
 
+        const string TOKET = "628x9x0xx447xx4x421x517x4x474x33x2065x4x1xx523xxxxx6x7x20";
+
         public static string message { get; set; } = "";
          
         public AddActivation()
@@ -99,7 +101,7 @@ namespace School.Pages
                         client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
                         client.DefaultRequestHeaders.Accept.Clear();
                         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                        HttpResponseMessage response = client.GetAsync("api/activations?data=" + json).Result; 
+                        HttpResponseMessage response = client.GetAsync($"api/activations?code={json}&token={TOKET}").Result;
                     }
                 }
             }
@@ -137,50 +139,5 @@ namespace School.Pages
             AdminPanel.ThisForm.Show();
             this.Hide();
         }
-
-
-        //static async void deleteData(string data)
-        //{
-        //    try
-        //    {
-        //        string code = data;
-        //        string username = "delete";
-        //        using (var client = new HttpClient())
-        //        {
-        //            client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
-        //            client.DefaultRequestHeaders.Accept.Clear();
-        //            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //            HttpResponseMessage response = await client.GetAsync($"api/activations?data={code}&username={username}");
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        message = "An error occurred connecting with database please check your internet connection";
-        //    }
-        //}
-
-        //static void getData()
-        //{
-        //    try
-        //    {
-        //        HttpClient client = new HttpClient();
-        //        client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //        HttpResponseMessage response = client.GetAsync("api/activations").Result;
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            var products = response.Content.ReadAsStringAsync().Result;
-        //            List<Activation_C> activations = JsonConvert.DeserializeObject<List<Activation_C>>(products);
-        //            foreach (Activation_C a in activations)
-        //            {
-        //                deleteData(a.activation_code);
-        //            }
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        message = "An error occurred connecting with database please check your internet connection";
-        //    } 
-        //}
     }
 }

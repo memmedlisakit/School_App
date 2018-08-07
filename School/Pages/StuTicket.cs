@@ -24,6 +24,8 @@ namespace School.Pages
 
         public List<Quation> IncorrectQuations { get; set; } = new List<Quation>();
 
+        public int CorrectCount { get; set; }
+
         System.Timers.Timer Timer = new System.Timers.Timer();
 
         public int Index { get; set; } = 0;
@@ -48,6 +50,8 @@ namespace School.Pages
 
         private void Closing(object sender, FormClosingEventArgs e)
         {
+            this.Timer.Stop();
+            this.Timer.Dispose();
             Dashboard.ThisForm.Show();
         }
 
@@ -143,7 +147,9 @@ namespace School.Pages
         private void cmbTicket_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.selectedQuatins.Clear();
+            this.IncorrectQuations.Clear();
             this.Index = 0;
+            this.CorrectCount = 0;
             int tickt_id = Convert.ToInt32((cmbTicket.SelectedItem as ComboboxItem).Value);
             foreach (P_TicketAndQuation item in this.Pivot.Where(p=>p.Ticket_id == tickt_id).ToList())
             {
@@ -202,6 +208,11 @@ namespace School.Pages
                 this.lblResponse.ForeColor = Color.LawnGreen;
                 btn.BackColor = Color.LawnGreen;
                 result = true;
+                CorrectCount++;
+                if (CorrectCount == 9)
+                {
+                    MessageBox.Show("Congratulations you passed this exem");
+                }
             }
             else
             {
@@ -253,16 +264,14 @@ namespace School.Pages
             }
             this.lblResponse.Text = "";
         }
-
-
+         
         void setTimer(int interval)
         { 
             Timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             Timer.Interval = interval;
             Timer.Enabled = true;
         }
-
-
+         
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             if (this.Minut == 0 && this.Second == 0)
@@ -307,6 +316,13 @@ namespace School.Pages
 
             this.pnlInfo.Left = ((this.Width - this.pnlInfo.Width) / 2);
             this.pnlInfo.Top = (pnlAnswer.Top + pnlAnswer.Height);
+        }
+
+        private void SelectButton(object sender, EventArgs e)
+        {
+            int num = Convert.ToInt32((sender as Button).Text);
+            this.Index = --num;
+            this.setQuation();
         }
     }
 }

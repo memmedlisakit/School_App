@@ -12,6 +12,7 @@ using System.Web.Script.Serialization;
 using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 
 namespace School.Pages
 {
@@ -22,6 +23,14 @@ namespace School.Pages
         public static string connection = null;
         public static LinkLabel LinkLabel = null;
 
+        public static CheckBox RemeberMe { get; set; }
+
+        public static CheckBox AsAdmin { get; set; }
+
+        public static TextBox UsernameTxt { get; set; }
+
+        public static TextBox PasswordTxt { get; set; }
+
         static HttpClient client = new HttpClient();
 
         public Login()
@@ -30,10 +39,14 @@ namespace School.Pages
             connection = "Data Source=" + Extentions.GetPath() + @"DB\StoreDb.db;Version=3;";
             LinkLabel = this.linkSignUp;
             hideSignUp();
+            RemeberMe = this.ckbRememberMe;
+            AsAdmin = this.ckbAdmin;
+            UsernameTxt = this.txtUsername;
+            PasswordTxt = this.txtPassword;
         }
          
         private void btnSignIn_Click(object sender, EventArgs e)
-        {
+        { 
             ThisForm = this;
             if (this.ckbAdmin.Checked)
             {

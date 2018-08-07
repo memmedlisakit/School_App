@@ -90,24 +90,39 @@ namespace School.Pages
         }
 
         private void ResetApp(object sender, EventArgs e)
-        {
-            using(SQLiteConnection con =new SQLiteConnection(Login.connection))
-            {
-                string sql = $"DELETE FROM Students";
-                SQLiteCommand com = new SQLiteCommand(sql, con);
-                con.Open();
-                com.ExecuteNonQuery();
-            }
-            using(SQLiteConnection con =new SQLiteConnection(Login.connection))
-            {
-                
-               string sql = $"DELETE FROM Activations";
-                SQLiteCommand com = new SQLiteCommand(sql, con);
-                con.Open();
-                com.ExecuteNonQuery();
-            }
+        { 
+            DeleteTabele("Students");
+            DeleteTabele("Activations");
             this.Close();
+            Login.RemeberMe.Checked = false;
+            Login.AsAdmin.Checked = false;
+            Login.UsernameTxt.Text = "";
+            Login.PasswordTxt.Text = "";
+            updateRemeber();
             Login.hideSignUp();
+        }
+
+        void updateRemeber()
+        {
+            using (SQLiteConnection con = new SQLiteConnection(Login.connection))
+            {
+                string sql = "UPDATE Remember_Me SET username = '', password = '', status = 0";
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                con.Open();
+                com.ExecuteNonQuery();
+            }
+        }
+
+        void DeleteTabele(string table)
+        {
+            using (SQLiteConnection con = new SQLiteConnection(Login.connection))
+            {
+
+                string sql = $"DELETE FROM {table}";
+                SQLiteCommand com = new SQLiteCommand(sql, con);
+                con.Open();
+                com.ExecuteNonQuery();
+            }
         }
     }
 }
