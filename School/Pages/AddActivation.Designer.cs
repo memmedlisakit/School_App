@@ -46,7 +46,7 @@
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(18, 329);
+            this.lblError.Location = new System.Drawing.Point(6, 323);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 14);
             this.lblError.TabIndex = 15;
@@ -91,7 +91,7 @@
             this.groupBox1.Controls.Add(this.lblError);
             this.groupBox1.Location = new System.Drawing.Point(12, 118);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(458, 357);
+            this.groupBox1.Size = new System.Drawing.Size(458, 382);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "List of activations";
@@ -100,7 +100,7 @@
             // 
             this.btnExel.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExel.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnExel.Location = new System.Drawing.Point(325, 319);
+            this.btnExel.Location = new System.Drawing.Point(325, 346);
             this.btnExel.Name = "btnExel";
             this.btnExel.Size = new System.Drawing.Size(127, 30);
             this.btnExel.TabIndex = 23;
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 479);
+            this.ClientSize = new System.Drawing.Size(482, 512);
             this.Controls.Add(this.txtActivation);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblCount);

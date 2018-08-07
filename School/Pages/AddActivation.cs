@@ -79,6 +79,7 @@ namespace School.Pages
                 {
                     this.lblError.ForeColor = Color.Red;
                     this.lblError.Text = message;
+                    this.btnExel.Text = "Save exel";
                     return;
                 }
                 this.lblError.ForeColor = Color.LawnGreen;
