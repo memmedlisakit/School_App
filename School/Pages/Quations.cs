@@ -26,7 +26,6 @@ namespace School.Pages
         public Quations()
         {
             InitializeComponent();
-            this.cmbCategory.Items.Add("All");
             AQ.fillComboBox(this.cmbCategory);
             AQ.fillComboBox(this.cmbInfoCategory);
             //this.fillPanel(this.getAllQuations());
@@ -140,16 +139,9 @@ namespace School.Pages
         }
 
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(this.cmbCategory.Text == "All")
-            {
-                this.fillPanel(this.getAllQuations());
-            }
-            else
-            {
-                int id = AddQuation.getCatId(this.cmbCategory.Text);
-                this.fillPanel(this.getAllQuations(null, id));
-            }
+        { 
+           int id = AddQuation.getCatId(this.cmbCategory.Text);
+           this.fillPanel(this.getAllQuations(null, id)); 
         }
 
         private void selectQuation(object sender, EventArgs e)
@@ -177,15 +169,12 @@ namespace School.Pages
         void selectQuationForNumber(string number = "")
         {
             this.selectedNumber = null;
-            if (this.cmbCategory.Text == "All")
-            {
-                this.fillPanel(this.getAllQuations());
-            }
-            else
+            if (this.cmbCategory.SelectedIndex != -1)
             {
                 int id = AddQuation.getCatId(this.cmbCategory.Text);
                 this.fillPanel(this.getAllQuations(null, id));
-            }
+            }            
+            
             if (number != "")
             {
                 foreach (var control in this.pnlAllQuations.Controls)

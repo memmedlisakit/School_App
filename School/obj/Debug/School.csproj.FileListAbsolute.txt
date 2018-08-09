@@ -41,3 +41,4 @@ C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Net.Http.xml
 C:\Users\Sakit\Desktop\School\School\bin\Debug\System.Net.Http.WebRequest.xml
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.csprojResolveAssemblyReference.cache
 C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.ActivatedStudents.resources
+C:\Users\Sakit\Desktop\School\School\obj\Debug\School.Pages.Loading.resources

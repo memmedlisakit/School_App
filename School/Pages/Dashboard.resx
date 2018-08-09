@@ -120,6 +120,25 @@
   <metadata name="menuUser.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="lblAbout.Text" xml:space="preserve">
+    <value>AzYHQ.az İmtahan Test Proqramının yaradılmasında məqsəd Sürücülük vəsiqəsi imtahanına və DYP-ə işə
+qəbul imtahanlarına hazırlıq dərslərimizin asanlaşdırılması və elektronlaşdırılmasıdır. Proqramda istifadə
+olunan testlərin tərtibatı zamanı mənbə olaraq müxtəlif kitab və saytlarda olan testlərdən, AzYHQ.az
+müəllimlərinin və AzYHQ.az-in təsisçisi Mansur Novruzovun Yol Hərəkəti Haqqında Qanuna əsasən
+hazırladığı testlərdən istifadə olunmuşdur. Burda istifadə olunan testlər hər hansı bir imtahanda istifadə
+edilən testlərin eynisi olaraq tərtib olunmur, ona görə də testlərin cavabının əzbərlənməsi məsləhət
+görülmür. Proqramda olan bir qism testlər imtahanda olan testlərlə tam eyni ola bilir, həmin testlər
+tələbələrin imtahanda rastlaşdığı sualın şifahi təsəvvürünü yaratması əsasında tərtib olunur və ya həmin
+sualın şəkli müxtəlif kitab və ya saytlardan əldə edilərək tərtib olunur və proqrama əlavə edilir.
+Proqramda istifadə edilən bütün testlər tələbələrə Yol Hərəkəti Haqqında Qanunu öyrətmək üçün dərs
+vəsaiti olaraq istifadə edilir. Proqram yalnız AzYHQ.az Sürücülük kurslarının YHQ üzrə Tədris planı
+əsasında Sürücülük vəsiqəsi imtahanına və DYP-ə işə qəbul üzrə imtahana hazırlaşan tələbələri üçün
+nəzərdə tutulmuşdur. Proqramın ayrıca satışı nəzərdə tutulmur. Proqramda istifadə olunan testlərin
+internet səhifələrində paylaşılması və Proqramın oxşarının yaradılması qadağandır. Əks halda həmin
+şəxslər Azərbaycan Respublikasının müvafiq qanunvericiliyinə uyğun olaraq məsuliyyət daşıyırlar.
+Yol Hərəkəti Qaydalarını bizimlə ÖYRƏNİN, çünki
+Biz sadəcə dərs demirik, ÖYRƏDİRİK!!!</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

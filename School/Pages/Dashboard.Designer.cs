@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {  
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.menuUser = new System.Windows.Forms.MenuStrip();
             this.quationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +55,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.ckbMale = new System.Windows.Forms.RadioButton();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.lblAbout = new System.Windows.Forms.Label();
             this.menuUser.SuspendLayout();
             this.grpStuProfile.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +94,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // profileToolStripMenuItem
             // 
@@ -333,12 +337,40 @@
             this.ckbMale.Text = "Male";
             this.ckbMale.UseVisualStyleBackColor = true;
             // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.Color.Black;
+            this.lblInfo.Location = new System.Drawing.Point(103, 402);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(749, 36);
+            this.lblInfo.TabIndex = 0;
+            this.lblInfo.Text = "\"Tehsilsiz surucu olmasin, yol qezalarinda insanlar olmesin\" ve \"Yol Hərəkəti Qay" +
+    "dalarını bizimlə ÖYRƏNİN, çünki\nBiz sadəcə dərs demirik, ÖYRƏDİRİK!!!\"";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblAbout
+            // 
+            this.lblAbout.AutoSize = true;
+            this.lblAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbout.ForeColor = System.Drawing.Color.Black;
+            this.lblAbout.Location = new System.Drawing.Point(112, 453);
+            this.lblAbout.Name = "lblAbout";
+            this.lblAbout.Size = new System.Drawing.Size(700, 306);
+            this.lblAbout.TabIndex = 5;
+            this.lblAbout.Text = resources.GetString("lblAbout.Text");
+            this.lblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAbout.Visible = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1004, 661);
+            this.ClientSize = new System.Drawing.Size(1004, 749);
+            this.Controls.Add(this.lblAbout);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.grpStuProfile);
             this.Controls.Add(this.menuUser);
             this.MainMenuStrip = this.menuUser;
@@ -387,5 +419,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.RadioButton ckbMale;
+        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Label lblAbout;
     }
 }

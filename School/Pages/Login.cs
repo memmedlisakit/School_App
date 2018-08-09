@@ -13,6 +13,8 @@ using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using System.Timers;
+using System.Drawing;
 
 namespace School.Pages
 {
@@ -33,8 +35,12 @@ namespace School.Pages
 
         static HttpClient client = new HttpClient();
 
+        public int Count { get; set; }
+
+        System.Timers.Timer Timer = new System.Timers.Timer();
+
         public Login()
-        {
+        { 
             InitializeComponent();
             connection = "Data Source=" + Extentions.GetPath() + @"DB\StoreDb.db;Version=3;";
             LinkLabel = this.linkSignUp;
@@ -43,8 +49,26 @@ namespace School.Pages
             AsAdmin = this.ckbAdmin;
             UsernameTxt = this.txtUsername;
             PasswordTxt = this.txtPassword;
+
+            this.Opacity = 0; 
+            new Loading().Show();
+            Timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            Timer.Interval = 1000;
+            Timer.Enabled = true; 
         }
          
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            Count++; 
+            if (Count > 2)
+            {
+                this.Timer.Stop();
+                this.Timer.Dispose();
+                Loading.ThisForm.Close();
+                this.Opacity = 1;
+            }
+        }
+
         private void btnSignIn_Click(object sender, EventArgs e)
         { 
             ThisForm = this;
@@ -257,7 +281,7 @@ namespace School.Pages
 
         private void Login_Load(object sender, EventArgs e)
         {
-           this.rememberMe(); 
+           this.rememberMe();
         }  
     } 
 }

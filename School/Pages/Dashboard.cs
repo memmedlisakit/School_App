@@ -54,6 +54,8 @@ namespace School.Pages
                 this.ckbFemale.Checked = true;
             }
             this.grpStuProfile.Visible = !this.grpStuProfile.Visible;
+            this.lblInfo.Visible = !this.grpStuProfile.Visible;
+            this.lblAbout.Visible = false;
         }
 
         void cleaner()
@@ -144,12 +146,25 @@ namespace School.Pages
 
         private void FormResize(object sender, EventArgs e)
         { 
-            this.grpStuProfile.Left = ((this.Width - this.grpStuProfile.Width) / 2 - 8); 
+            this.grpStuProfile.Left = ((this.Width - this.grpStuProfile.Width) / 2 - 8);
+            this.lblInfo.Left = ((this.Width - this.lblInfo.Width) / 2 - 8);
+            this.lblAbout.Left = ((this.Width - this.lblAbout.Width) / 2 - 8);
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         { 
-            this.grpStuProfile.Left = ((this.Width - this.grpStuProfile.Width) / 2 - 8); 
+            this.grpStuProfile.Left = ((this.Width - this.grpStuProfile.Width) / 2 - 8);
+            this.lblInfo.Left = ((this.Width - this.lblInfo.Width) / 2 - 8);
+            this.lblInfo.Top = 200;
+            this.lblAbout.Left = ((this.Width - this.lblAbout.Width) / 2 - 8);
+            this.lblAbout.Top = 200;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.grpStuProfile.Visible = false;
+            this.lblInfo.Visible = false;
+            this.lblAbout.Visible = true;
         }
     }
 }
