@@ -292,7 +292,9 @@ namespace School.Pages
             con.Open();
             com.ExecuteNonQuery();
             con.Close();
-            this.fillPanel(this.getAllQuations());
+            //this.fillPanel(this.getAllQuations());
+            int id = AddQuation.getCatId(this.cmbCategory.Text);
+            this.fillPanel(this.getAllQuations(null, id));
             this.grpInfo.Visible = false;
         }
 
@@ -308,7 +310,9 @@ namespace School.Pages
         {
             this.grpInfo.Visible = false;
             this.selectedNumber = null;
-            this.fillPanel(this.getAllQuations());
+            int id = AddQuation.getCatId(this.cmbCategory.Text);
+            this.fillPanel(this.getAllQuations(null, id));
+            //this.fillPanel(this.getAllQuations());
         }
     }
 }
