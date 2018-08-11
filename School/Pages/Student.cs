@@ -38,7 +38,7 @@ namespace School.Pages
             try
             {
                 HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
+                client.BaseAddress = new Uri("http://memmedlisakit-001-site1.itempurl.com/");
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = client.GetAsync($"api/activations?token={TOKET}").Result;
                 if (response.IsSuccessStatusCode)

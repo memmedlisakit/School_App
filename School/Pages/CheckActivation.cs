@@ -59,7 +59,7 @@ namespace School.Pages
             { 
                 using (var client = new HttpClient())
                 { 
-                    client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
+                    client.BaseAddress = new Uri("http://memmedlisakit-001-site1.itempurl.com/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     HttpResponseMessage response = await client.GetAsync($"api/activations?code={_code}&username={_username}&comp_info={_comp_info}&email={_email}&token={_token}");
@@ -78,7 +78,7 @@ namespace School.Pages
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://sakit.azurewebsites.net/");
+                    client.BaseAddress = new Uri("http://memmedlisakit-001-site1.itempurl.com/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     HttpResponseMessage response = await client.GetAsync($"api/students?code={_json}&token={_token}");
