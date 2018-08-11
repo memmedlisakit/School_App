@@ -56,7 +56,7 @@ namespace School.Pages
                         this.dgvData.Rows[index].Cells[1].Value = a.username;
                         this.dgvData.Rows[index].Cells[2].Value = a.user_email;
                         this.dgvData.Rows[index].Cells[3].Value = a.computer_info;
-                        this.dgvData.Rows[index].Cells[4].Value = a.status ? "Activated" : "No Activated";
+                        this.dgvData.Rows[index].Cells[4].Value = a.status ? "Activasiya olunub" : "Activasiya olunmayıb";
                         index++;
                     }
                     this.lblError.Text = "";
@@ -64,7 +64,7 @@ namespace School.Pages
             }
             catch (Exception)
             {
-                this.lblError.Text = "An error occurred connecting with database please check your internet connection";
+                this.lblError.Text = "Servere qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
             }
         }
 

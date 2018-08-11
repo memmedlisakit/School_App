@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
@@ -42,6 +37,11 @@
             this.rdEmail = new System.Windows.Forms.RadioButton();
             this.rdUsername = new System.Windows.Forms.RadioButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,31 +62,6 @@
             this.dgvData.Size = new System.Drawing.Size(1160, 536);
             this.dgvData.TabIndex = 0;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Activation Code";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Username";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Email";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "User Computer Info";
-            this.Column3.Name = "Column3";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Activated Status";
-            this.Column5.Name = "Column5";
-            // 
             // lblCount
             // 
             this.lblCount.AutoSize = true;
@@ -106,9 +81,9 @@
             this.label3.ForeColor = System.Drawing.Color.CadetBlue;
             this.label3.Location = new System.Drawing.Point(8, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 20);
+            this.label3.Size = new System.Drawing.Size(114, 20);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Activation count:";
+            this.label3.Text = "Activasiya sayı:";
             // 
             // lblError
             // 
@@ -129,7 +104,7 @@
             this.btnAll.Name = "btnAll";
             this.btnAll.Size = new System.Drawing.Size(179, 30);
             this.btnAll.TabIndex = 14;
-            this.btnAll.Text = "All Activated Students";
+            this.btnAll.Text = "Activasiyalı Tələbələr";
             this.btnAll.UseVisualStyleBackColor = true;
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
@@ -143,7 +118,7 @@
             this.groupBox1.Size = new System.Drawing.Size(270, 84);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search";
+            this.groupBox1.Text = "Axtar";
             // 
             // rdEmail
             // 
@@ -161,10 +136,10 @@
             this.rdUsername.Checked = true;
             this.rdUsername.Location = new System.Drawing.Point(7, 25);
             this.rdUsername.Name = "rdUsername";
-            this.rdUsername.Size = new System.Drawing.Size(71, 17);
+            this.rdUsername.Size = new System.Drawing.Size(83, 17);
             this.rdUsername.TabIndex = 3;
             this.rdUsername.TabStop = true;
-            this.rdUsername.Text = "username";
+            this.rdUsername.Text = "istifadəçi adi";
             this.rdUsername.UseVisualStyleBackColor = true;
             // 
             // txtSearch
@@ -176,6 +151,31 @@
             this.txtSearch.Size = new System.Drawing.Size(258, 30);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchUser);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Activasiya kodu";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "İstifadəçi adi";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Email";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "İstifadəçi Computer Məlumatı";
+            this.Column3.Name = "Column3";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Activasiya Vəziyyəti";
+            this.Column5.Name = "Column5";
             // 
             // Student
             // 
@@ -190,7 +190,7 @@
             this.Controls.Add(this.dgvData);
             this.MaximumSize = new System.Drawing.Size(1200, 700);
             this.Name = "Student";
-            this.Text = "Students";
+            this.Text = "Activasiyalar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -206,15 +206,15 @@
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button btnAll;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.RadioButton rdEmail;
         private System.Windows.Forms.RadioButton rdUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

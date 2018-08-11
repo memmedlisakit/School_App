@@ -62,20 +62,21 @@
             // 
             this.Column6.HeaderText = "Id";
             this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Name";
+            this.Column1.HeaderText = "Ad";
             this.Column1.Name = "Column1";
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Surname";
+            this.Column3.HeaderText = "Soyad";
             this.Column3.Name = "Column3";
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Username";
+            this.Column2.HeaderText = "Istifadəçi adi";
             this.Column2.Name = "Column2";
             // 
             // Column4
@@ -85,7 +86,7 @@
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Gender";
+            this.Column5.HeaderText = "Cins";
             this.Column5.Name = "Column5";
             // 
             // lblCount
@@ -94,7 +95,7 @@
             this.lblCount.BackColor = System.Drawing.SystemColors.Control;
             this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.Color.CadetBlue;
-            this.lblCount.Location = new System.Drawing.Point(154, 29);
+            this.lblCount.Location = new System.Drawing.Point(224, 29);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(0, 22);
             this.lblCount.TabIndex = 12;
@@ -107,9 +108,9 @@
             this.label3.ForeColor = System.Drawing.Color.CadetBlue;
             this.label3.Location = new System.Drawing.Point(12, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 20);
+            this.label3.Size = new System.Drawing.Size(212, 20);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Activated studets:";
+            this.label3.Text = "Activasiya olunmuş tələbələr:";
             // 
             // lblError
             // 
@@ -132,7 +133,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvData);
             this.Name = "ActivatedStudents";
-            this.Text = "ActivatedStudents";
+            this.Text = "Tələbələr";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
@@ -145,12 +146,12 @@
         private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Label lblError;
     }
 }

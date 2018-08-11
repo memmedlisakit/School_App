@@ -154,7 +154,7 @@ namespace School.Pages
             int count = 0;
             if (this.txtTicketName.Text == "")
             {
-                this.lblTicketName.Text = "Type ticket name !!!";
+                this.lblTicketName.Text = "Bilet adını yazın !!!";
                 return;
             }
 
@@ -172,7 +172,7 @@ namespace School.Pages
 
             if (count != 10)
             {
-                this.lblQuations.Text = "Select 10 quation !!!";
+                this.lblQuations.Text = "10 sual seçin !!!";
                 return;
             }
 
@@ -186,7 +186,7 @@ namespace School.Pages
                 {
                     if (dr[1].ToString() == this.txtTicketName.Text)
                     {
-                        this.lblTicketName.Text = "This ticket added !!!";
+                        this.lblTicketName.Text = "Bilet əlavə edildi !!!";
                         return;
                     }
                 }

@@ -32,6 +32,7 @@
             this.lblAllImages = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblMulti = new System.Windows.Forms.Label();
             this.btnAllSave = new System.Windows.Forms.Button();
             this.cmbAllCategory = new System.Windows.Forms.ComboBox();
@@ -52,7 +53,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnImage = new System.Windows.Forms.Button();
             this.lblImage = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pckSingle)).BeginInit();
@@ -67,7 +67,7 @@
             this.btnAllImages.Name = "btnAllImages";
             this.btnAllImages.Size = new System.Drawing.Size(172, 30);
             this.btnAllImages.TabIndex = 38;
-            this.btnAllImages.Text = "Select a folder";
+            this.btnAllImages.Text = "Qovluq seçin";
             this.btnAllImages.UseVisualStyleBackColor = false;
             this.btnAllImages.Click += new System.EventHandler(this.btnAllImages_Click);
             // 
@@ -88,9 +88,9 @@
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(36, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 18);
+            this.label3.Size = new System.Drawing.Size(58, 18);
             this.label3.TabIndex = 36;
-            this.label3.Text = "Images:";
+            this.label3.Text = "Şəkillər:";
             // 
             // groupBox2
             // 
@@ -111,7 +111,18 @@
             this.groupBox2.Size = new System.Drawing.Size(358, 455);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Add multipli quation";
+            this.groupBox2.Text = "Çoxlu sual elave et";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(125, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 14);
+            this.label1.TabIndex = 46;
+            this.label1.Text = ".jpg, .jpeg, .png";
             // 
             // lblMulti
             // 
@@ -127,11 +138,11 @@
             // 
             this.btnAllSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAllSave.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnAllSave.Location = new System.Drawing.Point(216, 404);
+            this.btnAllSave.Location = new System.Drawing.Point(203, 404);
             this.btnAllSave.Name = "btnAllSave";
-            this.btnAllSave.Size = new System.Drawing.Size(93, 30);
+            this.btnAllSave.Size = new System.Drawing.Size(106, 30);
             this.btnAllSave.TabIndex = 42;
-            this.btnAllSave.Text = "Save All";
+            this.btnAllSave.Text = "Yadda saxla";
             this.btnAllSave.UseVisualStyleBackColor = true;
             this.btnAllSave.Click += new System.EventHandler(this.btnAllSave_Click);
             // 
@@ -154,7 +165,7 @@
             this.btnAllAnswers.Name = "btnAllAnswers";
             this.btnAllAnswers.Size = new System.Drawing.Size(172, 30);
             this.btnAllAnswers.TabIndex = 41;
-            this.btnAllAnswers.Text = "Select a file";
+            this.btnAllAnswers.Text = "Fayl seçin";
             this.btnAllAnswers.UseVisualStyleBackColor = false;
             this.btnAllAnswers.Click += new System.EventHandler(this.btnAllAnswers_Click);
             // 
@@ -165,9 +176,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(36, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 18);
+            this.label2.Size = new System.Drawing.Size(79, 18);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Category:";
+            this.label2.Text = "Categoriya:";
             // 
             // lblAllAnswers
             // 
@@ -196,9 +207,9 @@
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(36, 230);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 18);
+            this.label7.Size = new System.Drawing.Size(65, 18);
             this.label7.TabIndex = 39;
-            this.label7.Text = "Answer:";
+            this.label7.Text = "Cavablar:";
             // 
             // groupBox3
             // 
@@ -218,7 +229,7 @@
             this.groupBox3.Size = new System.Drawing.Size(358, 455);
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Add single quation";
+            this.groupBox3.Text = "Bir sual elave et";
             // 
             // pckSingle
             // 
@@ -246,7 +257,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 30);
             this.btnSave.TabIndex = 42;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Yadda saxla";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -267,9 +278,9 @@
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(36, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 18);
+            this.label6.Size = new System.Drawing.Size(79, 18);
             this.label6.TabIndex = 28;
-            this.label6.Text = "Category:";
+            this.label6.Text = "Categoriya:";
             // 
             // lblAnswer
             // 
@@ -298,9 +309,9 @@
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(36, 125);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 18);
+            this.label10.Size = new System.Drawing.Size(49, 18);
             this.label10.TabIndex = 39;
-            this.label10.Text = "Answer:";
+            this.label10.Text = "Cavab:";
             // 
             // label11
             // 
@@ -309,9 +320,9 @@
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label11.Location = new System.Drawing.Point(36, 230);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 18);
+            this.label11.Size = new System.Drawing.Size(41, 18);
             this.label11.TabIndex = 36;
-            this.label11.Text = "Image:";
+            this.label11.Text = "Şəkil:";
             // 
             // btnImage
             // 
@@ -322,7 +333,7 @@
             this.btnImage.Name = "btnImage";
             this.btnImage.Size = new System.Drawing.Size(148, 30);
             this.btnImage.TabIndex = 38;
-            this.btnImage.Text = "Select an image";
+            this.btnImage.Text = "Şəkil seçin";
             this.btnImage.UseVisualStyleBackColor = false;
             this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
@@ -336,17 +347,6 @@
             this.lblImage.Size = new System.Drawing.Size(0, 14);
             this.lblImage.TabIndex = 37;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(125, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 14);
-            this.label1.TabIndex = 46;
-            this.label1.Text = ".jpg, .jpeg, .png";
-            // 
             // AddQuation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,7 +355,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Name = "AddQuation";
-            this.Text = "Quation";
+            this.Text = "Suallar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

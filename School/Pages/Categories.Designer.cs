@@ -33,10 +33,10 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblCatError = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,9 +47,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(9, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 18);
+            this.label2.Size = new System.Drawing.Size(79, 18);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Category:";
+            this.label2.Text = "Categoriya:";
             // 
             // txtCategory
             // 
@@ -68,7 +68,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(138, 30);
             this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Add Category";
+            this.btnAdd.Text = "Əlavə Et";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -96,17 +96,6 @@
             this.dgvData.TabIndex = 9;
             this.dgvData.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Celect);
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "id";
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Category Name";
-            this.Column1.Name = "Column1";
-            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -116,7 +105,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(138, 30);
             this.btnUpdate.TabIndex = 10;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Yenilə";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -130,10 +119,21 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(138, 30);
             this.btnDelete.TabIndex = 11;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Visible = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "id";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Categoriya Adi";
+            this.Column1.Name = "Column1";
             // 
             // Categories
             // 
@@ -148,7 +148,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCategory);
             this.Name = "Categories";
-            this.Text = "Category";
+            this.Text = "Categoriya";
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

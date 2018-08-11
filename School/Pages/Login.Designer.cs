@@ -69,9 +69,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(65, 159);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 18);
+            this.label1.Size = new System.Drawing.Size(40, 18);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Password:";
+            this.label1.Text = "Şifrə:";
             // 
             // label2
             // 
@@ -80,20 +80,20 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(65, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 18);
+            this.label2.Size = new System.Drawing.Size(87, 18);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Username:";
+            this.label2.Text = "İstifadəçi adi:";
             // 
             // btnSignIn
             // 
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnSignIn.Location = new System.Drawing.Point(166, 258);
+            this.btnSignIn.Location = new System.Drawing.Point(166, 269);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(102, 30);
             this.btnSignIn.TabIndex = 3;
-            this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.Text = "Daxil ol";
             this.btnSignIn.UseVisualStyleBackColor = true;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
@@ -116,17 +116,17 @@
             this.groupBox1.Size = new System.Drawing.Size(334, 315);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Login";
+            this.groupBox1.Text = "Daxil ol";
             // 
             // ckbRememberMe
             // 
             this.ckbRememberMe.AutoSize = true;
             this.ckbRememberMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbRememberMe.Location = new System.Drawing.Point(158, 233);
+            this.ckbRememberMe.Location = new System.Drawing.Point(178, 233);
             this.ckbRememberMe.Name = "ckbRememberMe";
-            this.ckbRememberMe.Size = new System.Drawing.Size(110, 19);
+            this.ckbRememberMe.Size = new System.Drawing.Size(90, 19);
             this.ckbRememberMe.TabIndex = 10;
-            this.ckbRememberMe.Text = "Remember Me";
+            this.ckbRememberMe.Text = "Məni xatirla";
             this.ckbRememberMe.UseVisualStyleBackColor = true;
             // 
             // ckbAdmin
@@ -135,9 +135,9 @@
             this.ckbAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbAdmin.Location = new System.Drawing.Point(68, 233);
             this.ckbAdmin.Name = "ckbAdmin";
-            this.ckbAdmin.Size = new System.Drawing.Size(77, 19);
+            this.ckbAdmin.Size = new System.Drawing.Size(98, 19);
             this.ckbAdmin.TabIndex = 9;
-            this.ckbAdmin.Text = "As Admin";
+            this.ckbAdmin.Text = "Administrator";
             this.ckbAdmin.UseVisualStyleBackColor = true;
             // 
             // lblError
@@ -175,10 +175,10 @@
             this.linkSignUp.AutoSize = true;
             this.linkSignUp.Location = new System.Drawing.Point(787, 9);
             this.linkSignUp.Name = "linkSignUp";
-            this.linkSignUp.Size = new System.Drawing.Size(45, 13);
+            this.linkSignUp.Size = new System.Drawing.Size(53, 13);
             this.linkSignUp.TabIndex = 7;
             this.linkSignUp.TabStop = true;
-            this.linkSignUp.Text = "Sign Up";
+            this.linkSignUp.Text = "Qeydiyyat";
             this.linkSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSignUp_LinkClicked);
             // 
             // Login
@@ -193,7 +193,7 @@
             this.MinimumSize = new System.Drawing.Size(870, 540);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Daxil ol";
             this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

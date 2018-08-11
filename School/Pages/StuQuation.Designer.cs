@@ -80,7 +80,7 @@
             this.grpAnswers.Size = new System.Drawing.Size(478, 64);
             this.grpAnswers.TabIndex = 54;
             this.grpAnswers.TabStop = false;
-            this.grpAnswers.Text = "Answers";
+            this.grpAnswers.Text = "Cavablar";
             // 
             // btn05
             // 
@@ -171,7 +171,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(72, 30);
             this.btnNext.TabIndex = 55;
-            this.btnNext.Text = "Next";
+            this.btnNext.Text = "Növbəti";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -192,7 +192,7 @@
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(72, 30);
             this.btnPrev.TabIndex = 49;
-            this.btnPrev.Text = "Prev";
+            this.btnPrev.Text = "Öncəki";
             this.btnPrev.UseVisualStyleBackColor = true;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
@@ -225,9 +225,9 @@
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(554, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 18);
+            this.label7.Size = new System.Drawing.Size(92, 18);
             this.label7.TabIndex = 62;
-            this.label7.Text = "Incorrect Quations:";
+            this.label7.Text = "Yanlış Suallar:";
             // 
             // groupBox1
             // 
@@ -251,7 +251,7 @@
             this.groupBox1.Size = new System.Drawing.Size(502, 146);
             this.groupBox1.TabIndex = 61;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "All information";
+            this.groupBox1.Text = "Məlumatlar";
             // 
             // rchCategory
             // 
@@ -270,9 +270,9 @@
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Location = new System.Drawing.Point(244, 53);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 18);
+            this.label8.Size = new System.Drawing.Size(53, 18);
             this.label8.TabIndex = 48;
-            this.label8.Text = "Incorrect:";
+            this.label8.Text = "Yanlış:";
             // 
             // label3
             // 
@@ -283,7 +283,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 18);
             this.label3.TabIndex = 46;
-            this.label3.Text = "Correct:";
+            this.label3.Text = "Düzgün:";
             // 
             // lblCorretCount
             // 
@@ -303,9 +303,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(6, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 18);
+            this.label2.Size = new System.Drawing.Size(108, 18);
             this.label2.TabIndex = 44;
-            this.label2.Text = "Quation Num:";
+            this.label2.Text = "Sual Nömrəsi:";
             // 
             // lblQuationNum
             // 
@@ -325,9 +325,9 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(6, 82);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 18);
+            this.label5.Size = new System.Drawing.Size(76, 18);
             this.label5.TabIndex = 42;
-            this.label5.Text = "Quation Count:";
+            this.label5.Text = "Sual Sayı:";
             // 
             // lblQuationCount
             // 
@@ -347,9 +347,9 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(6, 53);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 18);
+            this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 38;
-            this.label4.Text = "Surname:";
+            this.label4.Text = "Soyad:";
             // 
             // lblSurname
             // 
@@ -369,9 +369,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(6, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 18);
+            this.label1.Size = new System.Drawing.Size(32, 18);
             this.label1.TabIndex = 36;
-            this.label1.Text = "Name:";
+            this.label1.Text = "Ad:";
             // 
             // lblName
             // 
@@ -391,9 +391,9 @@
             this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label9.Location = new System.Drawing.Point(552, 108);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 18);
+            this.label9.Size = new System.Drawing.Size(79, 18);
             this.label9.TabIndex = 59;
-            this.label9.Text = "Category:";
+            this.label9.Text = "Categoriya:";
             // 
             // cmbCategory
             // 
@@ -442,7 +442,7 @@
             this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "StuQuation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StuQuation";
+            this.Text = "Suallar";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.Load += new System.EventHandler(this.StuQuation_Load);

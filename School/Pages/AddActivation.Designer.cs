@@ -35,8 +35,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExel = new System.Windows.Forms.Button();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtActivation = new System.Windows.Forms.TextBox();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.btnActivation.Name = "btnActivation";
             this.btnActivation.Size = new System.Drawing.Size(102, 30);
             this.btnActivation.TabIndex = 13;
-            this.btnActivation.Text = "Genrate";
+            this.btnActivation.Text = "Emal et";
             this.btnActivation.UseVisualStyleBackColor = true;
             this.btnActivation.Click += new System.EventHandler(this.btnActivation_Click);
             // 
@@ -70,9 +70,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(30, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 18);
+            this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Activations count:";
+            this.label1.Text = "Activasiya sayi:";
             // 
             // lblCount
             // 
@@ -94,17 +94,17 @@
             this.groupBox1.Size = new System.Drawing.Size(458, 382);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "List of activations";
+            this.groupBox1.Text = "Activasiya listi";
             // 
             // btnExel
             // 
             this.btnExel.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExel.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnExel.Location = new System.Drawing.Point(325, 346);
+            this.btnExel.Location = new System.Drawing.Point(305, 346);
             this.btnExel.Name = "btnExel";
-            this.btnExel.Size = new System.Drawing.Size(127, 30);
+            this.btnExel.Size = new System.Drawing.Size(147, 30);
             this.btnExel.TabIndex = 23;
-            this.btnExel.Text = "Save exel";
+            this.btnExel.Text = "Yadda saxla exel";
             this.btnExel.UseVisualStyleBackColor = true;
             this.btnExel.Click += new System.EventHandler(this.btnExel_Click);
             // 
@@ -120,11 +120,6 @@
             this.dgvData.Size = new System.Drawing.Size(446, 292);
             this.dgvData.TabIndex = 0;
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Activation code";
-            this.Column2.Name = "Column2";
-            // 
             // txtActivation
             // 
             this.txtActivation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,6 +128,11 @@
             this.txtActivation.Name = "txtActivation";
             this.txtActivation.Size = new System.Drawing.Size(200, 30);
             this.txtActivation.TabIndex = 23;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Activasiya kodu";
+            this.Column2.Name = "Column2";
             // 
             // AddActivation
             // 
@@ -145,7 +145,7 @@
             this.Controls.Add(this.btnActivation);
             this.Controls.Add(this.label1);
             this.Name = "AddActivation";
-            this.Text = "Activations";
+            this.Text = "Activasiyalar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -163,7 +163,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Button btnExel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.TextBox txtActivation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

@@ -40,14 +40,14 @@ namespace School.Pages
             int count = 0;
             if (txtActivation.Text == ""||(!int.TryParse(this.txtActivation.Text, out count))|| txtActivation.Text == "0")
             {
-                this.lblCount.Text = "Enter count of activation !!!";
+                this.lblCount.Text = "Activasiya sayini daxil edin !!!";
                 return;
             }
             else
             {
                 if (count > 200)
                 {
-                    this.lblCount.Text = "Maximim count 200 !!!";
+                    this.lblCount.Text = "Maximim say 200 !!!";
                     return;
                 }
                 btnActivation.Enabled = false;
@@ -68,7 +68,7 @@ namespace School.Pages
         public void btnExel_Click(object sender, EventArgs e)
         {
             btnExel.Enabled = false;
-            btnExel.Text = "Wait...";
+            btnExel.Text = "Gözləyin...";
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "Excel Documents (*.xls)|*.xls";
             sfd.FileName = "export.xls";
@@ -79,14 +79,14 @@ namespace School.Pages
                 {
                     this.lblError.ForeColor = Color.Red;
                     this.lblError.Text = message;
-                    this.btnExel.Text = "Save exel";
+                    this.btnExel.Text = "Yadda saxla exel";
                     return;
                 }
-                this.lblError.ForeColor = Color.LawnGreen;
-                this.lblError.Text = "Added Succesfuly"; 
-                Extentions.Export_data(this.dgvData, sfd.FileName);
+                this.lblError.ForeColor = Color.LimeGreen;
+                this.lblError.Text = "Uğurla tamamlandi"; 
+                Extentions.Export_data(this.dgvData, sfd.FileName); 
             }
-            btnExel.Text = "Finish";
+            btnExel.Text = "Bitdi";
         }
 
         static void addData(List<string> activations)
@@ -108,7 +108,7 @@ namespace School.Pages
             }
             catch (Exception)
             {
-                message = "An error occurred connecting with database please check your internet connection";
+                message = "Servere qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
             }
         }
 

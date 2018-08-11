@@ -64,7 +64,7 @@ namespace School.Pages
             { 
 
                 DataGridViewButtonCell update = new DataGridViewButtonCell();
-                update.Value = "Update";
+                update.Value = "Yenilə";
                 update.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 update.FlatStyle = FlatStyle.Flat;
                 update.Style.BackColor = Color.LimeGreen; 
@@ -72,7 +72,7 @@ namespace School.Pages
                 
 
                 DataGridViewButtonCell delete = new DataGridViewButtonCell();
-                delete.Value = "Delete";
+                delete.Value = "Sil";
                 delete.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 delete.FlatStyle = FlatStyle.Flat;
                 delete.Style.BackColor = Color.IndianRed;

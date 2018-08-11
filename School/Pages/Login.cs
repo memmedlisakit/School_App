@@ -187,7 +187,7 @@ namespace School.Pages
             }
             else
             {
-                this.lblError.Text = "Username or Password incorrect !";
+                this.lblError.Text = "İstifadəçi adı və ya Şifrə yalnəşdır !";
                 return false;
             }
         }
@@ -220,7 +220,7 @@ namespace School.Pages
             }
             else
             {
-                this.lblError.Text = "Username or Password incorrect !";
+                this.lblError.Text = "İstifadəçi adı və ya Şifrə yalnəşdır !";
                 return false;
             }
         }
@@ -258,14 +258,14 @@ namespace School.Pages
             if (username == "")
             {
                 this.lblError.Text = "";
-                this.lblUsername.Text = "username is required !!!";
+                this.lblUsername.Text = "İstifadəçi adı boş olmaz !";
                 this.ActiveControl = this.txtUsername;
                 return false;
             }
             if(password == "")
             {
                 this.lblError.Text = "";
-                this.lblPassword.Text = "password is required !!!";
+                this.lblPassword.Text = "Şifrə boş olmaz !!!";
                 this.ActiveControl = this.txtPassword;
                 return false;
             }

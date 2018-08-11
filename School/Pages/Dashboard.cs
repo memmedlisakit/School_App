@@ -19,6 +19,7 @@ namespace School.Pages
         {
             InitializeComponent();
             ThisForm = this;
+            this.pctMain.Image = School.Properties.Resources.dashboard;
         }
 
         private void Closing(object sender, FormClosingEventArgs e)
@@ -54,7 +55,7 @@ namespace School.Pages
                 this.ckbFemale.Checked = true;
             }
             this.grpStuProfile.Visible = !this.grpStuProfile.Visible;
-            this.lblInfo.Visible = !this.grpStuProfile.Visible;
+            this.grpInfo.Visible = !this.grpStuProfile.Visible;
             this.lblAbout.Visible = false;
         }
 
@@ -147,15 +148,15 @@ namespace School.Pages
         private void FormResize(object sender, EventArgs e)
         { 
             this.grpStuProfile.Left = ((this.Width - this.grpStuProfile.Width) / 2 - 8);
-            this.lblInfo.Left = ((this.Width - this.lblInfo.Width) / 2 - 8);
+            this.grpInfo.Left = ((this.Width - this.grpInfo.Width) / 2 - 8);
             this.lblAbout.Left = ((this.Width - this.lblAbout.Width) / 2 - 8);
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         { 
             this.grpStuProfile.Left = ((this.Width - this.grpStuProfile.Width) / 2 - 8);
-            this.lblInfo.Left = ((this.Width - this.lblInfo.Width) / 2 - 8);
-            this.lblInfo.Top = 200;
+            this.grpInfo.Left = ((this.Width - this.grpInfo.Width) / 2 - 8);
+            this.grpInfo.Top = 50;
             this.lblAbout.Left = ((this.Width - this.lblAbout.Width) / 2 - 8);
             this.lblAbout.Top = 200;
         }
@@ -163,7 +164,7 @@ namespace School.Pages
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.grpStuProfile.Visible = false;
-            this.lblInfo.Visible = false;
+            this.grpInfo.Visible = false;
             this.lblAbout.Visible = true;
         }
     }

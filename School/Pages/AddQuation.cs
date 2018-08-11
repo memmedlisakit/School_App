@@ -48,17 +48,17 @@ namespace School.Pages
         private bool checkingFiled()
         {
             if (this.cmbCategory.Text == "") {
-                this.lblCategory.Text = "Select a category !!!";
+                this.lblCategory.Text = "Categoriya seçin !!!";
                 return false;
             }
             if (this.txtAnswer.Text == "")
             {
-                this.lblAnswer.Text = "Write an answer !!!";
+                this.lblAnswer.Text = "Cavab Yazin !!!";
                 return false;
             } 
             if (ofd.SafeFileName == "")
             {
-                this.lblImage.Text = "Choose an image !!!";
+                this.lblImage.Text = "Bir şəkil seçin !!!";
                 return false;
             }
             return true;
@@ -145,12 +145,12 @@ namespace School.Pages
                     catch (Exception)
                     {
                         this.lblMulti.ForeColor = Color.Red;
-                        this.lblMulti.Text = "An error occurred connecting with database";
+                        this.lblMulti.Text = "Databazaya bağlanarkən xəta baş verdi";
                         return;
                     }
                }
-            this.lblMulti.ForeColor = Color.Lime;
-            this.lblMulti.Text = "Added successfuly";
+            this.lblMulti.ForeColor = Color.LimeGreen;
+            this.lblMulti.Text = "Uğurla tamamlandi";
             this.cleaner();
         }
 
@@ -180,7 +180,7 @@ namespace School.Pages
                 }
                 else
                 {
-                    this.lblAllAnswers.Text = "File extention must be .txt!!!";
+                    this.lblAllAnswers.Text = "Fayl tipi .txt olmalidir !!!";
                 }
             }
 
@@ -200,27 +200,27 @@ namespace School.Pages
         {
             if(this.cmbAllCategory.Text == "")
             {
-                this.lblAllCategory.Text = "Select a category !!!";
+                this.lblAllCategory.Text = "Categoriya seçin !!!";
                 return false;
             }
             if (this.images.Count <= 0)
             {
-                this.lblAllImages.Text = "Select am Image folder !!!";
+                this.lblAllImages.Text = "Şəkillər qovluqu seçin !!!";
                 return false;
             }
             if (this.answers.Count <= 0)
             {
-                this.lblAllAnswers.Text = "Select a answers !!!";
+                this.lblAllAnswers.Text = "Cavablar faylı seçin !!!";
                 return false;
             }
             if (this.answers.Count < this.images.Count)
             {
-                this.lblAllAnswers.Text = "Answers count must be same as images count !!!";
+                this.lblAllAnswers.Text = "Cavablar sayi Şəkillər sayi ile eyni olmalidir !!!";
                 return false;
             }
             if (this.images.Count < this.answers.Count)
             {
-                this.lblAllImages.Text = "Images count must be same as answers count !!!";
+                this.lblAllImages.Text = "Şəkillər sayi Cavablar sayi ile eyni olmalidir !!!";
                 return false;
             }
             return true;

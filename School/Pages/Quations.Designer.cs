@@ -62,7 +62,7 @@
             this.groupBox2.Size = new System.Drawing.Size(742, 653);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "List of Quations";
+            this.groupBox2.Text = "Suallar Listi";
             // 
             // lblNumberOfQuation
             // 
@@ -98,9 +98,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(349, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 18);
+            this.label1.Size = new System.Drawing.Size(92, 18);
             this.label1.TabIndex = 43;
-            this.label1.Text = "Number of quation:";
+            this.label1.Text = "Sual nömrəsi:";
             // 
             // cmbCategory
             // 
@@ -120,9 +120,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(36, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 18);
+            this.label2.Size = new System.Drawing.Size(79, 18);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Category:";
+            this.label2.Text = "Categoriya:";
             // 
             // grpInfo
             // 
@@ -139,7 +139,7 @@
             this.grpInfo.Size = new System.Drawing.Size(504, 515);
             this.grpInfo.TabIndex = 36;
             this.grpInfo.TabStop = false;
-            this.grpInfo.Text = "Full info quation";
+            this.grpInfo.Text = "Sual məlumatları";
             this.grpInfo.Visible = false;
             // 
             // btnCancel
@@ -150,7 +150,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(93, 30);
             this.btnCancel.TabIndex = 53;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Ləğv edin";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -159,10 +159,10 @@
             this.linkUpload.AutoSize = true;
             this.linkUpload.Location = new System.Drawing.Point(6, 114);
             this.linkUpload.Name = "linkUpload";
-            this.linkUpload.Size = new System.Drawing.Size(47, 13);
+            this.linkUpload.Size = new System.Drawing.Size(38, 13);
             this.linkUpload.TabIndex = 52;
             this.linkUpload.TabStop = true;
-            this.linkUpload.Text = "browse..";
+            this.linkUpload.Text = "seçin..";
             this.linkUpload.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkUpload_LinkClicked);
             // 
             // btnSave
@@ -173,7 +173,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(93, 30);
             this.btnSave.TabIndex = 51;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Yadda saxla";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -202,9 +202,9 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(287, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 18);
+            this.label4.Size = new System.Drawing.Size(49, 18);
             this.label4.TabIndex = 48;
-            this.label4.Text = "Amswer:";
+            this.label4.Text = "Cavab:";
             // 
             // cmbInfoCategory
             // 
@@ -223,9 +223,9 @@
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(3, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 18);
+            this.label3.Size = new System.Drawing.Size(79, 18);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Category:";
+            this.label3.Text = "Categoriya:";
             // 
             // Quations
             // 
@@ -235,7 +235,7 @@
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.groupBox2);
             this.Name = "Quations";
-            this.Text = "Quations";
+            this.Text = "Suallar";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.groupBox2.ResumeLayout(false);

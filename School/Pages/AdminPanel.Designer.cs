@@ -36,6 +36,7 @@
             this.addQuationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aCtivationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.examToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.resetAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAdmin.SuspendLayout();
             this.grpAdminInfo.SuspendLayout();
             this.SuspendLayout();
@@ -79,51 +79,58 @@
             // studentsToolStripMenuItem1
             // 
             this.studentsToolStripMenuItem1.Name = "studentsToolStripMenuItem1";
-            this.studentsToolStripMenuItem1.Size = new System.Drawing.Size(145, 24);
-            this.studentsToolStripMenuItem1.Text = "Activated Students";
+            this.studentsToolStripMenuItem1.Size = new System.Drawing.Size(161, 24);
+            this.studentsToolStripMenuItem1.Text = "Activasiyali Tələbələr";
             this.studentsToolStripMenuItem1.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // activationToolStripMenuItem
             // 
             this.activationToolStripMenuItem.Name = "activationToolStripMenuItem";
-            this.activationToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
-            this.activationToolStripMenuItem.Text = "Activation";
+            this.activationToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.activationToolStripMenuItem.Text = "Activasiya";
             this.activationToolStripMenuItem.Click += new System.EventHandler(this.aCtivationsToolStripMenuItem_Click);
             // 
             // catgoryToolStripMenuItem
             // 
             this.catgoryToolStripMenuItem.Name = "catgoryToolStripMenuItem";
-            this.catgoryToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.catgoryToolStripMenuItem.Text = "Catgory";
+            this.catgoryToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.catgoryToolStripMenuItem.Text = "Catgoriya";
             this.catgoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // quationsToolStripMenuItem2
             // 
             this.quationsToolStripMenuItem2.Name = "quationsToolStripMenuItem2";
-            this.quationsToolStripMenuItem2.Size = new System.Drawing.Size(80, 24);
-            this.quationsToolStripMenuItem2.Text = "Quations";
+            this.quationsToolStripMenuItem2.Size = new System.Drawing.Size(66, 24);
+            this.quationsToolStripMenuItem2.Text = "Suallar";
             this.quationsToolStripMenuItem2.Click += new System.EventHandler(this.quationsToolStripMenuItem1_Click);
             // 
             // addQuationToolStripMenuItem
             // 
             this.addQuationToolStripMenuItem.Name = "addQuationToolStripMenuItem";
-            this.addQuationToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
-            this.addQuationToolStripMenuItem.Text = "Add Quation";
+            this.addQuationToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.addQuationToolStripMenuItem.Text = "Sual Əlavə et";
             this.addQuationToolStripMenuItem.Click += new System.EventHandler(this.quationsToolStripMenuItem_Click);
             // 
             // ticketsToolStripMenuItem1
             // 
             this.ticketsToolStripMenuItem1.Name = "ticketsToolStripMenuItem1";
-            this.ticketsToolStripMenuItem1.Size = new System.Drawing.Size(66, 24);
-            this.ticketsToolStripMenuItem1.Text = "Tickets";
+            this.ticketsToolStripMenuItem1.Size = new System.Drawing.Size(68, 24);
+            this.ticketsToolStripMenuItem1.Text = "Biletlər";
             this.ticketsToolStripMenuItem1.Click += new System.EventHandler(this.ticketsToolStripMenuItem_Click);
             // 
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
-            this.profileToolStripMenuItem.Text = "Profile";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
+            this.profileToolStripMenuItem.Text = "Öz səhifəm";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileUpdate);
+            // 
+            // resetAppToolStripMenuItem
+            // 
+            this.resetAppToolStripMenuItem.Name = "resetAppToolStripMenuItem";
+            this.resetAppToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.resetAppToolStripMenuItem.Text = "Programı Sıfırla";
+            this.resetAppToolStripMenuItem.Click += new System.EventHandler(this.ResetApp);
             // 
             // studentsToolStripMenuItem
             // 
@@ -194,7 +201,7 @@
             this.grpAdminInfo.Size = new System.Drawing.Size(930, 147);
             this.grpAdminInfo.TabIndex = 7;
             this.grpAdminInfo.TabStop = false;
-            this.grpAdminInfo.Text = "Update Profile";
+            this.grpAdminInfo.Text = "Yeniləmə";
             this.grpAdminInfo.Visible = false;
             // 
             // txtEmail
@@ -232,11 +239,11 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnSave.Location = new System.Drawing.Point(798, 76);
+            this.btnSave.Location = new System.Drawing.Point(781, 76);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(102, 30);
+            this.btnSave.Size = new System.Drawing.Size(119, 30);
             this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Yadda Saxla";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -256,9 +263,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(13, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 18);
+            this.label2.Size = new System.Drawing.Size(87, 18);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Username:";
+            this.label2.Text = "İstifadəçi adi:";
             // 
             // txtUsername
             // 
@@ -276,16 +283,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(250, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 18);
+            this.label1.Size = new System.Drawing.Size(40, 18);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Password:";
-            // 
-            // resetAppToolStripMenuItem
-            // 
-            this.resetAppToolStripMenuItem.Name = "resetAppToolStripMenuItem";
-            this.resetAppToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
-            this.resetAppToolStripMenuItem.Text = "Reset App";
-            this.resetAppToolStripMenuItem.Click += new System.EventHandler(this.ResetApp);
+            this.label1.Text = "Şifrə:";
             // 
             // AdminPanel
             // 
@@ -296,7 +296,7 @@
             this.Controls.Add(this.menuAdmin);
             this.MainMenuStrip = this.menuAdmin;
             this.Name = "AdminPanel";
-            this.Text = "AdminPanel";
+            this.Text = "Administrator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.menuAdmin.ResumeLayout(false);
             this.menuAdmin.PerformLayout();

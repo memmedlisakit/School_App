@@ -88,7 +88,7 @@
             this.groupBox1.Size = new System.Drawing.Size(381, 173);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "All information";
+            this.groupBox1.Text = "Məlumatlar";
             // 
             // richCategory
             // 
@@ -118,9 +118,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(6, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 18);
+            this.label2.Size = new System.Drawing.Size(72, 18);
             this.label2.TabIndex = 44;
-            this.label2.Text = "Duration:";
+            this.label2.Text = "Müddəti:";
             // 
             // label4
             // 
@@ -129,9 +129,9 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(198, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 18);
+            this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 38;
-            this.label4.Text = "Surname:";
+            this.label4.Text = "Soyad:";
             // 
             // lblSurname
             // 
@@ -151,9 +151,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(6, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 18);
+            this.label1.Size = new System.Drawing.Size(32, 18);
             this.label1.TabIndex = 36;
-            this.label1.Text = "Name:";
+            this.label1.Text = "Ad:";
             // 
             // lblName
             // 
@@ -184,9 +184,9 @@
             this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label9.Location = new System.Drawing.Point(144, 54);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 18);
+            this.label9.Size = new System.Drawing.Size(38, 18);
             this.label9.TabIndex = 42;
-            this.label9.Text = "Ticket:";
+            this.label9.Text = "Bilet:";
             // 
             // lblResponse
             // 
@@ -213,7 +213,7 @@
             this.grpAnswers.Size = new System.Drawing.Size(478, 64);
             this.grpAnswers.TabIndex = 49;
             this.grpAnswers.TabStop = false;
-            this.grpAnswers.Text = "Answers";
+            this.grpAnswers.Text = "Cavablar";
             // 
             // btn05
             // 
@@ -294,7 +294,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(72, 30);
             this.btnNext.TabIndex = 50;
-            this.btnNext.Text = "Next";
+            this.btnNext.Text = "Növbəti";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -306,7 +306,7 @@
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(72, 30);
             this.btnPrev.TabIndex = 47;
-            this.btnPrev.Text = "Prev";
+            this.btnPrev.Text = "Öncəki";
             this.btnPrev.UseVisualStyleBackColor = true;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
@@ -329,7 +329,7 @@
             this.grpQuations.Size = new System.Drawing.Size(435, 173);
             this.grpQuations.TabIndex = 51;
             this.grpQuations.TabStop = false;
-            this.grpQuations.Text = "Quations";
+            this.grpQuations.Text = "Suallar";
             // 
             // button6
             // 
@@ -492,7 +492,7 @@
             this.Controls.Add(this.pctTicket);
             this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "StuTicket";
-            this.Text = "StuTicket";
+            this.Text = "Bilet";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.Load += new System.EventHandler(this.StuTicket_Load);

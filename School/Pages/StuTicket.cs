@@ -204,14 +204,14 @@ namespace School.Pages
             string answer = this.selectedQuatins[Index].Answer;
             if (btn.Text == answer)
             {
-                this.lblResponse.Text = "Correct Answer";
+                this.lblResponse.Text = "Düzgün Cavab";
                 this.lblResponse.ForeColor = Color.LawnGreen;
                 btn.BackColor = Color.LawnGreen;
                 result = true;
                 CorrectCount++;
                 if (CorrectCount == 9)
                 {
-                    MessageBox.Show("Congratulations you passed this exem");
+                    MessageBox.Show("İmtahandan keçdiyiniz üçün təbrik edirik");
                 }
             }
             else
@@ -223,7 +223,7 @@ namespace School.Pages
                         _btn.BackColor = Color.LawnGreen;
                     }
                 }
-                this.lblResponse.Text = "Incorrect Answer";
+                this.lblResponse.Text = "Yanlış Cavab";
                 this.lblResponse.ForeColor = Color.Red;
                 btn.BackColor = Color.Red;
                 this.IncorrectQuations.Add(this.selectedQuatins[Index]);
@@ -249,7 +249,7 @@ namespace School.Pages
             {
                 this.Timer.Stop();
                 this.Timer.Dispose();
-                MessageBox.Show("Your exem is 'Blocked'.");
+                MessageBox.Show("İmtahan dayandırıldı");
                 this.Close();
                 Dashboard.ThisForm.Show();
             }
@@ -278,7 +278,7 @@ namespace School.Pages
             {
                 this.Timer.Stop();
                 this.Timer.Dispose();
-                MessageBox.Show("Your exam is 'Blocked'");
+                MessageBox.Show("İmtahan dayandırıldı");
                 this.Close();
             }
             if(this.Second > 0)

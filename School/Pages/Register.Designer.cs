@@ -66,10 +66,10 @@
             this.ckbMale.AutoSize = true;
             this.ckbMale.Location = new System.Drawing.Point(666, 167);
             this.ckbMale.Name = "ckbMale";
-            this.ckbMale.Size = new System.Drawing.Size(48, 17);
+            this.ckbMale.Size = new System.Drawing.Size(41, 17);
             this.ckbMale.TabIndex = 2;
             this.ckbMale.TabStop = true;
-            this.ckbMale.Text = "Male";
+            this.ckbMale.Text = "Kişi";
             this.ckbMale.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -99,13 +99,13 @@
             this.groupBox1.Size = new System.Drawing.Size(960, 405);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Registration";
+            this.groupBox1.Text = "Qeydiyyat";
             // 
             // lblSuccess
             // 
             this.lblSuccess.AutoSize = true;
             this.lblSuccess.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuccess.ForeColor = System.Drawing.Color.Lime;
+            this.lblSuccess.ForeColor = System.Drawing.Color.LimeGreen;
             this.lblSuccess.Location = new System.Drawing.Point(16, 246);
             this.lblSuccess.Name = "lblSuccess";
             this.lblSuccess.Size = new System.Drawing.Size(0, 16);
@@ -175,11 +175,11 @@
             // 
             this.btnRegister.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnRegister.Location = new System.Drawing.Point(794, 232);
+            this.btnRegister.Location = new System.Drawing.Point(774, 232);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(102, 30);
+            this.btnRegister.Size = new System.Drawing.Size(122, 30);
             this.btnRegister.TabIndex = 18;
-            this.btnRegister.Text = "Register";
+            this.btnRegister.Text = "Yadda saxla";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -188,10 +188,10 @@
             this.ckbFemale.AutoSize = true;
             this.ckbFemale.Location = new System.Drawing.Point(837, 172);
             this.ckbFemale.Name = "ckbFemale";
-            this.ckbFemale.Size = new System.Drawing.Size(59, 17);
+            this.ckbFemale.Size = new System.Drawing.Size(53, 17);
             this.ckbFemale.TabIndex = 14;
             this.ckbFemale.TabStop = true;
-            this.ckbFemale.Text = "Female";
+            this.ckbFemale.Text = "Qadın";
             this.ckbFemale.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -201,9 +201,9 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(663, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 18);
+            this.label4.Size = new System.Drawing.Size(40, 18);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Password:";
+            this.label4.Text = "Şifrə:";
             // 
             // txtPassword
             // 
@@ -241,9 +241,9 @@
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(336, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 18);
+            this.label3.Size = new System.Drawing.Size(87, 18);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Username:";
+            this.label3.Text = "İstifadəçi adi:";
             // 
             // txtUsername
             // 
@@ -261,9 +261,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(16, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 18);
+            this.label1.Size = new System.Drawing.Size(50, 18);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Surname:";
+            this.label1.Text = "Soyad:";
             // 
             // txtSurname
             // 
@@ -281,9 +281,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(16, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 18);
+            this.label2.Size = new System.Drawing.Size(29, 18);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Name:";
+            this.label2.Text = "Ad:";
             // 
             // Register
             // 
@@ -293,7 +293,7 @@
             this.ClientSize = new System.Drawing.Size(984, 430);
             this.Controls.Add(this.groupBox1);
             this.Name = "Register";
-            this.Text = "Sign Up";
+            this.Text = "Qeydiyyat";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

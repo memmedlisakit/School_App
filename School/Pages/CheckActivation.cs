@@ -68,7 +68,7 @@ namespace School.Pages
             }
             catch (Exception)
             {
-                Error.Text = "An error accourd with connecting server";
+                Error.Text = "Servere qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
             } 
         }
 
@@ -86,7 +86,7 @@ namespace School.Pages
             }
             catch (Exception)
             {
-                Error.Text = "An error accourd with connecting server";
+                Error.Text = "Servere qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
             }
         }
          
@@ -117,7 +117,7 @@ namespace School.Pages
             }
             else
             {
-                Error.Text = "Actiation code is used !!!";
+                Error.Text = "Activasiya kodu istifadə olunub !!!";
             }
            
         }

@@ -47,7 +47,7 @@ namespace School.Pages
                 }
                 btnRegister.Enabled = false;
                 cleaner();
-                this.lblSuccess.Text = "registration was successfully";
+                this.lblSuccess.Text = "Registrasiya uğurla başa çatdı";
             } 
         }
 
@@ -55,37 +55,37 @@ namespace School.Pages
         {
             if (this.txtName.Text == "")
             {
-                this.lblName.Text = "name is required !!!";
+                this.lblName.Text = "Ad boş olmaz !!!";
                 this.ActiveControl = this.txtName;
                 return false;
             }
             if (this.txtSurname.Text == "")
             {
-                this.lblSurname.Text = "surname is required !!!";
+                this.lblSurname.Text = "Soyad boş olmaz !!!";
                 this.ActiveControl = this.txtSurname;
                 return false;
             }
             if(this.txtUsername.Text == "")
             {
-                this.lblUsername.Text = "username is required !!!";
+                this.lblUsername.Text = "İstifadəçi adı boş olmaz !!!";
                 this.ActiveControl = this.txtUsername;
                 return false;
             }
             if (this.txtEmail.Text == "")
             {
-                this.lblEmail.Text = "email is required !!!";
+                this.lblEmail.Text = "Email boş olmaz !!!";
                 this.ActiveControl = this.txtEmail;
                 return false;
             }
             if (this.txtPassword.Text == "")
             {
-                this.lblPassword.Text = "password is required !!!";
+                this.lblPassword.Text = "Şifrə boş olmaz !!!";
                 this.ActiveControl = this.txtPassword;
                 return false;
             }
             if (!(this.ckbMale.Checked || this.ckbFemale.Checked))
             {
-                this.lblGender.Text = "gender is required !!!";
+                this.lblGender.Text = "Cins boş olmaz !!!";
                 return false;
             }
             return true;

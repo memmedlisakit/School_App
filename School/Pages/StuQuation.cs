@@ -150,7 +150,7 @@ namespace School.Pages
                 {
                     btn.BackColor = Color.LawnGreen;
                     this.lblResponse.ForeColor = Color.LawnGreen;
-                    this.lblResponse.Text = "Congratulations correct answer";
+                    this.lblResponse.Text = "Doğru cavab təbrik edirik";
                     this.lblCorretCount.Text = (++this.CorrectCount).ToString();
 
 
@@ -165,7 +165,7 @@ namespace School.Pages
                 {
                     btn.BackColor = Color.Red;
                     this.lblResponse.ForeColor = Color.Red;
-                    this.lblResponse.Text = "Incorrect answer !!!";
+                    this.lblResponse.Text = "Yanlış cavab !!!";
 
 
                     Quation quat = this.SelectedQuations[Index];

@@ -41,9 +41,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(123, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 18);
+            this.label2.Size = new System.Drawing.Size(109, 18);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Enter  activation code:";
+            this.label2.Text = "Activasiya kodu:";
             // 
             // txtActivation
             // 
@@ -63,7 +63,7 @@
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(200, 30);
             this.btnCheck.TabIndex = 7;
-            this.btnCheck.Text = "Check Activation";
+            this.btnCheck.Text = "Activasiyanı Yoxla";
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
@@ -88,7 +88,7 @@
             this.Controls.Add(this.txtActivation);
             this.Name = "CheckActivation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShowActivation";
+            this.Text = "Yoxlama";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.ResumeLayout(false);
             this.PerformLayout();

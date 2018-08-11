@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(462, 306);
             this.Name = "Loading";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Loading";
+            this.Text = "Gözləmə";
             this.ResumeLayout(false);
 
         }

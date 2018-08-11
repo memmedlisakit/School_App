@@ -7,8 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data;
+using System.Windows.Forms; 
 using System.Data.SQLite;
 using School.Settings;
 using System.IO;
@@ -156,7 +155,7 @@ namespace School.Pages
                 }
                 else
                 {
-                    this.lblNumberOfQuation.Text = "Must be number !!!";
+                    this.lblNumberOfQuation.Text = "Rəqəm olmalıdır !!!";
                 }
             }
             else

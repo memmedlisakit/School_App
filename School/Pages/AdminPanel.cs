@@ -76,7 +76,7 @@ namespace School.Pages
         {
             if (txtUsername.Text.Trim() == "" || txtPassword.Text.Trim() == "" || txtEmail.Text.Trim() == "")
             {
-                this.lblError.Text = "Do not empty";
+                this.lblError.Text = "Boşluq olmaz !!!";
                 return;
             }
             using(SQLiteConnection con =new SQLiteConnection(Login.connection))
@@ -124,5 +124,6 @@ namespace School.Pages
                 com.ExecuteNonQuery();
             }
         }
+         
     }
 }

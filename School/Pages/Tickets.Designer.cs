@@ -43,11 +43,11 @@
             // 
             this.btnAddTicket.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTicket.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnAddTicket.Location = new System.Drawing.Point(959, 22);
+            this.btnAddTicket.Location = new System.Drawing.Point(942, 22);
             this.btnAddTicket.Name = "btnAddTicket";
-            this.btnAddTicket.Size = new System.Drawing.Size(102, 30);
+            this.btnAddTicket.Size = new System.Drawing.Size(119, 30);
             this.btnAddTicket.TabIndex = 4;
-            this.btnAddTicket.Text = "Add Ticket";
+            this.btnAddTicket.Text = "Bilet Əlavə et";
             this.btnAddTicket.UseVisualStyleBackColor = true;
             this.btnAddTicket.Click += new System.EventHandler(this.btnAddTicket_Click);
             // 
@@ -59,7 +59,7 @@
             this.grpTickets.Size = new System.Drawing.Size(1072, 414);
             this.grpTickets.TabIndex = 5;
             this.grpTickets.TabStop = false;
-            this.grpTickets.Text = "All Tickets";
+            this.grpTickets.Text = "Bütün Biletlər";
             // 
             // dgwTickets
             // 
@@ -86,20 +86,20 @@
             // Column1
             // 
             this.Column1.FillWeight = 70F;
-            this.Column1.HeaderText = "Ticket Name";
+            this.Column1.HeaderText = "Bilet Adı";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
             this.Column2.FillWeight = 15F;
-            this.Column2.HeaderText = "Update";
+            this.Column2.HeaderText = "Yenilə";
             this.Column2.MinimumWidth = 3;
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
             this.Column3.FillWeight = 15F;
-            this.Column3.HeaderText = "Delete";
+            this.Column3.HeaderText = "Sil";
             this.Column3.Name = "Column3";
             // 
             // Tickets
@@ -110,7 +110,7 @@
             this.Controls.Add(this.grpTickets);
             this.Controls.Add(this.btnAddTicket);
             this.Name = "Tickets";
-            this.Text = "Ticket";
+            this.Text = "Biletlər";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.grpTickets.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwTickets)).EndInit();

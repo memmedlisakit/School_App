@@ -57,8 +57,12 @@
             this.ckbMale = new System.Windows.Forms.RadioButton();
             this.lblInfo = new System.Windows.Forms.Label();
             this.lblAbout = new System.Windows.Forms.Label();
+            this.grpInfo = new System.Windows.Forms.GroupBox();
+            this.pctMain = new System.Windows.Forms.PictureBox();
             this.menuUser.SuspendLayout();
             this.grpStuProfile.SuspendLayout();
+            this.grpInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctMain)).BeginInit();
             this.SuspendLayout();
             // 
             // menuUser
@@ -78,29 +82,29 @@
             // quationToolStripMenuItem
             // 
             this.quationToolStripMenuItem.Name = "quationToolStripMenuItem";
-            this.quationToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.quationToolStripMenuItem.Text = "Quation";
+            this.quationToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.quationToolStripMenuItem.Text = "Suallar";
             this.quationToolStripMenuItem.Click += new System.EventHandler(this.QuationClick);
             // 
             // ticketToolStripMenuItem
             // 
             this.ticketToolStripMenuItem.Name = "ticketToolStripMenuItem";
-            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
-            this.ticketToolStripMenuItem.Text = "Ticket";
+            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.ticketToolStripMenuItem.Text = "Biletlər";
             this.ticketToolStripMenuItem.Click += new System.EventHandler(this.TicketClick);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
+            this.aboutToolStripMenuItem.Text = "Haqqimizda";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
-            this.profileToolStripMenuItem.Text = "Profile";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
+            this.profileToolStripMenuItem.Text = "Öz səhifəm";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.UpdateProfile);
             // 
             // grpStuProfile
@@ -130,7 +134,7 @@
             this.grpStuProfile.Size = new System.Drawing.Size(960, 355);
             this.grpStuProfile.TabIndex = 4;
             this.grpStuProfile.TabStop = false;
-            this.grpStuProfile.Text = "Update Profile";
+            this.grpStuProfile.Text = "Yenilənmə";
             this.grpStuProfile.Visible = false;
             // 
             // lblSuccess
@@ -220,10 +224,10 @@
             this.ckbFemale.AutoSize = true;
             this.ckbFemale.Location = new System.Drawing.Point(841, 191);
             this.ckbFemale.Name = "ckbFemale";
-            this.ckbFemale.Size = new System.Drawing.Size(59, 17);
+            this.ckbFemale.Size = new System.Drawing.Size(53, 17);
             this.ckbFemale.TabIndex = 14;
             this.ckbFemale.TabStop = true;
-            this.ckbFemale.Text = "Female";
+            this.ckbFemale.Text = "Qadın";
             this.ckbFemale.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -233,9 +237,9 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(667, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 18);
+            this.label4.Size = new System.Drawing.Size(40, 18);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Password:";
+            this.label4.Text = "Şifrə:";
             // 
             // txtPassword
             // 
@@ -273,9 +277,9 @@
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(357, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 18);
+            this.label3.Size = new System.Drawing.Size(87, 18);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Username:";
+            this.label3.Text = "İstifadəçi adi:";
             // 
             // txtUsername
             // 
@@ -293,9 +297,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(40, 152);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 18);
+            this.label1.Size = new System.Drawing.Size(50, 18);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Surname:";
+            this.label1.Text = "Soyad:";
             // 
             // txtSurname
             // 
@@ -313,9 +317,9 @@
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(40, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 18);
+            this.label2.Size = new System.Drawing.Size(29, 18);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Name:";
+            this.label2.Text = "Ad:";
             // 
             // txtName
             // 
@@ -331,18 +335,18 @@
             this.ckbMale.AutoSize = true;
             this.ckbMale.Location = new System.Drawing.Point(670, 186);
             this.ckbMale.Name = "ckbMale";
-            this.ckbMale.Size = new System.Drawing.Size(48, 17);
+            this.ckbMale.Size = new System.Drawing.Size(41, 17);
             this.ckbMale.TabIndex = 2;
             this.ckbMale.TabStop = true;
-            this.ckbMale.Text = "Male";
+            this.ckbMale.Text = "Kişi";
             this.ckbMale.UseVisualStyleBackColor = true;
             // 
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.ForeColor = System.Drawing.Color.Black;
-            this.lblInfo.Location = new System.Drawing.Point(103, 402);
+            this.lblInfo.ForeColor = System.Drawing.Color.Red;
+            this.lblInfo.Location = new System.Drawing.Point(112, 28);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(749, 36);
             this.lblInfo.TabIndex = 0;
@@ -355,7 +359,7 @@
             this.lblAbout.AutoSize = true;
             this.lblAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbout.ForeColor = System.Drawing.Color.Black;
-            this.lblAbout.Location = new System.Drawing.Point(112, 453);
+            this.lblAbout.Location = new System.Drawing.Point(-312, 434);
             this.lblAbout.Name = "lblAbout";
             this.lblAbout.Size = new System.Drawing.Size(700, 306);
             this.lblAbout.TabIndex = 5;
@@ -363,14 +367,34 @@
             this.lblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblAbout.Visible = false;
             // 
+            // grpInfo
+            // 
+            this.grpInfo.Controls.Add(this.pctMain);
+            this.grpInfo.Controls.Add(this.lblInfo);
+            this.grpInfo.Location = new System.Drawing.Point(452, 434);
+            this.grpInfo.Name = "grpInfo";
+            this.grpInfo.Size = new System.Drawing.Size(963, 571);
+            this.grpInfo.TabIndex = 26;
+            this.grpInfo.TabStop = false;
+            this.grpInfo.Text = "Əsas Səhifə";
+            // 
+            // pctMain
+            // 
+            this.pctMain.Location = new System.Drawing.Point(70, 90);
+            this.pctMain.Name = "pctMain";
+            this.pctMain.Size = new System.Drawing.Size(825, 451);
+            this.pctMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctMain.TabIndex = 1;
+            this.pctMain.TabStop = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1004, 749);
+            this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.lblAbout);
-            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.grpStuProfile);
             this.Controls.Add(this.menuUser);
             this.MainMenuStrip = this.menuUser;
@@ -386,6 +410,9 @@
             this.menuUser.PerformLayout();
             this.grpStuProfile.ResumeLayout(false);
             this.grpStuProfile.PerformLayout();
+            this.grpInfo.ResumeLayout(false);
+            this.grpInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,7 +446,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.RadioButton ckbMale;
-        private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Label lblAbout;
+        private System.Windows.Forms.GroupBox grpInfo;
+        private System.Windows.Forms.PictureBox pctMain;
+        private System.Windows.Forms.Label lblInfo;
     }
 }
