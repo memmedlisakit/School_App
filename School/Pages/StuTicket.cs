@@ -28,12 +28,18 @@ namespace School.Pages
 
         System.Timers.Timer Timer = new System.Timers.Timer();
 
+        System.Timers.Timer MessageTimer = new System.Timers.Timer();
+
         public int Index { get; set; } = 0;
 
         public int Minut { get; set; } = 15;
 
-        public int Second { get; set; } = 0;
+        public int Second { get; set; } = 1;
 
+        public int MessageSecond { get; set; } = 0;
+
+
+        Loading loading = new Loading();
 
 
         public StuTicket()
@@ -45,7 +51,7 @@ namespace School.Pages
             this.Tickets = getData<Ticket>("Tickets") as List<Ticket>;
             this.Pivot = getData < P_TicketAndQuation>("P_TicketAndQuation") as List<P_TicketAndQuation>;
             fillCmbTickets();
-            setTimer(1000);
+            setTimer(1000); 
         }
 
         private void Closing(object sender, FormClosingEventArgs e)
@@ -140,7 +146,6 @@ namespace School.Pages
             {
                 this.pctTicket.Image = Image.FromStream(s);
             }
-            this.txtTicketNum.Text = (this.Index + 1).ToString();
             this.cleaner();
         }
 
@@ -158,45 +163,14 @@ namespace School.Pages
             this.setQuation();
             foreach (Button btn in this.grpQuations.Controls)
             {
-                btn.BackColor = default(Color);
+                btn.BackColor = Color.Black;
             }
 
             this.Minut = 15;
             this.Second = 0;
             this.lblDuration.Text = "15:00";
-            this.richCategory.Text = this.cmbTicket.Text;
         }
-
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            this.Index = this.Index > 0 ? --this.Index : this.Index;
-            this.setQuation();
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            this.Index = this.Index < (this.selectedQuatins.Count - 1) ? ++this.Index : this.Index;
-            this.setQuation();
-        }
-
-        private void SelectForNum(object sender, KeyEventArgs e)
-        { 
-            if (e.KeyData == Keys.Enter)
-            {
-                int num;
-                if (int.TryParse(txtTicketNum.Text.Trim(), out num))
-                {
-                    num--;
-                    if (num >= 0 && num <= (this.selectedQuatins.Count - 1))
-                    {
-                        this.Index = num;
-                        this.setQuation();
-                    }
-                }
-                txtTicketNum.Text = "";
-            }
-        }
-
+  
         private void btnAnswer(object sender, EventArgs e)
         {
             bool result;
@@ -204,14 +178,14 @@ namespace School.Pages
             string answer = this.selectedQuatins[Index].Answer;
             if (btn.Text == answer)
             {
-                this.lblResponse.Text = "Düzgün Cavab";
-                this.lblResponse.ForeColor = Color.LawnGreen;
+                this.lblResponse.Text = "Cavab Doğrudur";
+                this.lblResponse.ForeColor = Color.Green;
                 btn.BackColor = Color.LawnGreen;
                 result = true;
                 CorrectCount++;
                 if (CorrectCount == 9)
-                {
-                    MessageBox.Show("İmtahandan keçdiyiniz üçün təbrik edirik");
+                { 
+                  ShowResponse($"\"{Login.LoginedUser.Name}\" İmtahandan keçdiniz", Color.Green);
                 }
             }
             else
@@ -223,7 +197,7 @@ namespace School.Pages
                         _btn.BackColor = Color.LawnGreen;
                     }
                 }
-                this.lblResponse.Text = "Yanlış Cavab";
+                this.lblResponse.Text = "Cavab Səhvdir";
                 this.lblResponse.ForeColor = Color.Red;
                 btn.BackColor = Color.Red;
                 this.IncorrectQuations.Add(this.selectedQuatins[Index]);
@@ -236,12 +210,20 @@ namespace School.Pages
                 {
                     btnQua.BackColor = result ? Color.LawnGreen : Color.Red;
                 }
-            }
-            foreach (Button btnAnsw in this.grpAnswers.Controls)
-            {
-                btnAnsw.Enabled = false;
-            }
+            } 
         } 
+
+        private void ShowResponse(string message, Color back_color)
+        {
+            loading.lblMessage.Text = message;
+            loading.lblMessage.Left = ((loading.Width - loading.lblMessage.Width) / 2);
+            loading.lblMessage.ForeColor = Color.White;
+            loading.BackColor = back_color;
+            loading.Show(this);
+            MessageTimer.Elapsed += new ElapsedEventHandler(CloseMessage);
+            MessageTimer.Interval = 1000;
+            MessageTimer.Enabled = true;
+        }
 
         private void checkExem()
         {
@@ -249,9 +231,7 @@ namespace School.Pages
             {
                 this.Timer.Stop();
                 this.Timer.Dispose();
-                MessageBox.Show("İmtahan dayandırıldı");
-                this.Close();
-                Dashboard.ThisForm.Show();
+                ShowResponse("İmtahan dayandırıldı", Color.Red);
             }
         }
 
@@ -259,13 +239,13 @@ namespace School.Pages
         {
             foreach (Button btn in this.grpAnswers.Controls)
             {
-                btn.BackColor = default(Color);
+                btn.BackColor = Color.Black;
                 btn.Enabled = true;
             }
             this.lblResponse.Text = "";
         }
-         
-        void setTimer(int interval)
+
+        private void setTimer(int interval)
         { 
             Timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             Timer.Interval = interval;
@@ -278,7 +258,7 @@ namespace School.Pages
             {
                 this.Timer.Stop();
                 this.Timer.Dispose();
-                MessageBox.Show("İmtahan dayandırıldı");
+                MessageBox.Show(this, "İmtahan vaxtı bitti");
                 this.Close();
             }
             if(this.Second > 0)
@@ -289,6 +269,18 @@ namespace School.Pages
             {
                 this.Second = 60;
                 this.Minut--;
+            }
+        }
+         
+        private void CloseMessage(object source, ElapsedEventArgs e)
+        {
+            MessageSecond++;
+            if (MessageSecond > 2)
+            {
+                this.MessageTimer.Stop();
+                this.MessageTimer.Dispose();
+                loading.Close();
+                this.Close();
             }
         }
 

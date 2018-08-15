@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
             this.menuAdmin = new System.Windows.Forms.MenuStrip();
             this.studentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.activationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,7 @@
             // 
             // menuAdmin
             // 
-            this.menuAdmin.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.menuAdmin.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.menuAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.studentsToolStripMenuItem1,
             this.activationToolStripMenuItem,
@@ -79,57 +80,57 @@
             // studentsToolStripMenuItem1
             // 
             this.studentsToolStripMenuItem1.Name = "studentsToolStripMenuItem1";
-            this.studentsToolStripMenuItem1.Size = new System.Drawing.Size(161, 24);
-            this.studentsToolStripMenuItem1.Text = "Activasiyali Tələbələr";
+            this.studentsToolStripMenuItem1.Size = new System.Drawing.Size(160, 24);
+            this.studentsToolStripMenuItem1.Text = "Qeydiyyatda olanlar";
             this.studentsToolStripMenuItem1.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // activationToolStripMenuItem
             // 
             this.activationToolStripMenuItem.Name = "activationToolStripMenuItem";
-            this.activationToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
-            this.activationToolStripMenuItem.Text = "Activasiya";
+            this.activationToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
+            this.activationToolStripMenuItem.Text = "Şifrə yarat";
             this.activationToolStripMenuItem.Click += new System.EventHandler(this.aCtivationsToolStripMenuItem_Click);
             // 
             // catgoryToolStripMenuItem
             // 
             this.catgoryToolStripMenuItem.Name = "catgoryToolStripMenuItem";
-            this.catgoryToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
-            this.catgoryToolStripMenuItem.Text = "Catgoriya";
+            this.catgoryToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.catgoryToolStripMenuItem.Text = "Mövzular";
             this.catgoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // quationsToolStripMenuItem2
             // 
             this.quationsToolStripMenuItem2.Name = "quationsToolStripMenuItem2";
-            this.quationsToolStripMenuItem2.Size = new System.Drawing.Size(66, 24);
-            this.quationsToolStripMenuItem2.Text = "Suallar";
+            this.quationsToolStripMenuItem2.Size = new System.Drawing.Size(153, 24);
+            this.quationsToolStripMenuItem2.Text = "Suallarda dəyişiklik";
             this.quationsToolStripMenuItem2.Click += new System.EventHandler(this.quationsToolStripMenuItem1_Click);
             // 
             // addQuationToolStripMenuItem
             // 
             this.addQuationToolStripMenuItem.Name = "addQuationToolStripMenuItem";
             this.addQuationToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
-            this.addQuationToolStripMenuItem.Text = "Sual Əlavə et";
+            this.addQuationToolStripMenuItem.Text = "Sual əlavə et";
             this.addQuationToolStripMenuItem.Click += new System.EventHandler(this.quationsToolStripMenuItem_Click);
             // 
             // ticketsToolStripMenuItem1
             // 
             this.ticketsToolStripMenuItem1.Name = "ticketsToolStripMenuItem1";
-            this.ticketsToolStripMenuItem1.Size = new System.Drawing.Size(68, 24);
-            this.ticketsToolStripMenuItem1.Text = "Biletlər";
+            this.ticketsToolStripMenuItem1.Size = new System.Drawing.Size(93, 24);
+            this.ticketsToolStripMenuItem1.Text = "Bilet yarat";
             this.ticketsToolStripMenuItem1.Click += new System.EventHandler(this.ticketsToolStripMenuItem_Click);
             // 
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
-            this.profileToolStripMenuItem.Text = "Öz səhifəm";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.profileToolStripMenuItem.Text = "Hesabım";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileUpdate);
             // 
             // resetAppToolStripMenuItem
             // 
             this.resetAppToolStripMenuItem.Name = "resetAppToolStripMenuItem";
-            this.resetAppToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
-            this.resetAppToolStripMenuItem.Text = "Programı Sıfırla";
+            this.resetAppToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
+            this.resetAppToolStripMenuItem.Text = "Proqramı sıfırla";
             this.resetAppToolStripMenuItem.Click += new System.EventHandler(this.ResetApp);
             // 
             // studentsToolStripMenuItem
@@ -194,10 +195,12 @@
             this.grpAdminInfo.Controls.Add(this.label2);
             this.grpAdminInfo.Controls.Add(this.txtUsername);
             this.grpAdminInfo.Controls.Add(this.label1);
-            this.grpAdminInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAdminInfo.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAdminInfo.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.grpAdminInfo.Location = new System.Drawing.Point(12, 47);
+            this.grpAdminInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpAdminInfo.Name = "grpAdminInfo";
+            this.grpAdminInfo.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpAdminInfo.Size = new System.Drawing.Size(930, 147);
             this.grpAdminInfo.TabIndex = 7;
             this.grpAdminInfo.TabStop = false;
@@ -206,8 +209,9 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(500, 76);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 30);
@@ -216,30 +220,31 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(497, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 18);
+            this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "Email:";
             // 
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Font = new System.Drawing.Font("Microsoft Yi Baiti", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(25, 124);
+            this.lblError.Location = new System.Drawing.Point(12, 118);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 16);
+            this.lblError.Size = new System.Drawing.Size(0, 19);
             this.lblError.TabIndex = 8;
             // 
             // btnSave
             // 
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnSave.Location = new System.Drawing.Point(781, 76);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 30);
             this.btnSave.TabIndex = 3;
@@ -249,8 +254,9 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(253, 76);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(200, 30);
@@ -259,18 +265,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(13, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 18);
+            this.label2.Size = new System.Drawing.Size(100, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "İstifadəçi adi:";
             // 
             // txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(16, 76);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(200, 30);
@@ -279,11 +286,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(250, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 18);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Şifrə:";
             // 
@@ -294,8 +301,11 @@
             this.ClientSize = new System.Drawing.Size(954, 485);
             this.Controls.Add(this.grpAdminInfo);
             this.Controls.Add(this.menuAdmin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuAdmin;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AdminPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             this.menuAdmin.ResumeLayout(false);

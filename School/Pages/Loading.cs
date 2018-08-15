@@ -18,6 +18,9 @@ namespace School.Pages
             InitializeComponent();
             ThisForm = this;
             this.FormBorderStyle = FormBorderStyle.None;
+        }
+        public void setImage()
+        {
             this.BackgroundImage = School.Properties.Resources.initial;
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }

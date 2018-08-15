@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Quations));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblNumberOfQuation = new System.Windows.Forms.Label();
             this.pnlAllQuations = new System.Windows.Forms.Panel();
@@ -57,6 +58,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.cmbCategory);
             this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(24, 29);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(742, 653);
@@ -83,7 +85,7 @@
             // 
             // txtNumOfQuation
             // 
-            this.txtNumOfQuation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumOfQuation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumOfQuation.Location = new System.Drawing.Point(352, 55);
             this.txtNumOfQuation.Multiline = true;
             this.txtNumOfQuation.Name = "txtNumOfQuation";
@@ -94,18 +96,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(349, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 18);
+            this.label1.Size = new System.Drawing.Size(102, 16);
             this.label1.TabIndex = 43;
             this.label1.Text = "Sual nömrəsi:";
             // 
             // cmbCategory
             // 
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(39, 53);
             this.cmbCategory.Name = "cmbCategory";
@@ -116,13 +118,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(36, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 18);
+            this.label2.Size = new System.Drawing.Size(59, 16);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Categoriya:";
+            this.label2.Text = "Mövzu:";
             // 
             // grpInfo
             // 
@@ -134,6 +136,7 @@
             this.grpInfo.Controls.Add(this.label4);
             this.grpInfo.Controls.Add(this.cmbInfoCategory);
             this.grpInfo.Controls.Add(this.label3);
+            this.grpInfo.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpInfo.Location = new System.Drawing.Point(793, 29);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(504, 515);
@@ -144,7 +147,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnCancel.Location = new System.Drawing.Point(9, 478);
             this.btnCancel.Name = "btnCancel";
@@ -157,9 +160,10 @@
             // linkUpload
             // 
             this.linkUpload.AutoSize = true;
+            this.linkUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkUpload.Location = new System.Drawing.Point(6, 114);
             this.linkUpload.Name = "linkUpload";
-            this.linkUpload.Size = new System.Drawing.Size(38, 13);
+            this.linkUpload.Size = new System.Drawing.Size(45, 13);
             this.linkUpload.TabIndex = 52;
             this.linkUpload.TabStop = true;
             this.linkUpload.Text = "seçin..";
@@ -167,7 +171,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnSave.Location = new System.Drawing.Point(405, 478);
             this.btnSave.Name = "btnSave";
@@ -188,7 +192,7 @@
             // 
             // txtInfoAnswer
             // 
-            this.txtInfoAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInfoAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInfoAnswer.Location = new System.Drawing.Point(290, 52);
             this.txtInfoAnswer.Multiline = true;
             this.txtInfoAnswer.Name = "txtInfoAnswer";
@@ -198,18 +202,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(287, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 18);
+            this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 48;
             this.label4.Text = "Cavab:";
             // 
             // cmbInfoCategory
             // 
             this.cmbInfoCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbInfoCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbInfoCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbInfoCategory.FormattingEnabled = true;
             this.cmbInfoCategory.Location = new System.Drawing.Point(6, 52);
             this.cmbInfoCategory.Name = "cmbInfoCategory";
@@ -219,13 +223,13 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(3, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 18);
+            this.label3.Size = new System.Drawing.Size(59, 16);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Categoriya:";
+            this.label3.Text = "Mövzu:";
             // 
             // Quations
             // 
@@ -234,6 +238,7 @@
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Quations";
             this.Text = "Suallar";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

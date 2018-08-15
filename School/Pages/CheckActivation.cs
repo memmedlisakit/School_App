@@ -43,7 +43,7 @@ namespace School.Pages
                 }
             }
             string code = this.txtActivation.Text;
-            string username = Login.LoginedUser.Username;
+            string username = $"{Login.LoginedUser.Name}, {Login.LoginedUser.Surname}";
             string email = Login.LoginedUser.Email;
             if(code == "azyhq75357536241598azyhq.az")
             {
@@ -53,46 +53,46 @@ namespace School.Pages
             UpdateData(code, username, comp_info, email, TOKET); 
         }
          
-        static async void UpdateData(string _code, string _username, string _comp_info, string _email, string _token)
+        static  void UpdateData(string _code, string _username, string _comp_info, string _email, string _token)
         {
             try
-            { 
-                using (var client = new HttpClient())
-                { 
-                    client.BaseAddress = new Uri("http://memmedlisakit-001-site1.itempurl.com/");
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    HttpResponseMessage response = await client.GetAsync($"api/activations?code={_code}&username={_username}&comp_info={_comp_info}&email={_email}&token={_token}");
-                    insertLocalActivation(_code, _username, 1, _comp_info, _email,response.StatusCode.ToString().ToLower());
+            {
+                using (var client = new WebClient())
+                {
+                    Uri url = new Uri("http://memmedlisakit-001-site1.itempurl.com/api/activations");
+                    client.Headers[HttpRequestHeader.ContentType] = "application/json";
+                    var response =  client.DownloadString($"{url}?code={_code}&username={_username}&comp_info={_comp_info}&email={_email}&token={_token}");
+                    insertLocalActivation(_code, _username, 1, _comp_info, _email, response.ToLower());
                 }
             }
             catch (Exception)
             {
                 Error.Text = "Servere qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
+                Error.Left = ((ThisForm.Width - Error.Width) / 2);
             } 
         }
 
-        static async void AddStudent(string _json, string _token)
+        static void AddStudent(string _json, string _token)
         {
             try
             {
-                using (var client = new HttpClient())
+                using (var client = new WebClient())
                 {
-                    client.BaseAddress = new Uri("http://memmedlisakit-001-site1.itempurl.com/");
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    HttpResponseMessage response = await client.GetAsync($"api/students?code={_json}&token={_token}");
+                    Uri url = new Uri("http://memmedlisakit-001-site1.itempurl.com/api/students"); 
+                    client.Headers[HttpRequestHeader.ContentType] = "application/json";
+                    var response = client.DownloadString($"{url}?code={_json}&token={_token}");
                 }
             }
             catch (Exception)
             {
                 Error.Text = "Servere qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
+                Error.Left = ((ThisForm.Width - Error.Width) / 2);
             }
         }
          
         static void insertLocalActivation(string _code, string _username, int _status, string comp_info, string email, string status_code)
         {
-            if (status_code == "ok")
+            if (status_code.Contains("ok"))
             {
                 using (SQLiteConnection con = new SQLiteConnection(Login.connection))
                 {
@@ -117,7 +117,8 @@ namespace School.Pages
             }
             else
             {
-                Error.Text = "Activasiya kodu istifadə olunub !!!";
+                Error.Text = "Activasiya kodu istifadə olunub ";
+                Error.Left = ((ThisForm.Width - Error.Width) / 2);
             }
            
         }

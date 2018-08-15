@@ -40,14 +40,14 @@ namespace School.Pages
             int count = 0;
             if (txtActivation.Text == ""||(!int.TryParse(this.txtActivation.Text, out count))|| txtActivation.Text == "0")
             {
-                this.lblCount.Text = "Activasiya sayini daxil edin !!!";
+                this.lblCount.Text = "Activasiya sayını daxil edin ";
                 return;
             }
             else
             {
                 if (count > 200)
                 {
-                    this.lblCount.Text = "Maximim say 200 !!!";
+                    this.lblCount.Text = "Maximim say 200 ";
                     return;
                 }
                 btnActivation.Enabled = false;
@@ -108,7 +108,7 @@ namespace School.Pages
             }
             catch (Exception)
             {
-                message = "Servere qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
+                message = "Servere qoşularkən xəta baş verdi, \r\nzəhmət olmasa internet bağlantınızı yoxlayin";
             }
         }
 
@@ -139,6 +139,6 @@ namespace School.Pages
         {
             AdminPanel.ThisForm.Show();
             this.Hide();
-        }
+        } 
     }
 }

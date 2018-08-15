@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tickets));
             this.btnAddTicket = new System.Windows.Forms.Button();
             this.grpTickets = new System.Windows.Forms.GroupBox();
             this.dgwTickets = new System.Windows.Forms.DataGridView();
@@ -41,11 +42,11 @@
             // 
             // btnAddTicket
             // 
-            this.btnAddTicket.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTicket.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTicket.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnAddTicket.Location = new System.Drawing.Point(942, 22);
+            this.btnAddTicket.Location = new System.Drawing.Point(1099, 22);
             this.btnAddTicket.Name = "btnAddTicket";
-            this.btnAddTicket.Size = new System.Drawing.Size(119, 30);
+            this.btnAddTicket.Size = new System.Drawing.Size(139, 30);
             this.btnAddTicket.TabIndex = 4;
             this.btnAddTicket.Text = "Bilet Əlavə et";
             this.btnAddTicket.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@
             // grpTickets
             // 
             this.grpTickets.Controls.Add(this.dgwTickets);
-            this.grpTickets.Location = new System.Drawing.Point(12, 58);
+            this.grpTickets.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpTickets.Location = new System.Drawing.Point(14, 58);
             this.grpTickets.Name = "grpTickets";
-            this.grpTickets.Size = new System.Drawing.Size(1072, 414);
+            this.grpTickets.Size = new System.Drawing.Size(1251, 414);
             this.grpTickets.TabIndex = 5;
             this.grpTickets.TabStop = false;
             this.grpTickets.Text = "Bütün Biletlər";
@@ -73,7 +75,7 @@
             this.Column3});
             this.dgwTickets.Location = new System.Drawing.Point(6, 19);
             this.dgwTickets.Name = "dgwTickets";
-            this.dgwTickets.Size = new System.Drawing.Size(1060, 389);
+            this.dgwTickets.Size = new System.Drawing.Size(1226, 389);
             this.dgwTickets.TabIndex = 0;
             this.dgwTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.updateAndDelete);
             // 
@@ -104,11 +106,13 @@
             // 
             // Tickets
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 485);
+            this.ClientSize = new System.Drawing.Size(1280, 485);
             this.Controls.Add(this.grpTickets);
             this.Controls.Add(this.btnAddTicket);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tickets";
             this.Text = "Biletlər";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);

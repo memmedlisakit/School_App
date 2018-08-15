@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTicket));
             this.grpMain = new System.Windows.Forms.GroupBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
@@ -134,6 +135,7 @@
             this.grpMain.Controls.Add(this.btnSave);
             this.grpMain.Controls.Add(this.label2);
             this.grpMain.Controls.Add(this.txtTicketName);
+            this.grpMain.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpMain.ForeColor = System.Drawing.SystemColors.ControlText;
             this.grpMain.Location = new System.Drawing.Point(12, 13);
             this.grpMain.Name = "grpMain";
@@ -141,11 +143,12 @@
             this.grpMain.TabIndex = 7;
             this.grpMain.TabStop = false;
             this.grpMain.Text = "Yeni bilet əlavə et";
+            this.grpMain.Enter += new System.EventHandler(this.grpMain_Enter);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Teal;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnUpdate.Location = new System.Drawing.Point(1224, 635);
             this.btnUpdate.Name = "btnUpdate";
@@ -159,13 +162,13 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft JhengHei Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Font = new System.Drawing.Font("MilitaryID", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label23.Location = new System.Drawing.Point(1082, 33);
+            this.label23.Location = new System.Drawing.Point(1062, 33);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(78, 15);
+            this.label23.Size = new System.Drawing.Size(83, 14);
             this.label23.TabIndex = 58;
-            this.label23.Text = "Selected Now:";
+            this.label23.Text = "İndi Seçilənlər";
             // 
             // button12
             // 
@@ -173,7 +176,7 @@
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.ForeColor = System.Drawing.Color.Gold;
-            this.button12.Location = new System.Drawing.Point(1175, 28);
+            this.button12.Location = new System.Drawing.Point(1159, 28);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(20, 20);
             this.button12.TabIndex = 57;
@@ -182,13 +185,13 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft JhengHei Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("MilitaryID", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label22.Location = new System.Drawing.Point(1213, 33);
+            this.label22.Location = new System.Drawing.Point(1197, 33);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(87, 15);
+            this.label22.Size = new System.Drawing.Size(92, 14);
             this.label22.TabIndex = 56;
-            this.label22.Text = "Selected Before:";
+            this.label22.Text = "Əvvəl Seçilənlər";
             // 
             // button11
             // 
@@ -219,12 +222,14 @@
             this.groupBox6.Controls.Add(this.comboBox5);
             this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.Controls.Add(this.button6);
+            this.groupBox6.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(1070, 350);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(256, 278);
             this.groupBox6.TabIndex = 50;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Sual 10";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // panel5
             // 
@@ -236,18 +241,18 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label12.Location = new System.Drawing.Point(12, 74);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 18);
+            this.label12.Size = new System.Drawing.Size(42, 18);
             this.label12.TabIndex = 34;
             this.label12.Text = "Sual:";
             // 
             // comboBox5
             // 
             this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(15, 39);
             this.comboBox5.Name = "comboBox5";
@@ -257,13 +262,13 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label13.Location = new System.Drawing.Point(12, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 18);
+            this.label13.Size = new System.Drawing.Size(61, 18);
             this.label13.TabIndex = 31;
-            this.label13.Text = "Categoriya:";
+            this.label13.Text = "Mövzu:";
             // 
             // button6
             // 
@@ -283,12 +288,14 @@
             this.groupBox5.Controls.Add(this.comboBox4);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.button5);
+            this.groupBox5.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(1070, 66);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(256, 278);
             this.groupBox5.TabIndex = 48;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sual 5";
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // panel4
             // 
@@ -300,18 +307,18 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(12, 74);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 18);
+            this.label10.Size = new System.Drawing.Size(42, 18);
             this.label10.TabIndex = 34;
             this.label10.Text = "Sual:";
             // 
             // comboBox4
             // 
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(15, 39);
             this.comboBox4.Name = "comboBox4";
@@ -321,13 +328,13 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label11.Location = new System.Drawing.Point(12, 18);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(79, 18);
+            this.label11.Size = new System.Drawing.Size(61, 18);
             this.label11.TabIndex = 31;
-            this.label11.Text = "Categoriya:";
+            this.label11.Text = "Mövzu:";
             // 
             // button5
             // 
@@ -347,12 +354,14 @@
             this.groupBox7.Controls.Add(this.comboBox6);
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Controls.Add(this.button7);
+            this.groupBox7.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(807, 350);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(256, 278);
             this.groupBox7.TabIndex = 51;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Sual 9";
+            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
             // 
             // panel6
             // 
@@ -364,18 +373,18 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label14.Location = new System.Drawing.Point(12, 74);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(37, 18);
+            this.label14.Size = new System.Drawing.Size(42, 18);
             this.label14.TabIndex = 34;
             this.label14.Text = "Sual:";
             // 
             // comboBox6
             // 
             this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(15, 39);
             this.comboBox6.Name = "comboBox6";
@@ -385,13 +394,13 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label15.Location = new System.Drawing.Point(12, 18);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(79, 18);
+            this.label15.Size = new System.Drawing.Size(61, 18);
             this.label15.TabIndex = 31;
-            this.label15.Text = "Categoriya:";
+            this.label15.Text = "Mövzu:";
             // 
             // button7
             // 
@@ -411,12 +420,14 @@
             this.groupBox8.Controls.Add(this.comboBox7);
             this.groupBox8.Controls.Add(this.label17);
             this.groupBox8.Controls.Add(this.button8);
+            this.groupBox8.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(545, 350);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(256, 278);
             this.groupBox8.TabIndex = 52;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Sual 8";
+            this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
             // 
             // panel7
             // 
@@ -428,18 +439,18 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label16.Location = new System.Drawing.Point(12, 74);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(37, 18);
+            this.label16.Size = new System.Drawing.Size(42, 18);
             this.label16.TabIndex = 34;
             this.label16.Text = "Sual:";
             // 
             // comboBox7
             // 
             this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(15, 39);
             this.comboBox7.Name = "comboBox7";
@@ -449,13 +460,13 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label17.Location = new System.Drawing.Point(12, 18);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(79, 18);
+            this.label17.Size = new System.Drawing.Size(61, 18);
             this.label17.TabIndex = 31;
-            this.label17.Text = "Categoriya:";
+            this.label17.Text = "Mövzu:";
             // 
             // button8
             // 
@@ -475,12 +486,14 @@
             this.groupBox4.Controls.Add(this.comboBox3);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(807, 66);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(256, 278);
             this.groupBox4.TabIndex = 48;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Sual 4";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // panel3
             // 
@@ -492,18 +505,18 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(12, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 18);
+            this.label6.Size = new System.Drawing.Size(42, 18);
             this.label6.TabIndex = 34;
             this.label6.Text = "Sual:";
             // 
             // comboBox3
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(15, 39);
             this.comboBox3.Name = "comboBox3";
@@ -513,13 +526,13 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label8.Location = new System.Drawing.Point(12, 18);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 18);
+            this.label8.Size = new System.Drawing.Size(61, 18);
             this.label8.TabIndex = 31;
-            this.label8.Text = "Categoriya:";
+            this.label8.Text = "Mövzu:";
             // 
             // button4
             // 
@@ -539,12 +552,14 @@
             this.groupBox9.Controls.Add(this.comboBox8);
             this.groupBox9.Controls.Add(this.label19);
             this.groupBox9.Controls.Add(this.button9);
+            this.groupBox9.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.Location = new System.Drawing.Point(284, 350);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(256, 278);
             this.groupBox9.TabIndex = 53;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Sual 7";
+            this.groupBox9.Enter += new System.EventHandler(this.groupBox9_Enter);
             // 
             // panel8
             // 
@@ -556,18 +571,18 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label18.Location = new System.Drawing.Point(12, 74);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(37, 18);
+            this.label18.Size = new System.Drawing.Size(42, 18);
             this.label18.TabIndex = 34;
             this.label18.Text = "Sual:";
             // 
             // comboBox8
             // 
             this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(15, 39);
             this.comboBox8.Name = "comboBox8";
@@ -577,13 +592,13 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label19.Location = new System.Drawing.Point(12, 18);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(79, 18);
+            this.label19.Size = new System.Drawing.Size(61, 18);
             this.label19.TabIndex = 31;
-            this.label19.Text = "Categoriya:";
+            this.label19.Text = "Mövzu:";
             // 
             // button9
             // 
@@ -603,12 +618,14 @@
             this.groupBox3.Controls.Add(this.comboBox2);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(545, 66);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(256, 278);
             this.groupBox3.TabIndex = 48;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sual 3";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // panel2
             // 
@@ -620,18 +637,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(12, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 18);
+            this.label4.Size = new System.Drawing.Size(42, 18);
             this.label4.TabIndex = 34;
             this.label4.Text = "Sual:";
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(15, 39);
             this.comboBox2.Name = "comboBox2";
@@ -641,13 +658,13 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(12, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 18);
+            this.label5.Size = new System.Drawing.Size(61, 18);
             this.label5.TabIndex = 31;
-            this.label5.Text = "Categoriya:";
+            this.label5.Text = "Mövzu:";
             // 
             // button3
             // 
@@ -667,12 +684,14 @@
             this.groupBox10.Controls.Add(this.comboBox9);
             this.groupBox10.Controls.Add(this.label21);
             this.groupBox10.Controls.Add(this.button10);
+            this.groupBox10.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(21, 350);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(256, 278);
             this.groupBox10.TabIndex = 49;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Sual 6";
+            this.groupBox10.Enter += new System.EventHandler(this.groupBox10_Enter);
             // 
             // panel9
             // 
@@ -684,18 +703,18 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label20.Location = new System.Drawing.Point(12, 74);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(37, 18);
+            this.label20.Size = new System.Drawing.Size(42, 18);
             this.label20.TabIndex = 34;
             this.label20.Text = "Sual:";
             // 
             // comboBox9
             // 
             this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox9.FormattingEnabled = true;
             this.comboBox9.Location = new System.Drawing.Point(15, 39);
             this.comboBox9.Name = "comboBox9";
@@ -705,13 +724,13 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label21.Location = new System.Drawing.Point(12, 18);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(79, 18);
+            this.label21.Size = new System.Drawing.Size(61, 18);
             this.label21.TabIndex = 31;
-            this.label21.Text = "Categoriya:";
+            this.label21.Text = "Mövzu:";
             // 
             // button10
             // 
@@ -731,12 +750,14 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(283, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(256, 278);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sual 2";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // panel1
             // 
@@ -748,18 +769,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(12, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 18);
+            this.label1.Size = new System.Drawing.Size(42, 18);
             this.label1.TabIndex = 34;
             this.label1.Text = "Sual:";
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(15, 39);
             this.comboBox1.Name = "comboBox1";
@@ -769,13 +790,13 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(12, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 18);
+            this.label3.Size = new System.Drawing.Size(61, 18);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Categoriya:";
+            this.label3.Text = "Mövzu:";
             // 
             // button2
             // 
@@ -795,12 +816,14 @@
             this.groupBox2.Controls.Add(this.cmbCategory01);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(21, 66);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(256, 278);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sual 1";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // pnlQuations01
             // 
@@ -812,18 +835,18 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(12, 74);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 18);
+            this.label7.Size = new System.Drawing.Size(42, 18);
             this.label7.TabIndex = 34;
             this.label7.Text = "Sual:";
             // 
             // cmbCategory01
             // 
             this.cmbCategory01.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategory01.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory01.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory01.FormattingEnabled = true;
             this.cmbCategory01.Location = new System.Drawing.Point(15, 39);
             this.cmbCategory01.Name = "cmbCategory01";
@@ -833,13 +856,13 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label9.Location = new System.Drawing.Point(12, 18);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 18);
+            this.label9.Size = new System.Drawing.Size(61, 18);
             this.label9.TabIndex = 31;
-            this.label9.Text = "Categoriya:";
+            this.label9.Text = "Mövzu:";
             // 
             // button1
             // 
@@ -864,7 +887,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnSave.Location = new System.Drawing.Point(1224, 634);
             this.btnSave.Name = "btnSave";
@@ -877,18 +900,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(24, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 18);
+            this.label2.Size = new System.Drawing.Size(69, 16);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Bilət adi:";
+            this.label2.Text = "Bilet adi:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtTicketName
             // 
-            this.txtTicketName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTicketName.Location = new System.Drawing.Point(90, 16);
+            this.txtTicketName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTicketName.Location = new System.Drawing.Point(100, 18);
             this.txtTicketName.Multiline = true;
             this.txtTicketName.Name = "txtTicketName";
             this.txtTicketName.Size = new System.Drawing.Size(200, 30);
@@ -900,6 +924,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 689);
             this.Controls.Add(this.grpMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddTicket";
             this.Text = "Bilet əlavə";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -944,21 +969,15 @@
         private System.Windows.Forms.Panel pnlQuations01;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
@@ -968,33 +987,23 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label lblQuations;
         private System.Windows.Forms.Label label23;
@@ -1003,5 +1012,21 @@
         private System.Windows.Forms.Button button11;
         public System.Windows.Forms.TextBox txtTicketName;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
     }
 }

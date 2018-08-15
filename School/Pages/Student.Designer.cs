@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student));
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
@@ -37,13 +43,10 @@
             this.rdEmail = new System.Windows.Forms.RadioButton();
             this.rdUsername = new System.Windows.Forms.RadioButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvData
@@ -57,100 +60,10 @@
             this.Column4,
             this.Column3,
             this.Column5});
-            this.dgvData.Location = new System.Drawing.Point(12, 102);
+            this.dgvData.Location = new System.Drawing.Point(10, 19);
             this.dgvData.Name = "dgvData";
-            this.dgvData.Size = new System.Drawing.Size(1160, 536);
+            this.dgvData.Size = new System.Drawing.Size(1330, 524);
             this.dgvData.TabIndex = 0;
-            // 
-            // lblCount
-            // 
-            this.lblCount.AutoSize = true;
-            this.lblCount.BackColor = System.Drawing.SystemColors.Control;
-            this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount.ForeColor = System.Drawing.Color.CadetBlue;
-            this.lblCount.Location = new System.Drawing.Point(140, 43);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(0, 22);
-            this.lblCount.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.CadetBlue;
-            this.label3.Location = new System.Drawing.Point(8, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 20);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Activasiya sayı:";
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(9, 83);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(41, 16);
-            this.lblError.TabIndex = 11;
-            this.lblError.Text = "sadas";
-            // 
-            // btnAll
-            // 
-            this.btnAll.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnAll.Location = new System.Drawing.Point(993, 66);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(179, 30);
-            this.btnAll.TabIndex = 14;
-            this.btnAll.Text = "Activasiyalı Tələbələr";
-            this.btnAll.UseVisualStyleBackColor = true;
-            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rdEmail);
-            this.groupBox1.Controls.Add(this.rdUsername);
-            this.groupBox1.Controls.Add(this.txtSearch);
-            this.groupBox1.Location = new System.Drawing.Point(717, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(270, 84);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Axtar";
-            // 
-            // rdEmail
-            // 
-            this.rdEmail.AutoSize = true;
-            this.rdEmail.Location = new System.Drawing.Point(94, 25);
-            this.rdEmail.Name = "rdEmail";
-            this.rdEmail.Size = new System.Drawing.Size(49, 17);
-            this.rdEmail.TabIndex = 4;
-            this.rdEmail.Text = "email";
-            this.rdEmail.UseVisualStyleBackColor = true;
-            // 
-            // rdUsername
-            // 
-            this.rdUsername.AutoSize = true;
-            this.rdUsername.Checked = true;
-            this.rdUsername.Location = new System.Drawing.Point(7, 25);
-            this.rdUsername.Name = "rdUsername";
-            this.rdUsername.Size = new System.Drawing.Size(83, 17);
-            this.rdUsername.TabIndex = 3;
-            this.rdUsername.TabStop = true;
-            this.rdUsername.Text = "istifadəçi adi";
-            this.rdUsername.UseVisualStyleBackColor = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(6, 48);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(258, 30);
-            this.txtSearch.TabIndex = 2;
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchUser);
             // 
             // Column1
             // 
@@ -177,24 +90,128 @@
             this.Column5.HeaderText = "Activasiya Vəziyyəti";
             this.Column5.Name = "Column5";
             // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount.ForeColor = System.Drawing.Color.CadetBlue;
+            this.lblCount.Location = new System.Drawing.Point(139, 43);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(0, 22);
+            this.lblCount.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.Font = new System.Drawing.Font("MilitaryID", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.CadetBlue;
+            this.label3.Location = new System.Drawing.Point(9, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 19);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Activasiya sayı:";
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("MilitaryID", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(9, 77);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 19);
+            this.lblError.TabIndex = 11;
+            // 
+            // btnAll
+            // 
+            this.btnAll.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnAll.Location = new System.Drawing.Point(1132, 60);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(215, 30);
+            this.btnAll.TabIndex = 14;
+            this.btnAll.Text = "Activasiyalı Tələbələr";
+            this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdEmail);
+            this.groupBox1.Controls.Add(this.rdUsername);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Font = new System.Drawing.Font("MilitaryID", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(798, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(315, 84);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Axtar";
+            // 
+            // rdEmail
+            // 
+            this.rdEmail.AutoSize = true;
+            this.rdEmail.Location = new System.Drawing.Point(110, 25);
+            this.rdEmail.Name = "rdEmail";
+            this.rdEmail.Size = new System.Drawing.Size(55, 18);
+            this.rdEmail.TabIndex = 4;
+            this.rdEmail.Text = "email";
+            this.rdEmail.UseVisualStyleBackColor = true;
+            // 
+            // rdUsername
+            // 
+            this.rdUsername.AutoSize = true;
+            this.rdUsername.Checked = true;
+            this.rdUsername.Location = new System.Drawing.Point(8, 25);
+            this.rdUsername.Name = "rdUsername";
+            this.rdUsername.Size = new System.Drawing.Size(93, 18);
+            this.rdUsername.TabIndex = 3;
+            this.rdUsername.TabStop = true;
+            this.rdUsername.Text = "istifadəçi adi";
+            this.rdUsername.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(7, 48);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(300, 30);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchUser);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvData);
+            this.groupBox2.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(13, 102);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1346, 553);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Activasiyalar";
+            // 
             // Student
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 622);
+            this.ClientSize = new System.Drawing.Size(1370, 657);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dgvData);
-            this.MaximumSize = new System.Drawing.Size(1200, 700);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Student";
             this.Text = "Activasiyalar";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +233,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

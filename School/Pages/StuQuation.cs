@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace School.Pages
@@ -115,7 +116,6 @@ namespace School.Pages
                     this.pctQuation.Image = Image.FromStream(s);
                 }
                 this.txtQuationNum.Text = (this.Index + 1).ToString();
-                this.lblQuationNum.Text = (this.Index + 1).ToString();
             }
             else
             {
@@ -124,7 +124,6 @@ namespace School.Pages
                     this.pctQuation.Image = Image.FromStream(s);
                 }
                 this.txtQuationNum.Text = "";
-                this.lblQuationNum.Text = "0";
             }
             this.cleaner(); 
         }
@@ -149,8 +148,8 @@ namespace School.Pages
                 if (this.SelectedQuations[Index].Answer == answer)
                 {
                     btn.BackColor = Color.LawnGreen;
-                    this.lblResponse.ForeColor = Color.LawnGreen;
-                    this.lblResponse.Text = "Doğru cavab təbrik edirik";
+                    this.lblResponse.ForeColor = Color.Green;
+                    this.lblResponse.Text = "Cavab Doğrudur";
                     this.lblCorretCount.Text = (++this.CorrectCount).ToString();
 
 
@@ -165,15 +164,14 @@ namespace School.Pages
                 {
                     btn.BackColor = Color.Red;
                     this.lblResponse.ForeColor = Color.Red;
-                    this.lblResponse.Text = "Yanlış cavab !!!";
+                    this.lblResponse.Text = "Cavab Səhvdir";
 
 
                     Quation quat = this.SelectedQuations[Index];
                     string value = quat.Id.ToString();
                     List<Quation> _quations = this.Quations.Where(q => q.Category_id == quat.Category_id).ToList();
                     int number = (_quations.IndexOf(quat) + 1);
-                    string text = "num - " + number;
-                    ComboboxItem item = new ComboboxItem { Text = text, Value = value };
+                    ComboboxItem item = new ComboboxItem { Text = number.ToString(), Value = value };
                     if (!this.IncorrectQuations.Any(q => (string)q.Value == value))
                     {
                         this.IncorrectQuations.Add(item);
@@ -205,14 +203,14 @@ namespace School.Pages
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string val = this.txtQuationNum.Text;
+                string val = Regex.Replace(this.txtQuationNum.Text, @"\t|\n|\r", "");
                 int num;
                 if (int.TryParse(val, out num))
                 {
                     this.Index = num > 0 && num <= this.SelectedQuations.Count ? (num - 1) : this.Index;
                     this.setQuation();
                 }
-                this.txtQuationNum.Text = "";
+                this.txtQuationNum.Text = val.Trim();
             }
         }
      
@@ -239,6 +237,7 @@ namespace School.Pages
 
         private void cmbIncorrectQuations_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (this.cmbIncorrectQuations.SelectedItem.ToString() == "") return;
             int id = Convert.ToInt32((this.cmbIncorrectQuations.SelectedItem as ComboboxItem).Value);
             this.SelectedQuations = this.Quations.Where(q => q.Id == id).ToList();
             this.Index = 0;
@@ -247,7 +246,6 @@ namespace School.Pages
             this.rchCategory.Text = "";
             this.txtQuationNum.Text = "";
             this.lblQuationCount.Text = "0";
-            this.lblQuationNum.Text = "0";
         }
 
         private void formResize(object sender, EventArgs e)
@@ -286,9 +284,6 @@ namespace School.Pages
         {
             this.Index = this.Index < (this.SelectedQuations.Count - 1) ? this.Index + 1 : this.Index;
             this.setQuation();
-        }
-         
-
-
+        } 
     }
 }

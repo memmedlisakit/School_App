@@ -64,7 +64,7 @@ namespace School.Pages
             }
             catch (Exception)
             {
-                this.lblError.Text = "Servere qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
+                this.lblError.Text = "Serverə qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
             }
         }
 

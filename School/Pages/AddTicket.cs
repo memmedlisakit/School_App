@@ -154,7 +154,7 @@ namespace School.Pages
             int count = 0;
             if (this.txtTicketName.Text == "")
             {
-                this.lblTicketName.Text = "Bilet adını yazın !!!";
+                this.lblTicketName.Text = "Bilet adını yazın ";
                 return;
             }
 
@@ -172,7 +172,7 @@ namespace School.Pages
 
             if (count != 10)
             {
-                this.lblQuations.Text = "10 sual seçin !!!";
+                this.lblQuations.Text = "10 sual seçin ";
                 return;
             }
 
@@ -186,7 +186,7 @@ namespace School.Pages
                 {
                     if (dr[1].ToString() == this.txtTicketName.Text)
                     {
-                        this.lblTicketName.Text = "Bilet əlavə edildi !!!";
+                        this.lblTicketName.Text = "Bilet əlavə edildi ";
                         return;
                     }
                 }
@@ -409,7 +409,64 @@ namespace School.Pages
             Tickets.ThisForm.Show();
         }
 
+        private void grpMain_Enter(object sender, EventArgs e)
+        {
 
-       
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox8_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox10_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox9_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

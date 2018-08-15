@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddQuation));
             this.btnAllImages = new System.Windows.Forms.Button();
             this.lblAllImages = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,7 +62,7 @@
             // btnAllImages
             // 
             this.btnAllImages.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnAllImages.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllImages.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAllImages.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnAllImages.Location = new System.Drawing.Point(39, 149);
             this.btnAllImages.Name = "btnAllImages";
@@ -74,21 +75,21 @@
             // lblAllImages
             // 
             this.lblAllImages.AutoSize = true;
-            this.lblAllImages.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllImages.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAllImages.ForeColor = System.Drawing.Color.Red;
-            this.lblAllImages.Location = new System.Drawing.Point(36, 182);
+            this.lblAllImages.Location = new System.Drawing.Point(42, 185);
             this.lblAllImages.Name = "lblAllImages";
-            this.lblAllImages.Size = new System.Drawing.Size(0, 14);
+            this.lblAllImages.Size = new System.Drawing.Size(0, 16);
             this.lblAllImages.TabIndex = 37;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(36, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 18);
+            this.label3.Size = new System.Drawing.Size(67, 18);
             this.label3.TabIndex = 36;
             this.label3.Text = "Şəkillər:";
             // 
@@ -106,41 +107,42 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.btnAllImages);
             this.groupBox2.Controls.Add(this.lblAllImages);
+            this.groupBox2.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(49, 48);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(358, 455);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Çoxlu sual elave et";
+            this.groupBox2.Text = "Çoxlu sual əlavə et";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(125, 127);
+            this.label1.Location = new System.Drawing.Point(108, 127);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 14);
+            this.label1.Size = new System.Drawing.Size(103, 14);
             this.label1.TabIndex = 46;
             this.label1.Text = ".jpg, .jpeg, .png";
             // 
             // lblMulti
             // 
             this.lblMulti.AutoSize = true;
-            this.lblMulti.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMulti.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMulti.ForeColor = System.Drawing.Color.Red;
             this.lblMulti.Location = new System.Drawing.Point(21, 331);
             this.lblMulti.Name = "lblMulti";
-            this.lblMulti.Size = new System.Drawing.Size(0, 14);
+            this.lblMulti.Size = new System.Drawing.Size(0, 16);
             this.lblMulti.TabIndex = 45;
             // 
             // btnAllSave
             // 
-            this.btnAllSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAllSave.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnAllSave.Location = new System.Drawing.Point(203, 404);
+            this.btnAllSave.Location = new System.Drawing.Point(179, 404);
             this.btnAllSave.Name = "btnAllSave";
-            this.btnAllSave.Size = new System.Drawing.Size(106, 30);
+            this.btnAllSave.Size = new System.Drawing.Size(130, 30);
             this.btnAllSave.TabIndex = 42;
             this.btnAllSave.Text = "Yadda saxla";
             this.btnAllSave.UseVisualStyleBackColor = true;
@@ -149,7 +151,7 @@
             // cmbAllCategory
             // 
             this.cmbAllCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAllCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAllCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAllCategory.FormattingEnabled = true;
             this.cmbAllCategory.Location = new System.Drawing.Point(39, 53);
             this.cmbAllCategory.Name = "cmbAllCategory";
@@ -159,7 +161,7 @@
             // btnAllAnswers
             // 
             this.btnAllAnswers.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnAllAnswers.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAllAnswers.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAllAnswers.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnAllAnswers.Location = new System.Drawing.Point(39, 254);
             this.btnAllAnswers.Name = "btnAllAnswers";
@@ -172,42 +174,42 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label2.Location = new System.Drawing.Point(36, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 18);
+            this.label2.Size = new System.Drawing.Size(61, 18);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Categoriya:";
+            this.label2.Text = "Mövzu:";
             // 
             // lblAllAnswers
             // 
             this.lblAllAnswers.AutoSize = true;
-            this.lblAllAnswers.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllAnswers.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAllAnswers.ForeColor = System.Drawing.Color.Red;
-            this.lblAllAnswers.Location = new System.Drawing.Point(36, 287);
+            this.lblAllAnswers.Location = new System.Drawing.Point(43, 290);
             this.lblAllAnswers.Name = "lblAllAnswers";
-            this.lblAllAnswers.Size = new System.Drawing.Size(0, 14);
+            this.lblAllAnswers.Size = new System.Drawing.Size(0, 16);
             this.lblAllAnswers.TabIndex = 40;
             // 
             // lblAllCategory
             // 
             this.lblAllCategory.AutoSize = true;
-            this.lblAllCategory.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAllCategory.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAllCategory.ForeColor = System.Drawing.Color.Red;
-            this.lblAllCategory.Location = new System.Drawing.Point(36, 86);
+            this.lblAllCategory.Location = new System.Drawing.Point(41, 91);
             this.lblAllCategory.Name = "lblAllCategory";
-            this.lblAllCategory.Size = new System.Drawing.Size(0, 14);
+            this.lblAllCategory.Size = new System.Drawing.Size(0, 16);
             this.lblAllCategory.TabIndex = 29;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label7.Location = new System.Drawing.Point(36, 230);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 18);
+            this.label7.Size = new System.Drawing.Size(74, 18);
             this.label7.TabIndex = 39;
             this.label7.Text = "Cavablar:";
             // 
@@ -224,12 +226,13 @@
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.btnImage);
             this.groupBox3.Controls.Add(this.lblImage);
+            this.groupBox3.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(530, 48);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(358, 455);
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Bir sual elave et";
+            this.groupBox3.Text = "Bir sual əlavə et";
             // 
             // pckSingle
             // 
@@ -251,11 +254,11 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnSave.Location = new System.Drawing.Point(220, 404);
+            this.btnSave.Location = new System.Drawing.Point(193, 411);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(102, 30);
+            this.btnSave.Size = new System.Drawing.Size(129, 30);
             this.btnSave.TabIndex = 42;
             this.btnSave.Text = "Yadda saxla";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -264,7 +267,7 @@
             // cmbCategory
             // 
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(39, 53);
             this.cmbCategory.Name = "cmbCategory";
@@ -274,30 +277,30 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(36, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 18);
+            this.label6.Size = new System.Drawing.Size(61, 18);
             this.label6.TabIndex = 28;
-            this.label6.Text = "Categoriya:";
+            this.label6.Text = "Mövzu:";
             // 
             // lblAnswer
             // 
             this.lblAnswer.AutoSize = true;
-            this.lblAnswer.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer.ForeColor = System.Drawing.Color.Red;
-            this.lblAnswer.Location = new System.Drawing.Point(36, 180);
+            this.lblAnswer.Location = new System.Drawing.Point(46, 187);
             this.lblAnswer.Name = "lblAnswer";
-            this.lblAnswer.Size = new System.Drawing.Size(0, 14);
+            this.lblAnswer.Size = new System.Drawing.Size(0, 16);
             this.lblAnswer.TabIndex = 40;
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.Color.Red;
-            this.lblCategory.Location = new System.Drawing.Point(36, 86);
+            this.lblCategory.Location = new System.Drawing.Point(46, 91);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(0, 16);
             this.lblCategory.TabIndex = 29;
@@ -305,29 +308,29 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label10.Location = new System.Drawing.Point(36, 125);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 18);
+            this.label10.Size = new System.Drawing.Size(55, 18);
             this.label10.TabIndex = 39;
             this.label10.Text = "Cavab:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label11.Location = new System.Drawing.Point(36, 230);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 18);
+            this.label11.Size = new System.Drawing.Size(47, 18);
             this.label11.TabIndex = 36;
             this.label11.Text = "Şəkil:";
             // 
             // btnImage
             // 
             this.btnImage.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnImage.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImage.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImage.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.btnImage.Location = new System.Drawing.Point(39, 254);
             this.btnImage.Name = "btnImage";
@@ -340,11 +343,11 @@
             // lblImage
             // 
             this.lblImage.AutoSize = true;
-            this.lblImage.Font = new System.Drawing.Font("Microsoft Yi Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImage.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImage.ForeColor = System.Drawing.Color.Red;
-            this.lblImage.Location = new System.Drawing.Point(36, 287);
+            this.lblImage.Location = new System.Drawing.Point(46, 292);
             this.lblImage.Name = "lblImage";
-            this.lblImage.Size = new System.Drawing.Size(0, 14);
+            this.lblImage.Size = new System.Drawing.Size(0, 16);
             this.lblImage.TabIndex = 37;
             // 
             // AddQuation
@@ -354,6 +357,7 @@
             this.ClientSize = new System.Drawing.Size(940, 553);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddQuation";
             this.Text = "Suallar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Closing);

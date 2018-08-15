@@ -155,7 +155,7 @@ namespace School.Pages
                 }
                 else
                 {
-                    this.lblNumberOfQuation.Text = "Rəqəm olmalıdır !!!";
+                    this.lblNumberOfQuation.Text = "Rəqəm olmalıdır ";
                 }
             }
             else
@@ -191,7 +191,8 @@ namespace School.Pages
 
         private void delete(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Also 'Delete' all Tickets with releted this category", "Delete Quation", MessageBoxButtons.YesNo))
+                                                     
+            if (DialogResult.Yes == MessageBox.Show("Həmçinin bu sual ile əlaqəli bütün Biletlər silinəcək", "Sualı sil", MessageBoxButtons.YesNo))
             {
                 this.selectedNumber = null;
                 this.pnlAllQuations.Controls.Clear();

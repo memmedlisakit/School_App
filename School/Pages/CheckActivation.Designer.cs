@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckActivation));
             this.label2 = new System.Windows.Forms.Label();
             this.txtActivation = new System.Windows.Forms.TextBox();
             this.btnCheck = new System.Windows.Forms.Button();
@@ -37,18 +38,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("MilitaryID", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Location = new System.Drawing.Point(123, 91);
+            this.label2.Location = new System.Drawing.Point(221, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 18);
+            this.label2.Size = new System.Drawing.Size(121, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Activasiya kodu:";
             // 
             // txtActivation
             // 
-            this.txtActivation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActivation.Location = new System.Drawing.Point(126, 112);
+            this.txtActivation.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActivation.Location = new System.Drawing.Point(224, 100);
+            this.txtActivation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtActivation.Multiline = true;
             this.txtActivation.Name = "txtActivation";
             this.txtActivation.Size = new System.Drawing.Size(200, 30);
@@ -57,9 +59,10 @@
             // btnCheck
             // 
             this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheck.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheck.Font = new System.Drawing.Font("Microsoft JhengHei Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheck.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnCheck.Location = new System.Drawing.Point(126, 178);
+            this.btnCheck.Location = new System.Drawing.Point(224, 165);
+            this.btnCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(200, 30);
             this.btnCheck.TabIndex = 7;
@@ -70,22 +73,24 @@
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Font = new System.Drawing.Font("MilitaryID", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(123, 224);
+            this.lblError.Location = new System.Drawing.Point(46, 252);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 16);
+            this.lblError.Size = new System.Drawing.Size(0, 19);
             this.lblError.TabIndex = 9;
             // 
             // CheckActivation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 316);
+            this.ClientSize = new System.Drawing.Size(655, 316);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtActivation);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CheckActivation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yoxlama";

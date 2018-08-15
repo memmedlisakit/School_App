@@ -21,7 +21,7 @@ namespace School.Pages
         {
             if (this.txtCategory.Text == "")
             {
-                this.lblCatError.Text = "Boşluq olmaz !!!";
+                this.lblCatError.Text = "Boşluq olmaz ";
             }
             else
             {
@@ -133,7 +133,7 @@ namespace School.Pages
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(DialogResult.Yes == MessageBox.Show("Həmçinin bu categoriya ile əlaqəli  butun Suallar və Biletlər silinəcək", "Categoriyanı sil", MessageBoxButtons.YesNo))
+            if(DialogResult.Yes == MessageBox.Show("Həmçinin bu mövzu ile əlaqəli  butun Suallar və Biletlər silinəcək", "Mövzunu sil", MessageBoxButtons.YesNo))
             {
                 string sql = "DELETE FROM Categories WHERE id = " + this.id;
                 SQLiteCommand com = new SQLiteCommand(sql, con);

@@ -9,13 +9,10 @@ using School.Settings;
 namespace School.Pages
 {
     public partial class Register : Form
-    { 
-        OpenFileDialog file = new OpenFileDialog();
-
+    {  
         public Register()
         {
             InitializeComponent();
-           // this.pctImage.Image = School.Properties.Resources._default;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -24,19 +21,11 @@ namespace School.Pages
             { 
                 string name = this.txtName.Text;
                 string surname = this.txtSurname.Text;
-                string username = this.txtUsername.Text;
                 string email = this.txtEmail.Text;
-                string password = this.txtPassword.Text;
                 int gender = this.ckbMale.Checked ? 1 : 0;
-                string imageName = null;
+                 
 
-                if (file.SafeFileName != "")
-                {
-                    imageName = DateTime.Now.ToString("yyyyMMddHHssmm") + file.SafeFileName;
-                    Extentions.ImageUpload(file, imageName, "Uploads");
-                }
-
-                string sql = "INSERT INTO Students(name, surname, username, email, password, gender, image) VALUES('" + name + "', '" + surname + "', '" + username + "', '" + email + "', '" + password + "', " + gender + ", '" + imageName + "')";
+                string sql = "INSERT INTO Students(name, surname, username, email, password, gender, image) VALUES('" + name + "', '" + surname + "', '', '" + email + "', '', " + gender + ", '')";
                 using(SQLiteConnection con = new SQLiteConnection(Login.connection))
                 {
                     con.Open();
@@ -47,7 +36,7 @@ namespace School.Pages
                 }
                 btnRegister.Enabled = false;
                 cleaner();
-                this.lblSuccess.Text = "Registrasiya uğurla başa çatdı";
+                this.Close();
             } 
         }
 
@@ -55,37 +44,19 @@ namespace School.Pages
         {
             if (this.txtName.Text == "")
             {
-                this.lblName.Text = "Ad boş olmaz !!!";
+                this.lblName.Text = "Ad boş olmaz ";
                 this.ActiveControl = this.txtName;
                 return false;
             }
             if (this.txtSurname.Text == "")
             {
-                this.lblSurname.Text = "Soyad boş olmaz !!!";
+                this.lblSurname.Text = "Soyad boş olmaz ";
                 this.ActiveControl = this.txtSurname;
                 return false;
-            }
-            if(this.txtUsername.Text == "")
-            {
-                this.lblUsername.Text = "İstifadəçi adı boş olmaz !!!";
-                this.ActiveControl = this.txtUsername;
-                return false;
-            }
-            if (this.txtEmail.Text == "")
-            {
-                this.lblEmail.Text = "Email boş olmaz !!!";
-                this.ActiveControl = this.txtEmail;
-                return false;
-            }
-            if (this.txtPassword.Text == "")
-            {
-                this.lblPassword.Text = "Şifrə boş olmaz !!!";
-                this.ActiveControl = this.txtPassword;
-                return false;
-            }
+            } 
             if (!(this.ckbMale.Checked || this.ckbFemale.Checked))
             {
-                this.lblGender.Text = "Cins boş olmaz !!!";
+                this.lblGender.Text = "Cins boş olmaz ";
                 return false;
             }
             return true;
@@ -95,27 +66,13 @@ namespace School.Pages
         {
             this.txtName.Text = "";
             this.txtSurname.Text = "";
-            this.txtUsername.Text = "";
             this.txtEmail.Text = "";
-            this.txtPassword.Text = "";
             this.ckbMale.Checked  = false;
             this.ckbFemale.Checked = false;
             this.lblName.Text = "";
             this.lblSurname.Text = "";
-            this.lblUsername.Text = "";
-            this.lblEmail.Text = "";
-            this.lblPassword.Text = "";
             this.lblGender.Text = "";
-        }
-
-        private void linkUpload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            file.ShowDialog();
-            //if (file.FileName != "")
-            //{
-            //    this.pctImage.Image = Image.FromFile(file.FileName); 
-            //}
-        }
+        } 
 
         private void Closing(object sender, FormClosingEventArgs e)
         {

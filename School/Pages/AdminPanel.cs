@@ -76,7 +76,7 @@ namespace School.Pages
         {
             if (txtUsername.Text.Trim() == "" || txtPassword.Text.Trim() == "" || txtEmail.Text.Trim() == "")
             {
-                this.lblError.Text = "Boşluq olmaz !!!";
+                this.lblError.Text = "Boşluq olmaz ";
                 return;
             }
             using(SQLiteConnection con =new SQLiteConnection(Login.connection))
@@ -94,24 +94,13 @@ namespace School.Pages
             DeleteTabele("Students");
             DeleteTabele("Activations");
             this.Close();
-            Login.RemeberMe.Checked = false;
             Login.AsAdmin.Checked = false;
             Login.UsernameTxt.Text = "";
-            Login.PasswordTxt.Text = "";
-            updateRemeber();
+            Login.PasswordTxt.Text = ""; 
             Login.hideSignUp();
         }
 
-        void updateRemeber()
-        {
-            using (SQLiteConnection con = new SQLiteConnection(Login.connection))
-            {
-                string sql = "UPDATE Remember_Me SET username = '', password = '', status = 0";
-                SQLiteCommand com = new SQLiteCommand(sql, con);
-                con.Open();
-                com.ExecuteNonQuery();
-            }
-        }
+       
 
         void DeleteTabele(string table)
         {

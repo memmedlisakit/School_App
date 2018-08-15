@@ -48,17 +48,17 @@ namespace School.Pages
         private bool checkingFiled()
         {
             if (this.cmbCategory.Text == "") {
-                this.lblCategory.Text = "Categoriya seçin !!!";
+                this.lblCategory.Text = "Mövzu seçin ";
                 return false;
             }
             if (this.txtAnswer.Text == "")
             {
-                this.lblAnswer.Text = "Cavab Yazin !!!";
+                this.lblAnswer.Text = "Cavab Yazın ";
                 return false;
             } 
             if (ofd.SafeFileName == "")
             {
-                this.lblImage.Text = "Bir şəkil seçin !!!";
+                this.lblImage.Text = "Şəkil seçin ";
                 return false;
             }
             return true;
@@ -180,7 +180,7 @@ namespace School.Pages
                 }
                 else
                 {
-                    this.lblAllAnswers.Text = "Fayl tipi .txt olmalidir !!!";
+                    this.lblAllAnswers.Text = "Fayl tipi .txt olmalidir ";
                 }
             }
 
@@ -200,27 +200,27 @@ namespace School.Pages
         {
             if(this.cmbAllCategory.Text == "")
             {
-                this.lblAllCategory.Text = "Categoriya seçin !!!";
+                this.lblAllCategory.Text = "Mövzu seçin ";
                 return false;
             }
             if (this.images.Count <= 0)
             {
-                this.lblAllImages.Text = "Şəkillər qovluqu seçin !!!";
+                this.lblAllImages.Text = "Şəkillər qovluqu seçin ";
                 return false;
             }
             if (this.answers.Count <= 0)
             {
-                this.lblAllAnswers.Text = "Cavablar faylı seçin !!!";
+                this.lblAllAnswers.Text = "Cavablar faylı seçin ";
                 return false;
             }
             if (this.answers.Count < this.images.Count)
             {
-                this.lblAllAnswers.Text = "Cavablar sayi Şəkillər sayi ile eyni olmalidir !!!";
+                this.lblAllAnswers.Text = "Cavablar sayi Şəkillər sayi ile eyni olmalıdır ";
                 return false;
             }
             if (this.images.Count < this.answers.Count)
             {
-                this.lblAllImages.Text = "Şəkillər sayi Cavablar sayi ile eyni olmalidir !!!";
+                this.lblAllImages.Text = "Şəkillər sayı Cavablar sayı ilə eyni olmalıdır ";
                 return false;
             }
             return true;

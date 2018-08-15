@@ -45,13 +45,14 @@ namespace School.Pages
             connection = "Data Source=" + Extentions.GetPath() + @"DB\StoreDb.db;Version=3;";
             LinkLabel = this.linkSignUp;
             hideSignUp();
-            RemeberMe = this.ckbRememberMe;
             AsAdmin = this.ckbAdmin;
-            UsernameTxt = this.txtUsername;
+            UsernameTxt = this.txtName;
             PasswordTxt = this.txtPassword;
 
-            this.Opacity = 0; 
-            new Loading().Show();
+            this.Opacity = 0;
+            Loading loading = new Loading();
+            loading.setImage();
+            loading.Show();
             Timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             Timer.Interval = 1000;
             Timer.Enabled = true; 
@@ -74,10 +75,10 @@ namespace School.Pages
             ThisForm = this;
             if (this.ckbAdmin.Checked)
             {
-                if (this.isNotEmpty(this.txtUsername.Text, this.txtPassword.Text))
+                if (this.isNotEmpty(this.txtName.Text, this.txtPassword.Text))
                 {
                     this.cleaner();
-                    if (this.hasAdmin(this.txtUsername.Text, this.txtPassword.Text))
+                    if (this.hasAdmin(this.txtName.Text, this.txtPassword.Text))
                     {
                         this.Hide(); 
                         this.lblError.Text = "";
@@ -86,32 +87,25 @@ namespace School.Pages
                 } 
             }
             else
-            {
-                if (this.isNotEmpty(this.txtUsername.Text, this.txtPassword.Text))
+            { 
+                if (hasStudent(txtName.Text, txtPassword.Text))
                 {
-                    this.cleaner();
-                    if (hasStudent(txtUsername.Text, txtPassword.Text))
-                    {
-                        this.lblError.Text = "";
-                        this.Hide();
-                        if (isActivated())
-                        {
-                            new Dashboard().Show();
-                        }
-                        else
-                        {
-                            new CheckActivation().Show();
-                        }
-                    }
+                   this.lblError.Text = "";
+                   this.Hide();
+                   if (isActivated())
+                   {
+                      new Dashboard().Show();
+                   }
+                   else
+                   {
+                     new CheckActivation().Show();
+                   }
                 }
-            }
-            if(this.ckbRememberMe.Checked && LoginedUser != null)
-            {
-                this.updateRemeber(1);
-            }
-            else if (!ckbRememberMe.Checked)
-            {
-                this.updateRemeber(0);
+                else
+                {
+                    this.lblError.Text = "Siz qeydiyyatdan keçməlisiniz";
+                }
+                
             }
         }
 
@@ -135,43 +129,13 @@ namespace School.Pages
             }
         }
 
-        void rememberMe()
-        {
-            using (SQLiteConnection con = new SQLiteConnection(connection))
-            {
-                string sql = "SELECT * FROM Remember_Me";
-                SQLiteCommand com = new SQLiteCommand(sql, con);
-                SQLiteDataAdapter da = new SQLiteDataAdapter(com);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                foreach (DataRow row in dt.Rows)
-                {
-                    int status = Convert.ToInt32(row["status"]);
-                    if (status == 1)
-                    {
-                        this.txtUsername.Text = row["username"].ToString();
-                        this.txtPassword.Text = row["password"].ToString();
-                        this.ckbRememberMe.Checked = true;
-                    }
-                }
-            }
-        }
+        
+        
 
-        void updateRemeber(int status)
-        {
-            using(SQLiteConnection con =new SQLiteConnection(connection))
-            {
-                string sql = "UPDATE Remember_Me SET username = '" + LoginedUser.Username + "', password = '" + LoginedUser.Password + "', status = " + status;
-                SQLiteCommand com = new SQLiteCommand(sql, con);
-                con.Open();
-                com.ExecuteNonQuery();
-            }
-        }
-
-        private bool hasAdmin(string username, string  password)
+        private bool hasAdmin(string name, string  password)
         {
             SQLiteConnection con = new SQLiteConnection(connection);
-            string sql = "SELECT * FROM Admin WHERE username = '" + username + "' AND password = '" + password + "'";
+            string sql = "SELECT * FROM Admin WHERE username = '" + name + "' AND password = '" + password + "'";
             SQLiteCommand com = new SQLiteCommand(sql, con);
             SQLiteDataAdapter da = new SQLiteDataAdapter();
             DataTable dt = new DataTable();
@@ -187,14 +151,14 @@ namespace School.Pages
             }
             else
             {
-                this.lblError.Text = "İstifadəçi adı və ya Şifrə yalnəşdır !";
+                this.lblError.Text = "İstifadəçi adı və ya Şifrə yalnışdır";
                 return false;
             }
         }
 
         private bool hasStudent(string username, string password)
         {
-            string query = "SELECT * FROM Students WHERE username = '" + username + "' AND password = '" + password + "'";
+            string query = "SELECT * FROM Students";
             SQLiteConnection Con = new SQLiteConnection(connection);
             SQLiteCommand Com = new SQLiteCommand(query, Con);
             SQLiteDataAdapter Da = new SQLiteDataAdapter();
@@ -218,11 +182,7 @@ namespace School.Pages
                 };
                 return true;
             }
-            else
-            {
-                this.lblError.Text = "İstifadəçi adı və ya Şifrə yalnəşdır !";
-                return false;
-            }
+            return false;
         }
 
         public static void hideSignUp()
@@ -258,14 +218,14 @@ namespace School.Pages
             if (username == "")
             {
                 this.lblError.Text = "";
-                this.lblUsername.Text = "İstifadəçi adı boş olmaz !";
-                this.ActiveControl = this.txtUsername;
+                this.lblUsername.Text = "İstifadəçi adı boş olmaz";
+                this.ActiveControl = this.txtName;
                 return false;
             }
             if(password == "")
             {
                 this.lblError.Text = "";
-                this.lblPassword.Text = "Şifrə boş olmaz !!!";
+                this.lblPassword.Text = "Şifrə boş olmaz ";
                 this.ActiveControl = this.txtPassword;
                 return false;
             }
@@ -279,9 +239,9 @@ namespace School.Pages
             new Register().Show();
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void ckbAdmin_CheckedChanged(object sender, EventArgs e)
         {
-           this.rememberMe();
-        }  
+            this.pnlLogin.Visible = this.ckbAdmin.Checked;
+        }
     } 
 }
