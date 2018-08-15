@@ -238,14 +238,14 @@ namespace School.Pages
         private void cmbIncorrectQuations_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.cmbIncorrectQuations.SelectedItem.ToString() == "") return;
-            int id = Convert.ToInt32((this.cmbIncorrectQuations.SelectedItem as ComboboxItem).Value);
-            this.SelectedQuations = this.Quations.Where(q => q.Id == id).ToList();
-            this.Index = 0;
+            int id = Convert.ToInt32((this.cmbIncorrectQuations.SelectedItem as ComboboxItem).Text);
+           // this.SelectedQuations = this.Quations.Where(q => q.Id == id).ToList();
+            this.Index = (id - 1);
             this.setQuation();
-            this.cmbCategory.SelectedIndex = -1;
-            this.rchCategory.Text = "";
-            this.txtQuationNum.Text = "";
-            this.lblQuationCount.Text = "0";
+            //this.cmbCategory.SelectedIndex = -1;
+            //this.rchCategory.Text = "";
+            //this.txtQuationNum.Text = "";
+            //this.lblQuationCount.Text = "0";
         }
 
         private void formResize(object sender, EventArgs e)

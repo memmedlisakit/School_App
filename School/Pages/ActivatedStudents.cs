@@ -23,7 +23,7 @@ namespace School.Pages
             getData(); 
         }
 
-        private void Closing(object sender, FormClosingEventArgs e)
+        public void Closing(object sender, FormClosingEventArgs e)
         {
             Student.ThisForm.Show();
         }

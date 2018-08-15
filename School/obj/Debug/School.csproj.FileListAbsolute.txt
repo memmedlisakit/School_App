@@ -82,3 +82,4 @@ C:\Users\Sakit\Desktop\School - Copy\School\obj\Debug\School.csproj.GenerateReso
 C:\Users\Sakit\Desktop\School - Copy\School\obj\Debug\School.csproj.CoreCompileInputs.cache
 C:\Users\Sakit\Desktop\School - Copy\School\obj\Debug\School.exe
 C:\Users\Sakit\Desktop\School - Copy\School\obj\Debug\School.pdb
+C:\Users\Sakit\Desktop\School - Copy\School\obj\Debug\School.csprojResolveAssemblyReference.cache
