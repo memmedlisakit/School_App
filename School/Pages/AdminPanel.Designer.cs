@@ -128,6 +128,7 @@
             // 
             // resetAppToolStripMenuItem
             // 
+            this.resetAppToolStripMenuItem.ForeColor = System.Drawing.Color.DarkOrange;
             this.resetAppToolStripMenuItem.Name = "resetAppToolStripMenuItem";
             this.resetAppToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
             this.resetAppToolStripMenuItem.Text = "Proqramı sıfırla";

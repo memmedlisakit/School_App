@@ -47,9 +47,17 @@ namespace School.Pages
             string email = Login.LoginedUser.Email;
             if(code == "azyhq75357536241598azyhq.az")
             {
-                insertLocalActivation(code, username, 1, comp_info, email, "ok");
-                return;
-            }
+                if (this.CheckForInternetConnection())
+                {
+                    insertLocalActivation(code, username, 1, comp_info, email, "ok");
+                    return;
+                }
+                else
+                {
+                    Error.Text = "Serverə qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayın";
+                    Error.Left = ((ThisForm.Width - Error.Width) / 2);
+                }
+        }
             UpdateData(code, username, comp_info, email, TOKET); 
         }
          
@@ -67,7 +75,7 @@ namespace School.Pages
             }
             catch (Exception)
             {
-                Error.Text = "Servere qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
+                Error.Text = "Serverə qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayın";
                 Error.Left = ((ThisForm.Width - Error.Width) / 2);
             } 
         }
@@ -85,7 +93,7 @@ namespace School.Pages
             }
             catch (Exception)
             {
-                Error.Text = "Servere qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayin";
+                Error.Text = "Serverə qoşularkən xəta baş verdi, zəhmət olmasa internet bağlantınızı yoxlayın";
                 Error.Left = ((ThisForm.Width - Error.Width) / 2);
             }
         }
@@ -126,6 +134,22 @@ namespace School.Pages
         private void Closing(object sender, FormClosingEventArgs e)
         {
             Login.ThisForm.Show();
+        }
+
+        public bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://memmedlisakit-001-site1.itempurl.com/"))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 
